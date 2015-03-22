@@ -1,0 +1,79 @@
+dota_launch_custom_game [地图插件名] [地形名]
+
+===进入自定义地图
+
+dota_launch_custom_game cloudforged cloudforged
+dota_launch_custom_game test untitled_1
+jointeam good
+jointeam bad
+
+===将玩家分配到天辉方夜魇方
+
+dota_create_unit 
+-createhero npc_unit_Q1_0_BZ
+-createhero npc_nature_10_PW enemy
+-createhero npc_unit_W1_25_SW enemy
+
+dota_create_unit npc_nature_10_PW
+dota_create_unit npc_unit_hum10_BZ
+dota_create_unit npc_unit_hum10_BZ enemy
+-item item_uglybase_tiepi
+
+===创建敌方斧王，友方斧王
+
+dota_dev hero_teleport
+===传送到当前英雄到鼠标点击位置。
+
+script_reload
+===重启脚本
+
+
+sv_cheats 1
+===作弊命令
+
+dota_camera_distance 1134
+===设置视角高度
+
+dota_ability_debug 1
+===技能没有冷却时间，这对敌方也会生效！
+
+dota_dev hero_level 25
+-lvlup 25
+===提高英雄等级
+
+dota_create_item 物品名称
+-item 物品名称
+===给与玩家特定的物品
+
+dota_bot_give_level [N]
+-levelbots
+===提高全部电脑玩家等级N级。
+
+dota_bot_give_item 物品名称
+-givebots 物品名称
+===给予所有机器人一件物品
+
+dota_dev hero_refresh
+-refresh
+===重置英雄技能冷却并布满状态
+
+dota_dev player_givegold
+-gold 99999
+===重置英雄技能冷却并布满状态
+
+dota_dev hero_respawn
+-respawn
+===在泉水处复活英雄
+
+-allvision
+===全图模式
+
+-normalvision
+===关闭全图
+
+
+-wtf
+==无cd无耗蓝模式
+
+-unwtf
+==关闭wtf
