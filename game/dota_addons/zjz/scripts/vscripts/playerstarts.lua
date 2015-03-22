@@ -101,7 +101,6 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
 
 
         if player ~= nil then
-            --print("yes!") 
             local ent =  Entities:FindAllByName("player"..tostring(i+1)) --这里返回一个表
             --print("Spawn BuildBase Done")
             PlayerS[i].BuildBase = {}                                                              --设置初始的地基
@@ -130,8 +129,6 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
                 fake:SetOrigin(Vector(p.x,p.y,p.z+ 13))
                 --buildbase:SetContextNum("player",i,0)
 
-                --设置地基的随机招兵技能
-                --非ReRoll，初始化
 
                 playerstarts:RollBuilds(buildbase) -- （地基单位；重选哪种兵种,nil为全选；是否reroll）
                 
