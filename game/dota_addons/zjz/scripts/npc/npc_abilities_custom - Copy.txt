@@ -1,0 +1,1919 @@
+﻿// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// 基础的马甲技能和实现某些效果技能
+	//=================================================================================================================
+ 
+ "build_base"  //地基的基本技能
+  {
+    "BaseClass"       "ability_datadriven"
+    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "Modifiers"
+    {
+                  "modifier_majia"
+                  {
+                    "Passive"   "1"
+                    "IsHidden"    "1"
+                    "StatusEffectName"     "particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
+                    "StatusEffectPriority" "10"//特效优先级
+                    "States"
+                    {
+                      "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED" //隐藏血条
+                      "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //魔法免疫
+                      "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED" //攻击免疫
+                      //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED" //不可选择
+                      "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
+                      "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"//不在小地图显示
+                    }
+                    //"OnCreated"
+                    //{
+                    //    "DelayedAction"  //延迟多少秒后执行动作
+                    //    {
+                    //        "Delay"             "1"
+                     //       "Action" 
+                       //         {
+                         //           "ApplyModifier"
+                           //                                         {
+                             //                                           "Target"            "CASTER"
+                               //                                         "ModifierName"      "modifier_buildbase_partic"
+                                 //                                   }
+                                //}
+              //         }
+            //        }
+
+                }
+               "modifier_buildbase_partic"
+                {
+                        "IsHidden"                        "1"
+                        "Passive"                        "0"
+                        "States"
+                    {
+                      "MODIFIER_STATE_FROZEN"           "MODIFIER_STATE_VALUE_ENABLED"//动作静止
+
+                    }
+
+                }
+
+
+    }
+}
+//====================================================================
+//=================马甲的基本技能===============================
+//====================================================================
+ "majia"  
+  {
+    "BaseClass"       "ability_datadriven"
+    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+
+    "Modifiers"
+    {
+      "modifier_majia"
+      {
+        "Passive"   "1"
+        "IsHidden"    "1"
+
+        "States"
+        {
+          "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED" //隐藏血条
+          "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //魔法免疫
+          "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED" //攻击免疫
+          "MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED" //不可选择
+          "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
+          "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"//不在小地图显示
+        }
+      }
+    }
+  }
+
+
+ "kexuanmajia"  
+  {
+    "BaseClass"       "ability_datadriven"
+    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+
+    "Modifiers"
+    {
+      "modifier_kexuanmajia"
+      {
+        "Passive"   "1"
+        "IsHidden"    "1"
+
+        "States"
+        {
+          "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED" //隐藏血条
+          "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //魔法免疫
+          "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED" //攻击免疫
+          //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED" //不可选择
+          "MODIFIER_STATE_ROOTED"   "MODIFIER_STATE_VALUE_ENABLED" //不可移动
+          "MODIFIER_STATE_INVISIBLE""MODIFIER_STATE_VALUE_ENABLED" //隐身
+          "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
+          "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"//不在小地图显示
+        }
+      }
+    }
+  }
+
+
+  //====================================================================
+//=================无碰撞状态===============================
+//====================================================================
+ "wupengzhuang"  
+  {
+    "BaseClass"       "ability_datadriven"
+    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "Modifiers"
+    {
+      "modifier_majia"
+      {
+        "Passive"   "1"
+        "IsHidden"    "1"
+
+        "States"
+        {
+
+          "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
+
+        }
+      }
+    }
+  }
+
+
+//====================================================================
+//=================传送门特效传送门特效+基地光环===============================
+//====================================================================
+"portal"
+  
+{
+        "BaseClass"                                        "ability_datadriven"
+        "AbilityBehavior"                        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCastRange"                                "1000"
+        "precache" //缓存特效
+    {
+        "particle"          "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"   //"particles/econ/courier/courier_greevil_green/courier_greevil_green_ambient_3.vpcf"
+    }
+
+        "Modifiers"
+        {
+                "modifier_portal_partic"
+                {
+                        "IsHidden"                        "1"
+                        "Passive"                        "1"
+ 
+                        "OnCreated"
+                        {
+                                "AttachEffect"
+                                {
+                                        "EffectName"                "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+                                        "EffectAttachType"          "follow_origin"
+                                        "Target"                    "CASTER"
+                                }
+                        }
+                }
+
+                "modifier_jidiguanghuang"
+                  {
+                        "Passive"        "1"
+                        "IsHidden"        "1"
+
+                         "Aura"                        "modifier_jidiguanghuang_buff"
+                         "Aura_Radius"                "1000"
+                         "Aura_Types"                "DOTA_UNIT_TARGET_CREEP"
+                         "Aura_Teams"                "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                         "Aura_Flags"                "DOTA_UNIT_TARGET_FLAG_NONE"
+                  }
+
+                  "modifier_jidiguanghuang_buff"
+                  {
+                       "Properties"
+                       {
+                          "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"                "3"        //护甲加成
+                          "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"               "3"       //攻击加成
+                       }
+                  }
+   }
+
+
+
+}
+
+
+
+
+"ability_farmer"
+  
+{
+        "BaseClass"                                        "ability_datadriven"
+        "AbilityBehavior"                        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCastRange"                                "1000"
+        "precache" //缓存特效
+    {
+        "particle"          "particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf"   //"particles/econ/courier/courier_greevil_green/courier_greevil_green_ambient_3.vpcf"
+    }
+
+        "Modifiers"
+        {
+                "modifier_farmer_partic"
+                {
+                        "IsHidden"                        "1"
+                        "Passive"                        "1"
+ 
+                        "OnCreated"
+                        {
+                                "AttachEffect"
+                                {
+                                        "EffectName"                "particles/units/heroes/hero_morphling/morphling_morph_agi.vpcf"
+                                        "EffectAttachType"          "follow_origin"
+                                        "Target"                    "CASTER"
+                                        "ControlPoints"
+                                                            {
+                                                                "00"                        "0 0 50"
+                                                            }
+
+                                }
+                        }
+                }            
+        }
+
+
+
+}
+
+//====================================================================
+//=================攻防相克所用技能，每个兵都要添加===================
+//====================================================================
+    "AandD"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_common_dont_touch_me"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+
+                "OnAttackLanded"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "scripts/vscripts/GONGFANG/AandDsystem.lua"
+                        "Function"      "AandDsystem"
+                        "DamageTaken"        "%attack_damage"
+                    }
+                }
+            }
+        }
+    }
+
+//====================================================================
+//=================        听取生命值的技能        ===================
+//====================================================================
+    "health_listener"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_common_health_listener"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+
+                "OnHealReceived"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "scripts/vscripts/global_function.lua"
+                        "Function"      "UnitManager:HealthListener"
+                    }
+                }
+            }
+        }
+    }
+
+//====================================================================
+//=================攻防类型技能===================
+//====================================================================
+//技能名字AL 混乱  AB普通  AM魔法 AP穿刺 AS攻城 AH英雄
+//        DZ 重甲  DS中甲  DW轻甲 DC城甲 DB无甲 DH英雄
+//混乱攻击类型
+    "AL"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "chaos_knight_chaos_bolt"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "03" //对轻甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DW"              "110"
+                }
+            "02" //对中甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DS"              "110"
+                }
+
+            "01" //对重甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DZ"              "110"
+                }
+            "04" //对城甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DC"              "110"
+                }
+            "05" //对无甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DB"              "110"
+                }
+            "06" //对英雄甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DH"              "110"
+                }
+
+        }
+
+    }
+
+//普通攻击类型
+    "AB"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "necronomicon_warrior_mana_burn"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+
+            "01" //对中甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DS"              "130"
+                }
+            "05" //对无甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DB"              "100"
+                }
+            "04" //对城甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DC"              "90"
+                }
+            "02" //对重甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DZ"              "90"
+                }
+            "06" //对英雄甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DH"              "85"
+                }
+            "03" //对轻甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DW"              "80"
+                }
+        }
+    }
+//魔法攻击类型
+    "AM"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "ghost_frost_attack"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "01" //对重甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DZ"              "130"
+                }
+            "03" //对轻甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DW"              "110"
+                }
+            "05" //对无甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DB"              "100"
+                }
+            "06" //对英雄甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DH"              "85"
+                }                
+            "02" //对中甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DS"              "80"
+                }
+
+            "04" //对城甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DC"              "70"
+                }
+
+        }
+    }
+//穿刺攻击类型
+    "AP"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "drow_ranger_marksmanship"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "03" //对轻甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DW"              "130"
+                }
+            "02" //对中甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DS"              "100"
+                }
+            "05" //对无甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DB"              "100"
+                }
+            "06" //对英雄甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DH"              "85"
+                }
+            "04" //对城甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DC"              "80"
+                }
+            "01" //对重甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DZ"              "80"
+                }
+        }
+    }
+//攻城攻击类型
+    "AS"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "invoker_chaos_meteor"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "04" //对城甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DC"              "130"
+                }
+            "05" //对无甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DB"              "100"
+                }
+            "01" //对重甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DZ"              "90"
+                }
+            "02" //对中甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DS"              "90"
+                }
+            "06" //对英雄甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DH"              "85"
+                }
+            "03" //对轻甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DW"              "80"
+                }
+        }
+    }
+//英雄攻击类型
+    "AH"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "oracle_purifying_flames"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "01" //对重甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DZ"              "100"
+                }
+            "02" //对中甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DS"              "100"
+                }
+            "03" //对轻甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DW"              "100"
+                }
+            "04" //对城甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DC"              "100"
+                }
+            "05" //对无甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DB"              "100"
+                }
+            "06" //对英雄甲
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "DH"              "100"
+                }
+        }
+    }
+
+
+//重型护甲类型
+    "DZ"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "DZ"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+
+            "04" //对穿刺
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AP"              "80"
+                }
+            "02" //对普通
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AB"              "90"
+                }
+            "05" //对攻城
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AS"              "90"
+                }
+            "06" //对神圣攻
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AH"              "100"
+                }
+            "01" //对混乱
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AL"              "110"
+                }
+            "03" //对魔法
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AM"              "130"
+                }
+        }
+    }
+
+    //中型护甲类型
+    "DS"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "DS"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+
+            "03" //对魔法
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AM"              "80"
+
+                }
+            "05" //对攻城
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AS"              "90"
+                }
+            "04" //对穿刺
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AP"              "100"
+                }               
+            "06" //对神圣攻
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AH"              "100"
+                }
+
+            "01" //对混乱
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AL"              "110"
+                }
+            "02" //对普通
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AB"              "130"
+                }
+        }
+    }
+
+    //轻型护甲类型
+    "DW"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "DW"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+
+            "02" //对普通
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AB"              "80"
+                }
+            "05" //对攻城
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AS"              "80"
+                }
+            "06" //对神圣攻
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AH"              "100"
+                }                
+            "03" //对魔法
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AM"              "110"
+                }
+            "01" //对混乱
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AL"              "110"
+                }                
+            "04" //对穿刺
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AP"              "130"
+
+                }
+
+        }
+    }
+
+    //城墙护甲类型
+    "DC"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "tiny_craggy_exterior"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "03" //对魔法
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AM"              "70"
+
+                }
+            "04" //对穿刺
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AP"              "80"
+                }
+            "02" //对普通
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AB"              "90"
+                }
+            "06" //对神圣攻
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AH"              "100"
+                }
+            "01" //对混乱
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AL"              "110"
+                }                
+            "05" //对攻城
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AS"              "130"
+                }                
+        }
+    }
+
+    //无护甲类型
+    "DB"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "DB"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "01" //对混乱
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AL"              "110"
+                }
+            "02" //对普通
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AB"              "100"
+
+                }
+            "03" //对魔法
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AM"              "100"
+
+                }
+            "04" //对穿刺
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AP"              "100"
+
+                }
+            "05" //对攻城
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AS"              "100"
+                }
+            "06" //对神圣攻
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AH"              "100"
+                }
+        }
+    }
+
+    //神圣护甲类型
+    "DH"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName" "omniknight_repel"//图标
+        "MaxLevel"                      "1"
+       
+        "AbilitySpecial"
+        {
+            "02" //对普通
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AB"              "85"
+
+                }
+            "03" //对魔法
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AM"              "85"
+
+                }
+            "04" //对穿刺
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AP"              "85"
+
+                }
+            "05" //对攻城
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AS"              "85"
+                }
+            "06" //对神圣攻
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AH"              "100"
+                }
+            "01" //对混乱
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "AL"              "110"
+                }                
+        }
+    }
+
+    //=================================================================================================================
+    // 左王：光明权杖
+    //=================================================================================================================
+
+//多重攻击
+"spilt_left"
+        {
+        "BaseClass" "ability_datadriven"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "MaxLevel" "1"
+        "AbilityTextureName" "chen_holy_persuasion"
+
+        "precache" //缓存特效
+            {
+                "particle"           "particles/econ/items/keeper_of_the_light/kotl_weapon_arcane_staff/keeper_base_attack_arcane_staff.vpcf"
+            }
+        "OnProjectileHitUnit"
+            {
+                "RunScript"
+                 {
+                    "ScriptFile"                            "scripts/vscripts/GONGFANG/AandDsystem.lua"
+                    "Target"                                "TARGET"
+                    "Function"                              "DuoChongGongJiDamage"
+                }
+            }
+
+        "Modifiers"
+                {
+                        "modifier_duo_chong_gong_ji_left"
+                            {
+                                "Passive" "1"
+                                "IsHidden" "0"
+                                "OnAttack"
+                                    {
+                                    "RunScript"
+                                        {
+                                            "ScriptFile"        "scripts/vscripts/GONGFANG/AandDsystem.lua"
+                                            "Target"            "TARGET"
+                                            "Function"          "DuoChongGongJi"
+                                            "attack_effect"     "particles/econ/items/keeper_of_the_light/kotl_weapon_arcane_staff/keeper_base_attack_arcane_staff.vpcf"
+                                            "attack_count"      "%attack_count"
+                                        }
+                                    }
+
+                                "Properties" //BUFF
+                                    {
+
+                                    "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"            "5" //格挡伤害
+                                    "MODIFIER_PROPERTY_EVASION_CONSTANT"            "10" //闪避
+                                    }
+                            }
+                }
+        "AbilitySpecial"
+        {
+            "01" //箭的数量，不包括被攻击的单位
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "attack_count"              "2"
+                }
+
+        }
+}
+
+    //=================================================================================================================
+    // 右王：魔渊之刃
+    //=================================================================================================================
+
+//多重攻击
+"spilt_right"
+        {
+        "BaseClass" "ability_datadriven"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "MaxLevel" "1"
+        "AbilityTextureName" "abaddon_frostmourne_alliance"
+
+        "precache" //缓存特效
+            {
+                "particle"           "particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+            }
+        "OnProjectileHitUnit"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"                            "scripts/vscripts/GONGFANG/AandDsystem.lua"
+                    "Target"                                "UNIT"
+                    "Function"                              "DuoChongGongJiDamage"
+                }
+            }
+
+        "Modifiers"
+                {
+                        "modifier_duo_chong_gong_ji_right"
+                            {
+                                "Passive" "1"
+                                "IsHidden" "0"
+                                "OnAttack"
+                                    {
+                                    "RunScript"
+                                        {
+                                            "ScriptFile"        "scripts/vscripts/GONGFANG/AandDsystem.lua"
+                                            "Target"            "UNIT"
+                                            "Function"          "DuoChongGongJi"
+                                            "attack_effect"     "particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+                                            "attack_count"      "%attack_count"
+                                        }
+                                    }
+                                "Properties" //BUFF
+                                    {
+                                    "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"            "5" //格挡伤害
+                                    "MODIFIER_PROPERTY_EVASION_CONSTANT"            "10" //闪避
+                                    }
+                            }
+                }
+        "AbilitySpecial"
+        {
+            "01" //箭的数量，不包括被攻击的单位
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "attack_count"              "2"
+                }
+
+        }
+}
+
+//============================================================
+//屯兵之道---------冲锋！
+//===============================================================
+
+
+"tunbing_chongfeng"
+{
+     "BaseClass"                     "ability_datadriven"
+     "AbilityTextureName"            "centaur_stampede"   
+
+    //技能行为，技能的施法方式
+    "AbilityBehavior"              "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"  
+
+    //技能目标所属类型
+    "AbilityUnitTargetType"        "DOTA_UNIT_TARGET_BASIC"
+
+    //技能伤害类型
+    "AbilityUnitDamageType"        ""
+
+    //技能目标所属队伍
+    "AbilityUnitTargetTeam"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+    //技能目标标志
+    "AbilityUnitTargetFlags"       "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+
+    //施法前摇
+    "AbilityCastPoint"        "0"
+
+    //施法距离
+    "AbilityCastRange"       "1300"  
+
+    //施法动作  
+    "AbilityCastAnimation"     "ACT_DOTA_CAST_ABILITY"
+
+    //技能CD        
+    "AbilityCooldown"                 "38"  
+    "AbilitySharedCooldown"         "tunbingzhidao" 
+    //技能施法所需魔法值
+    "AbilityManaCost"               "0" 
+
+    //持续时间，只是作为参数，用于设置BUFF时间等等
+    "AbilityDuration"               "5.0"  
+
+    "HotKeyOverride" "E"
+    //最大等级
+    "MaxLevel"                  "1"
+
+    "Modifiers"
+    {
+      "modifier_hero_hidden"
+      {
+        "Passive"   "1"
+        "IsHidden"    "1"
+
+        "States"
+        {
+          "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED" //隐藏血条
+          "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //魔法免疫
+          "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED" //攻击免疫
+          "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
+
+        }
+      }
+    }
+
+    "OnSpellStart" //开始施放技能
+        {
+            "ApplyModifier"
+                {
+                    "Target" 
+                                {
+                                "Types"     "DOTA_UNIT_TARGET_BASIC"
+                                "Teams"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                                "Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
+                                "Center"    "CASTER" //以施法者自身为中心
+                                "Radius"    "1300" //范围
+                                }
+                    "ModifierName"      "modifier_chongfeng"
+                }
+
+
+        }
+
+            "Modifiers"
+        {
+            "modifier_chongfeng"//
+            {
+                "Passive"           "0"  //是否是被动
+                "IsHidden"          "0"  //是否隐藏图标
+                "IsDebuff"          "0"  //是否为损益buff
+                "Duration"          "5" //这个Modifier的持续时间
+                "IsPurgable"        "0" //能否被净化
+
+                "Properties" //BUFF
+                {
+
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"            "%bonus_movespeed_pct" //移动速度提升
+
+                }
+
+            }
+
+        }
+
+        "AbilitySpecial"
+        {
+            "01" //移动速度附加
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "bonus_movespeed_pct"              "200"
+                }
+
+        }
+
+
+    }
+
+
+
+
+//============================================================
+//屯兵之道---------待命！
+//===============================================================
+
+
+"tunbing_daiming"
+{
+     "BaseClass"                     "ability_datadriven"
+     "AbilityTextureName"            "omniknight_degen_aura"   
+
+    //技能行为，技能的施法方式
+    "AbilityBehavior"              "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"  
+
+    //技能目标所属类型
+    "AbilityUnitTargetType"        "DOTA_UNIT_TARGET_BASIC"
+
+    //技能伤害类型
+    "AbilityUnitDamageType"        ""
+
+    //技能目标所属队伍
+    "AbilityUnitTargetTeam"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+    //技能目标标志
+    "AbilityUnitTargetFlags"       "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+
+    //施法前摇
+    "AbilityCastPoint"        "0"
+
+    //施法距离
+    "AbilityCastRange"       "1300"  
+
+    //施法动作  
+    "AbilityCastAnimation"     "ACT_DOTA_CAST_ABILITY"
+
+    //技能CD        
+    "AbilityCooldown"                 "38"  
+    "AbilitySharedCooldown"         "tunbingzhidao" //共享CD
+
+    //技能施法所需魔法值
+    "AbilityManaCost"               "0" 
+
+    //持续时间，只是作为参数，用于设置BUFF时间等等
+    "AbilityDuration"               "5.0"  
+
+    //"AbilityGoldCost"         "0" 花费金钱
+
+    //最大等级
+    "MaxLevel"                  "1"
+    "HotKeyOverride" "W"
+
+    "OnSpellStart" //开始施放技能
+        {
+            "ApplyModifier"
+                {
+                    "Target" 
+                                {
+                                "Types"     "DOTA_UNIT_TARGET_BASIC"
+                                "Teams"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                                "Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
+                                "Center"    "CASTER" //以施法者自身为中心
+                                "Radius"    "1300" //300范围
+                                }
+                    "ModifierName"      "modifier_daiming"
+                }
+
+
+        }
+
+            "Modifiers"
+        {
+            "modifier_daiming"//
+            {
+                "Passive"           "0"  //是否是被动
+                "IsHidden"          "0"  //是否隐藏图标
+                "IsDebuff"          "0"  //是否为损益buff
+                "Duration"          "5" //这个Modifier的持续时间
+                "IsPurgable"        "0" //能否被净化
+
+                "Properties" //BUFF
+                {
+
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"            "%bonus_movespeed" //移动速度降低
+                    "MODIFIER_PROPERTY_MOVESPEED_MAX"                         "0"
+                }
+                "States"
+                {
+                    "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"//禁止移动
+                }
+            }
+
+        }
+
+        "AbilitySpecial"
+        {
+            "01" //移动速度附加
+                {
+                    "var_type"                  "FIELD_INTEGER"
+                    "bonus_movespeed"              "-300"
+                }
+
+        }
+
+
+    }
+
+//===============================================================
+//升级技能
+//==============================================================
+//升级人口
+"Up_Food1"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "up_food"
+    "AbilityChannelTime" "1"
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    "HotKeyOverride"    "Z"//快捷键
+    "MaxLevel"                  "7"
+
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodStart"
+        }
+    }
+
+    "OnChannelSucceeded"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodSuccess"
+        }
+    }
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodCancel"
+      }
+    }
+
+               "AbilitySpecial"
+                {
+
+                        "01" //金钱消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "money"                        "30 35 40 45 50 55 60"
+                        }
+
+                        "02" //水晶消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "lumber"                        "60 70 80 90 100 110 120"
+                        }
+
+                }
+
+}
+
+//升级人口2
+"Up_Food2"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "up_food"
+    "AbilityChannelTime" "1"
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    "HotKeyOverride"    "Z"//快捷键
+    "MaxLevel"                  "7"
+
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodStart"
+        }
+    }
+
+    "OnChannelSucceeded"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodSuccess"
+        }
+    }
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodCancel"
+      }
+    }
+
+               "AbilitySpecial"
+                {
+
+                        "01" //金钱消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "money"                        "65 70 75 80 85 90 95"
+                        }
+
+                        "02" //水晶消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "lumber"                        "130 140 150 160 170 180 190"
+                        }
+
+                }
+
+}
+//升级人口3
+"Up_Food3"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "up_food"
+    "AbilityChannelTime" "1"
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    "HotKeyOverride"    "Z"//快捷键
+    "MaxLevel"                  "7"
+
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodStart"
+        }
+    }
+
+    "OnChannelSucceeded"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodSuccess"
+        }
+    }
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFoodCancel"
+      }
+    }
+
+               "AbilitySpecial"
+                {
+
+                        "01" //金钱消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "money"                        "100 105 110 115 120 125 130"
+                        }
+
+                        "02" //水晶消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "lumber"                        "200 210 220 230 240 250 260"
+                        }
+
+                }
+
+}
+
+
+
+//升级科技
+"Up_Tech"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "lumber_tech"
+    "AbilityChannelTime" "5"
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    "HotKeyOverride"    "T"//快捷键
+    "MaxLevel"                  "1"
+    "AbilityGoldCost"         "125" //花费金钱
+    "AbilityManaCost"         "125" //花费木材
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpTechStart"
+        }
+    }
+
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpTechCancel"
+      }
+    }
+
+    "OnChannelSucceeded"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpTechSuccess"
+        }
+    }
+
+}
+
+//增加水晶采集
+
+"Up_Farmer"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "lumber_farmer"
+    "AbilityChannelTime" "1" //15秒
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    "HotKeyOverride"    "W"//快捷键
+    "MaxLevel"                  "7"
+    "AbilityGoldCost"         "60 60 80 80 80 80 80" //花费金钱
+
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFarmerStart"
+        }
+    }
+
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFarmerCancel"
+      }
+    }
+
+    "OnChannelSucceeded"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "UpFarmerSuccess"
+        }
+    }
+
+}
+
+
+
+
+//升级王
+
+
+
+
+//===============================================================
+//建筑技能
+//==============================================================
+//贩售
+"Sale_Build"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "alchemist_goblins_greed"
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    //"HotKeyOverride"    "G"//快捷键
+    "MaxLevel"          "2" 
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "SaleBuild"
+        }
+    }
+
+    "AbilitySpecial"
+    {
+        "01" //归还金钱
+        {
+           "var_type"                "FIELD_INTEGER"
+            "backmoney"                        "100 50"
+        }
+    }
+
+}
+
+//防卡兵
+"fakabing"
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityTextureName" "legion_commander_duel_alt1"
+    "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
+    "HotKeyOverride"    "E"//快捷键
+    //施法距离，填写为0就代表全图哦
+    "AbilityCastRange"          "0"
+     "MaxLevel"          "1" 
+    //AOE指示器
+    "AOERadius"                 "200"
+
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Target"          "POINT"
+        "Function"        "fangkabing"
+
+        }
+    }
+
+}
+
+
+
+//===============================================================
+//建筑技能
+//==============================================================
+//人族10
+  "Q1_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "Q1_00"
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "75" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "Q"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //"Food"          "1"
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_Q1_00_BZ"
+        //"Food"          "1"
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族11
+  "Q1_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "Q1_10"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "225" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "Q"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //        //"Food"          "1"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_Q1_10_BZ" //新单位
+        //        //"Food"          "1"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族12
+  "Q1_20"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "Q1_20"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "295" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "Q"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        "Food"          "2"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_Q1_20_BZ" //新单位
+        "Food"          "2"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族125
+  "Q1_21"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "Q1_21"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "440" //花费金钱
+    "AbilityManaCost"          "3"//花费人口
+    "HotKeyOverride"    "Q"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //"Food"          "3"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_Q1_21_BZ" //新单位
+        //"Food"          "3"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族20
+  "W1_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "W1_00"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "110" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //        //"Food"          "1"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_W1_00_PS" //新单位
+        //        //"Food"          "1"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族21
+  "W1_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "W1_10"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "180" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //        //"Food"          "1"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_W1_10_PS" //新单位
+        //        //"Food"          "1"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族215
+  "W1_11"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "W1_11"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "240" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "Y"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //        //"Food"          "1"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_W1_11_SW" //新单位
+        //        //"Food"          "1"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+//人族22
+  "W1_20"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "W1_20"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "280" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //        //"Food"          "1"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_W1_20_PS" //新单位
+        //        //"Food"          "1"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+//人族225
+  "W1_21"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityManaCost" "0"
+    "AbilityTextureName" "W1_21"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "260" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "Y"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        //        //"Food"          "1"//人口
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_build_W1_21_SW" //新单位
+        //        //"Food"          "1"//人口
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+
+}

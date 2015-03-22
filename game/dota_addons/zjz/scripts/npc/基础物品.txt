@@ -1,0 +1,967 @@
+"DOTAAbilities"
+{
+	
+
+
+	//=================================================================================================================
+	// 达尔文进化岛
+	//=================================================================================================================
+	"item_uglybase_linjia" //鳞甲
+	{
+		"ID"							"1006"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"item_uglybase_linjia"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"1050"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+                "modifier_item_uglybase_linjia_buff"
+                {
+                	    "Passive"       	 "1"
+            			"IsHidden"     		 "1"
+
+                        "Properties"
+                        {
+                                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "14"//护甲加成
+                        }
+                }
+        }
+
+    }
+
+
+
+	"item_uglybase_tiepi" //铁皮
+	{
+		"ID"							"1007"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"uglybase_tiepi"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"380"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+                "modifier_item_uglybase_tiepi_buff"
+                {
+                	    "Passive"       	 "1"
+            			"IsHidden"     		 "1"
+
+				        "Aura"                        "modifier_item_uglybase_tiepi_enemy_passive"
+				        "Aura_Radius"        "1000"
+				        "Aura_Types"                "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+				        "Aura_Teams"                "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				        "Aura_Flags"                "DOTA_UNIT_TARGET_FLAG_NONE"
+
+
+				}
+
+						"modifier_item_uglybase_tiepi_enemy_passive"
+						{
+								"IsDebuff"                "1" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+						        "OnAttackStart"
+						        {
+						                "Random"
+						                {
+						                        "Chance"                "45"
+						                        "OnSuccess"
+						                        {
+						                                "ApplyModifier"
+						                                {
+						                                        "ModifierName"        "modifier_item_uglybase_tiepi_passive"
+						                                        "Target"                        "TARGET" 
+						                                }
+
+						                        }
+						                }
+						        }
+		                }
+
+				        "modifier_item_uglybase_tiepi_passive"
+				        {
+
+								"Passive"       	 "1"
+								"IsHidden"     		 "0"
+		            			//"Duration"			"5"
+				                "Properties"
+				                {
+				                        "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"                "70"//格挡70点伤害
+				                }
+
+
+				                				        "OnAttacked"
+				                {
+				                					"RemoveModifier"  //对目标删除Modifier
+													{
+													    "Target"			"TARGET"
+													    "ModifierName" 		"modifier_item_uglybase_tiepi_passive"
+													}
+
+				                }
+				        }
+
+				
+
+        }
+
+    }
+
+"item_uglybase_futou" //斧头
+	{
+		"ID"							"1008"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"item_uglybase_futou"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"1300"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+                "modifier_item_uglybase_futou_buff"
+                {
+                	    "Passive"       	 "1"
+            			"IsHidden"     		 "1"
+
+                        "Properties"
+                        {
+                                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "20"//攻击加成
+                                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"12"//移动速度
+                                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"20"//攻击速度
+                        }
+                }
+        }
+
+    }
+
+
+
+"item_uglybase_tiejian" //铁剑
+	{
+		"ID"							"1009"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"item_uglybase_tiejian"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"1300"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+                "modifier_item_uglybase_tiejian_buff"
+                {
+                	    "Passive"       	 "1"
+            			"IsHidden"     		 "1"
+
+                        "Properties"
+                        {
+                                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "30"//攻击加成
+                        }
+                }
+        }
+
+    }
+
+"item_uglybase_yirenmianzhao" //艺人面罩
+	{
+		"ID"							"1010"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"item_uglybase_yirenmianzhao"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"1300"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+                "modifier_item_uglybase_yirenmianzhao_buff"
+                {
+                	    "Passive"       	 "1"
+            			"IsHidden"     		 "1"
+
+                        "Properties"
+                        {
+                                "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"        "3"//增加魔法恢复数值
+                        }
+                }
+        }
+
+    }
+
+"item_uglybase_kuangwangzhixin" //狂妄之心
+	{
+		"ID"							"1011"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"item_uglybase_kuangwangzhixin"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"1950"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+                "modifier_item_uglybase_kuangwangzhixin_buff"
+                {
+                	    "Passive"       	 "1"
+            			"IsHidden"     		 "1"
+
+                        "Properties"
+                        {
+                                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"        "60"//增加攻击速度
+                        }
+                }
+        }
+
+    }
+
+
+
+"item_uglybase_judubishou" //剧毒匕首  中毒特效需B老师做
+	{
+		"ID"							"1012"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"uglybase_judubishou"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"1150"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_uglybase_judubishou"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "20"//增加攻击
+				                        }
+
+						        "OnAttackStart"
+						        {
+						                "Random"
+						                {
+						                        "Chance"                "15"
+						                        "OnSuccess"
+						                        {
+						                                "ApplyModifier"
+						                                {
+						                                        "ModifierName"        "modifier_item_uglybase_judubishou_buff"
+						                                        "Target"                        "TARGET" 
+						                                }
+
+						                        }
+						                }
+						        }
+		                }
+
+				        "modifier_item_uglybase_judubishou_buff"
+				        {
+
+				        		"IsDebuff"           "1" 
+								"Passive"       	 "0"
+								"IsHidden"     		 "0"
+		            			"Duration"			"5"
+				                "Properties"
+				                {
+				                        "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"                "-30"//减移动速
+				                }
+
+				        }
+        }
+
+    }
+
+//====================美女商店========================
+
+"item_bellebase_langtou" //榔头
+{
+		"ID"							"1013"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_langtou"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"55"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_langtou"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "5"//增加攻击
+				                                "MODIFIER_PROPERTY_HEALTH_BONUS"				"40"//增加生命
+				                                "MODIFIER_PROPERTY_MANA_BONUS"					"20"//增加魔法
+				                                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"1"//护甲
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+"item_bellebase_jiasushoutao" //加速手套
+{
+		"ID"							"1014"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_jiasushoutao"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"340"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_langtou"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"        "15"//增加攻击速度
+
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+"item_bellebase_huifujiezhi" //回复戒指
+{
+		"ID"							"1014"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_huifujiezhi"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"420"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_huifujiezhi"
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"        "8"//增加生命恢复
+
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+
+"item_bellebase_zhimingbaoshi" //致命宝石
+{
+		"ID"							"1015"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_zhimingbaoshi"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"600"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_zhimingbaoshi"
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"        "15"//增加攻击速度
+				                        }
+				     		                
+		                "OnAttackStart"
+						        {
+						                "Random"
+						                {
+						                        "Chance"                "15"
+						                        "OnSuccess"
+						                        {
+						                                "ApplyModifier"
+						                                {
+						                                        "ModifierName"        "modifier_item_bellebase_zhimingbaoshi_buff"
+						                                        "Target"                        "ATTACKER" 
+						                                }
+
+						                        }
+						                }
+						        }
+		                
+
+				        "modifier_item_bellebase_zhimingbaoshi_buff"
+				        {
+
+				        		"IsDebuff"           "1" 
+								"Passive"       	 "0"
+								"IsHidden"     		 "1"
+				                "Properties"
+				                {
+				                        "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"200" //暴击
+				                }
+
+				                "OnAttacked"
+				                
+				                "RemoveModifier"  //对目标删除Modifier
+													{
+													    "Target"			"ATTACKER"
+													    "ModifierName" 		"modifier_item_bellebase_zhimingbaoshi_buff"
+													}
+			                
+				        }
+
+    	}
+
+}
+
+
+"item_bellebase_shazhudao" //杀猪刀
+{
+		"ID"							"1016"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_shazhudao"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"430"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_shazhudao"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "15"//攻击加成
+
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+
+"item_bellebase_siwangmianzhao" //死亡面罩
+{
+		"ID"							"1017"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_siwangmianzhao"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"700"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_siwangmianzhao"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "15"//攻击加成
+
+				                        }
+								"OnAttackLanded"
+								        {
+									          "Lifesteal"
+											          {
+											            "Target"      "ATTACKER"
+											            "LifestealPercent"  "%20"
+											          }
+								        }
+						      
+		                }
+
+    	}
+
+}
+
+
+"item_bellebase_nengliangchuishi" //能量垂饰
+{
+		"ID"							"1018"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_nengliangchuishi"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"360"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_nengliangchuishi"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                          		"MODIFIER_PROPERTY_MANA_BONUS"					"150"//增加魔法
+
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+"item_bellebase_suduzhixue" //速度之靴
+{
+		"ID"							"1019"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_suduzhixue"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"260"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_suduzhixue"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                          		"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"					"50"//增加速度
+
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+"item_bellebase_shengminghufu" //速度之靴
+{
+		"ID"							"1020"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_shengminghufu"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"360"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_shengminghufu"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                          		"MODIFIER_PROPERTY_HEALTH_BONUS"				"150"//增加生命
+
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+"item_bellebase_shouhuzhihuan" //守护指环
+{
+		"ID"							"1021"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			//技能类型
+		"BaseClass"                     "item_datadriven"						//类
+        "AbilityTextureName"       		"bellebase_shouhuzhihuan"							//图标
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"										//冷却时间
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"										//魔法消耗
+		"ItemCost"						"300"          							//花费
+		"ItemQuality"					"artifact"  							//颜色
+		"ItemDroppable"					"1"										//可否丢弃
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"		//得到物品提示
+		"ItemDisassembleRule"			"0"										//可否拆封
+		"ItemAlertable"					"0"										//是否可提示
+		"ItemAliases"					""										//别名
+		"ItemPermanent"					"1"										//是否永久
+
+
+
+        "Modifiers"
+        {
+
+						"modifier_item_bellebase_shouhuzhihuan"
+						{
+								"IsDebuff"           "0" 
+								"Passive"       	 "1"
+            					"IsHidden"     		 "1"
+            					"Properties"
+				                        {
+				                                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"4"//护甲
+				                        }
+
+						      
+		                }
+
+    	}
+
+}
+
+
+
+
+
+}

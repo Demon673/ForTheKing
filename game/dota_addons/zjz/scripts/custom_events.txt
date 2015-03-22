@@ -1,0 +1,17 @@
+"CustomEvents"
+{
+	"custom_error_show"//自定义错误信息
+	{
+		"player_ID"		"short"
+		"_error"		"string"
+	}
+
+
+	"custom_get_gold"//自定义获得金钱
+	{
+		"player_ID"		"short"
+		"number"		"int"
+	}
+
+
+}
