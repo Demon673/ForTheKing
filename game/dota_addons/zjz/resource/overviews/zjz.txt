@@ -1,0 +1,8 @@
+zjz
+{
+	material materials/overviews/zjz.vmat
+	pos_x -7360
+	pos_y 7168
+	scale 14.063
+}
+
