@@ -68,10 +68,6 @@ function buildbuilding( keys )--建筑完成
 	local FullFood = PlayerS[pid].FullFood
 	local CurFood =  PlayerS[pid].CurFood + food
 
-	--if	 cost <= money then --再次检查金钱
-	--if  CurFood <= FullFood  then --再次检查人口
-
-
 	--创建新的建筑
 		local build = CreateUnitByName(new_build, BuildPoint, false, old_build:GetOwner(), old_build:GetOwner(), TeamNumber) 
 		print(old_build:GetOwner())
@@ -115,20 +111,6 @@ function buildbuilding( keys )--建筑完成
 	--增加升级
 		building_tech:ApplyTechSkills( build )
 
-
-
-	--扣除金钱
-		--PlayerResource:SetGold(pid,money-cost, false)
-
-
-	--人口增加
-		--PlayerS[pid].CurFood = PlayerS[pid].CurFood + food
-	--else
-		--BTFGeneral:ShowError("#NoEnoughFood", pid) --警告信息
-	--end
-	--else
-	--	BTFGeneral:ShowError("#NoEnoughMoney", pid) --警告信息	
-	--end
 end
 
 
@@ -146,14 +128,12 @@ function conditions(keys) --开始建筑
 	PlayerS[pid].CurFood = PlayerS[pid].CurFood + food  --增加人口
 
 	local CurFood =  PlayerS[pid].CurFood
-	--[[if cost > money then
-        BTFGeneral:ShowError("#NoEnoughMoney", pid) --警告信息
-        old_build:Stop()]]
+
 
 	if (CurFood > FullFood)  then
 		BTFGeneral:ShowError("#NoEnoughFood", pid) --人口不足的警告信息
 		old_build:Stop()
-		--PlayerS[pid].CurFood = PlayerS[pid].CurFood - food
+
 	end
 
 	
@@ -172,7 +152,6 @@ function CancelBuild(keys )
 --退还人口
 	PlayerS[pid].CurFood = PlayerS[pid].CurFood - food	
 
-
 end
 
 
@@ -182,7 +161,7 @@ function UpFoodStart(keys)
 	local pid = caster:GetPlayerOwnerID() 
 	--local pid = player:GetPlayerID()
 	--local pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID 
-		print("now UpFood OwnerPlayerid is "..pid)
+		--print("now UpFood OwnerPlayerid is "..pid)
 	local FullFood = PlayerS[pid].FullFood
 	local money = PlayerResource:GetGold(pid) 
 	local lumber = PlayerS[pid].Lumber
@@ -287,9 +266,6 @@ function UpTechStart(keys)
 
 			end
 		end
-
-			--PlayerResource:SetGold(pid,money+cost, false)
-
 	end
 	PlayerS[pid].Lumber = PlayerS[pid].Lumber - 125
 
@@ -313,8 +289,7 @@ function UpTechCancel(keys)
 	PlayerS[pid].Lumber = PlayerS[pid].Lumber + 125
 ---------------------退还金钱--------------------------------
 	PlayerResource:SetGold(pid,money+125, false)
----------------------金钱特效--------------------------------
-    --PopupGoldGain(buildbase,60)
+
 
 end
 
@@ -326,17 +301,8 @@ function UpTechSuccess(keys)
 	local money = PlayerResource:GetGold(pid) 
 	local lumber = PlayerS[pid].Lumber
 	local cost = 125
-	--if money < cost then
-	--	BTFGeneral:ShowError("#NoEnoughMoney", pid) --警告信息
 
-	--else
-	--	if lumber < cost then
-	--		BTFGeneral:ShowError("#NoEnoughLumber", pid) --警告信息
-	--	else
 			PlayerS[pid].Tech = PlayerS[pid].Tech+1
-	--	end
-	--end	
-
 
 end
 
@@ -392,16 +358,12 @@ function UpFarmerStart(keys)
 	local CurFood = PlayerS[pid].CurFood
 	local FullFood = PlayerS[pid].FullFood
 
-	--[[if FarmerNum > 4 then	--设置售价
-		local cost = 60
-	else
-		local cost = 80
-	end]]
+
 PlayerS[pid].CurFood = PlayerS[pid].CurFood + 1 --增加人口
 
 	if	FarmerNum >= 8 then
 
-		BTFGeneral:ShowError("#MaxFarmerNum", pid) --警告信息
+		BTFGeneral:ShowError("#MaxFarmerNum", pid) --最大采集者数量警告信息
 		caster:Stop() --升级中断
 		PlayerS[pid].FarmerNum = 8
 
@@ -409,7 +371,7 @@ PlayerS[pid].CurFood = PlayerS[pid].CurFood + 1 --增加人口
 
 		if  CurFood + 1 > FullFood  then
 
-			BTFGeneral:ShowError("#NoEnoughFood", pid) --警告信息
+			BTFGeneral:ShowError("#NoEnoughFood", pid) --人口不足警告信息
 			caster:Stop() --升级中断
 			
 		end
