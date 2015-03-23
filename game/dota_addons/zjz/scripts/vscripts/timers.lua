@@ -73,9 +73,3 @@
 		end
 	end
 
-
-	function CustomTimer(TimerName,func,delay)
-
-		GameRules:GetGameModeEntity():SetContextThink(DoUniqueString(TimerName),func,delay)
-
-	end
