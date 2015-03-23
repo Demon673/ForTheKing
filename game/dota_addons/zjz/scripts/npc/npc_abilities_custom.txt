@@ -29,21 +29,6 @@
                       "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
                       "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"//不在小地图显示
                     }
-                    //"OnCreated"
-                    //{
-                    //    "DelayedAction"  //延迟多少秒后执行动作
-                    //    {
-                    //        "Delay"             "1"
-                     //       "Action" 
-                       //         {
-                         //           "ApplyModifier"
-                           //                                         {
-                             //                                           "Target"            "CASTER"
-                               //                                         "ModifierName"      "modifier_buildbase_partic"
-                                 //                                   }
-                                //}
-              //         }
-            //        }
 
                 }
                "modifier_buildbase_partic"
@@ -2432,7 +2417,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //"Food"          "3"//人口
+
         }
     }
 
@@ -2442,7 +2427,6 @@
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
         "new_build"           "npc_build_Q5_21_SZ" //新单位
-        //"Food"          "3"//人口
       }
     }
     
