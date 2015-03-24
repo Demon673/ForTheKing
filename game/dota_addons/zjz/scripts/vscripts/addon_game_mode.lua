@@ -284,8 +284,8 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/lanaya/ta_ns_head/ta_ns_head.vmdl"},--4670
 
 	--W5 00 models/heroes/shadowshaman/shadowshaman.vmdl
-	{"model", "models/heroes/shadowshaman/head.vmdl"},- --251  通用
-	--{"model", "models/items/shadowshaman/shades_weapon/shades_weapon.vmdl"},--6197
+	{"model", "models/heroes/shadowshaman/head.vmdl"},--251  通用
+	{"model", "models/items/shadowshaman/shades_weapon/shades_weapon.vmdl"},--6197
 	{"model", "models/items/shadowshaman/shades_offhand/shades_offhand.vmdl"},--6198
 	{"model", "models/items/shadowshaman/shades_belt/shades_belt.vmdl"},--6206
 	{"model", "models/items/shadowshaman/shades_arms/shades_arms.vmdl"},--6309
