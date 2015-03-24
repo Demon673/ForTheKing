@@ -223,17 +223,199 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/techies/bigshot/bigshot_spleen_costume.vmdl"},
 	{"model", "models/items/techies/bigshot/bigshot_squee_costume.vmdl"},
 	{"model", "models/items/techies/bigshot/bigshot_barrel.vmdl"},
+	{"model", "models/items/techies/bigshot/bigshot.vmdl"},
 
+	--W2 00  models/heroes/huskar/huskar.vmdl
+	{"model", "models/heroes/huskar/huskar_spear.vmdl"},--268
+	{"model", "models/heroes/huskar/huskar_dagger.vmdl"},--269
+	{"model", "models/heroes/huskar/huskar_helmet.vmdl"},--270
+	{"model", "models/heroes/huskar/huskar_shoulder.vmdl"},--271
+	{"model", "models/heroes/huskar/huskar_bracer.vmdl"},--272
 
-	--E1 00
+	--W2 10
+	{"model", "models/items/huskar/sacred_bones_offhand_weapon/sacred_bones_offhand_weapon.vmdl"}, --4906
+	{"model", "models/items/huskar/sacred_bones_shoulder/sacred_bones_shoulder.vmdl"}, --4907
+	{"model", "models/items/huskar/sacred_bones_arms/sacred_bones_arms.vmdl"}, --4908
+	{"model", "models/items/huskar/sacred_bones_helmet/sacred_bones_helmet.vmdl"},--4909
+	{"model", "models/items/huskar/sacred_bones_spear/sacred_bones_spear.vmdl"}, --4910
+
+	--W2 20
+	{"model", "models/items/huskar/obsidian_claw_of_the_jaguar_arms/obsidian_claw_of_the_jaguar_arms.vmdl"}, --4299
+	{"model", "models/items/huskar/obsidian_claw_of_the_jaguar_helmet/obsidian_claw_of_the_jaguar_helmet.vmdl"},--4300
+	{"model", "models/items/huskar/obsidian_claw_of_the_jaguar_shoulder/obsidian_claw_of_the_jaguar_shoulder.vmdl"},--4301
+	{"model", "models/items/huskar/obsidian_blade_spear/obsidian_blade_spear.vmdl"},--4748
+	{"model", "models/items/huskar/obsidian_claw_of_the_jaguar_dagger/obsidian_claw_of_the_jaguar_dagger.vmdl"},--4749
+
+	--W3 00 models/heroes/clinkz/clinkz.vmdl
+	{"model", "models/heroes/clinkz/clinkz_head.vmdl"}, --56 通用
+	{"model", "models/heroes/clinkz/clinkz_bow.vmdl"},  --57
+	{"model", "models/heroes/clinkz/clinkz_pads.vmdl"},  --58
+	{"model", "models/heroes/clinkz/clinkz_back.vmdl"},  --59
+	{"model", "models/heroes/clinkz/clinkz_horns.vmdl"}, --60
+	{"model", "models/heroes/clinkz/clinkz_gloves.vmdl"}, --61
+
+	--W3 10
+	{"model", "models/items/clinkz/clinkz_weapon_goc/clinkz_weapon_goc.vmdl"},--4741
+	{"model", "models/items/clinkz/clinkz_shoulders_goc/clinkz_shoulders_goc.vmdl"},--4742
+	{"model", "models/items/clinkz/clinkz_helmet01_goc/clinkz_helmet01_goc.vmdl"},--4971
+	{"model", "models/items/clinkz/clinkz_hands_goc/clinkz_hands_goc.vmdl"},--4972
+	{"model", "models/items/clinkz/clinkz_back_goc/clinkz_back_goc.vmdl"},--4973
+
+	--W3 20
+	{"model", "models/items/clinkz/lost_viking_back/lost_viking_back.vmdl"},--5151
+	{"model", "models/items/clinkz/lost_viking_bow/lost_viking_bow.vmdl"},--5152
+	{"model", "models/items/clinkz/lost_viking_gauntlet/lost_viking_gauntlet.vmdl"},--5153
+	{"model", "models/items/clinkz/lost_viking_helmet/lost_viking_helmet.vmdl"},--5154
+	{"model", "models/items/clinkz/lost_viking_shoulder/lost_viking_shoulder.vmdl"},--5155
+
+	--W4 00 models/heroes/lanaya/lanaya.vmdl
+	{"model", "models/heroes/lanaya/lanaya_hair.vmdl"},--173
+	{"model", "models/heroes/lanaya/lanaya_cowl_shoulder.vmdl"},--174
+	{"model", "models/heroes/lanaya/lanaya_bracers_skirt.vmdl"},--175
+
+	--W4 10
+	{"model", "models/items/lanaya/thiefscholar_girdle/thiefscholar_girdle.vmdl"}, --4695
+	{"model", "models/items/lanaya/thiefscholar_coiffure/thiefscholar_coiffure.vmdl"},--4696
+	{"model", "models/items/lanaya/thiefscholar_shoulder/thiefscholar_shoulder.vmdl"},--4697
+
+	--W4 20
+	{"model", "models/items/lanaya/ta_ns_shoulder/ta_ns_shoulder.vmdl"},--4668
+	{"model", "models/items/lanaya/ta_ns_armor/ta_ns_armor.vmdl"},--4669
+	{"model", "models/items/lanaya/ta_ns_head/ta_ns_head.vmdl"},--4670
+
+	--W5 00 models/heroes/shadowshaman/shadowshaman.vmdl
+	{"model", "models/heroes/shadowshaman/head.vmdl"},- --251  通用
+	--{"model", "models/items/shadowshaman/shades_weapon/shades_weapon.vmdl"},--6197
+	{"model", "models/items/shadowshaman/shades_offhand/shades_offhand.vmdl"},--6198
+	{"model", "models/items/shadowshaman/shades_belt/shades_belt.vmdl"},--6206
+	{"model", "models/items/shadowshaman/shades_arms/shades_arms.vmdl"},--6309
+	{"model", "models/items/shadowshaman/shades_head/shades_head.vmdl"}, --6310
+
+	--W5 10
+	{"model", "models/items/shadowshaman/vagabond_pack/vagabond_pack.vmdl"}, --4412
+	{"model", "models/items/shadowshaman/vagabond_wand/vagabond_wand.vmdl"},--4416
+	{"model", "models/items/shadowshaman/vagabond_hat/vagabond_hat.vmdl"},--4417
+	{"model", "models/items/shadowshaman/vagabond_drink/vagabond_drink.vmdl"},--4419
+
+	--W5 20
+	{"model", "models/items/shadowshaman/tangki_offhand/tangki_offhand.vmdl"},--6814
+	{"model", "models/items/shadowshaman/tangki_weapon/tangki_weapon.vmdl"},--6816
+	{"model", "models/items/shadowshaman/tangki_arms/tangki_arms.vmdl"},--6817
+	{"model", "models/items/shadowshaman/tangki_belt/tangki_belt.vmdl"},--6818
+	{"model", "models/items/shadowshaman/tangki_head/tangki_head.vmdl"},--6819
+
+	--W5 21
+	{"model", "models/items/shadowshaman/eki_bukaw_bracers/eki_bukaw_bracers.vmdl"},--5501
+	{"model", "models/items/shadowshaman/records_of_the_eki_bukaw/records_of_the_eki_bukaw.vmdl"},--5500
+	{"model", "models/items/shadowshaman/eki_bukaw_wand__offhand/eki_bukaw_wand__offhand.vmdl"},--5503
+	{"model", "models/items/shadowshaman/eki_bukaw_wand/eki_bukaw_wand.vmdl"},--5504
+	{"model", "models/items/shadowshaman/visage_of_eki_bukaw/visage_of_eki_bukaw.vmdl"},--5548
+
+	--E1 00 models/heroes/tiny_02/tiny_02.vmdl
 	{"model", "models/heroes/tiny_02/tiny_02_body.vmdl"},--494
 	{"model", "models/heroes/tiny_02/tiny_02_head.vmdl"},--493
 	{"model", "models/heroes/tiny_02/tiny_02_left_arm.vmdl"},--495
 	{"model", "models/heroes/tiny_02/tiny_02_right_arm.vmdl"},--496
 
+	--E1 10 models/heroes/tiny_04/tiny_04.vmdl
+	{"model", "models/heroes/tiny_04/tiny_04_body.vmdl"},--494
+	{"model", "models/heroes/tiny_04/tiny_04_head.vmdl"},--493
+	{"model", "models/heroes/tiny_04/tiny_04_left_arm.vmdl"},--495
+	{"model", "models/heroes/tiny_04/tiny_04_right_arm.vmdl"},--496
+
+
+	--E2 00 models/heroes/undying/undying.vmdl
+	{"model", "models/heroes/undying/undying_helmet.vmdl"}, --392
+	{"model", "models/heroes/undying/undying_armor.vmdl"}, --393
+
+	--E2 10 models/heroes/undying/undying_flesh_golem.vmdl
+
+ 	--E2 1a models/heroes/undying/undying_minion.vmdl
+
+	--E3 00 models/heroes/wraith_king/wraith_king.vmdl
+	{"model", "models/heroes/wraith_king/wraith_king_chest.vmdl"}, --500 通用
+	{"model", "models/items/wraith_king/eternal_arms/eternal_arms.vmdl"},--6171
+	{"model", "models/items/wraith_king/eternal_back/eternal_back.vmdl"}, --6172
+	{"model", "models/items/wraith_king/eternal_blade/eternal_blade.vmdl"}, --6173
+	{"model", "models/items/wraith_king/eternal_head/eternal_head.vmdl"},--6174
+	{"model", "models/items/wraith_king/eternal_shoulder/eternal_shoulder.vmdl"},--6175
+
+	--E3 10
+	{"model", "models/items/wraith_king/regalia_of_the_wraith_lord_back/regalia_of_the_wraith_lord_back.vmdl"},--5052
+	{"model", "models/items/wraith_king/regalia_of_the_wraith_lord_sword/regalia_of_the_wraith_lord_sword.vmdl"},--5053
+	{"model", "models/items/wraith_king/regalia_of_the_wraith_lord_bracers/regalia_of_the_wraith_lord_bracers.vmdl"},--5054
+	{"model", "models/items/wraith_king/regalia_of_the_wraith_lord_helmet/regalia_of_the_wraith_lord_helmet.vmdl"},--5055
+	{"model", "models/items/wraith_king/regalia_of_the_wraith_lord_shoulder/regalia_of_the_wraith_lord_shoulder.vmdl"},--5056
+
+	--E4 00 models/heroes/shredder/shredder.vmdl
+	{"model", "models/heroes/shredder/shredder_driver_hat.vmdl"},--386
+	{"model", "models/heroes/shredder/shredder_chainsaw.vmdl"},--388(注意不连贯)
+	{"model", "models/heroes/shredder/shredder_shoulders.vmdl"},--389
+	{"model", "models/heroes/shredder/shredder_body.vmdl"},--390
+	{"model", "models/heroes/shredder/shredder_blade.vmdl"},--400
+	{"model", "models/heroes/shredder/shredder_armor.vmdl"},--401
+	{"model", "models/heroes/shredder/shredder_hook.vmdl"},--402
+
+	--E4 10
+	{"model", "models/items/shredder/timberthaw_armor/timberthaw_armor.vmdl"},--6519
+	{"model", "models/items/shredder/timberthaw_weapon/timberthaw_weapon.vmdl"},--6520
+	{"model", "models/items/shredder/timberthaw_head/timberthaw_head.vmdl"},--6521
+	{"model", "models/items/shredder/timberthaw_offhand/timberthaw_offhand.vmdl"},--6522
+	{"model", "models/items/shredder/timberthaw_shoulder/timberthaw_shoulder.vmdl"},--6523
+	{"model", "models/items/shredder/timberthaw_back/timberthaw_back.vmdl"},--6524
+
+	--E5 00 models/heroes/chaos_knight/chaos_knight.vmdl
+	{"model", "models/items/chaos_knight/chaos_legion_mount/chaos_legion_mount.vmdl"},--5980
+	{"model", "models/items/chaos_knight/chaos_legion_drapes/chaos_legion_drapes.vmdl"},--5981
+	{"model", "models/items/chaos_knight/chaos_legion_helm/chaos_legion_helm.vmdl"},--5982
+	{"model", "models/items/chaos_knight/chaos_legion_shield/chaos_legion_shield.vmdl"},--5983
+	{"model", "models/items/chaos_knight/chaos_legion_weapon/chaos_legion_weapon.vmdl"},--5984
+
+	--E5 10
+	{"model", "models/items/chaos_knight/ck_esp_blade/ck_esp_blade.vmdl"},--5518
+	{"model", "models/items/chaos_knight/ck_esp_helm/ck_esp_helm.vmdl"},--5519
+	{"model", "models/items/chaos_knight/ck_esp_mount/ck_esp_mount.vmdl"},--5520
+	{"model", "models/items/chaos_knight/ck_esp_shield/ck_esp_shield.vmdl"},--5521
+	{"model", "models/items/chaos_knight/ck_esp_shoulder/ck_esp_shoulder.vmdl"},--5522
+
+	--E5 11
+	{"model", "models/items/chaos_knight/rising_chaos_blade/rising_chaos_blade.vmdl"},--5921
+	{"model", "models/items/chaos_knight/rising_chaos_helm/rising_chaos_helm.vmdl"},--5922
+	{"model", "models/items/chaos_knight/rising_chaos_spaulders/rising_chaos_spaulders.vmdl"},--5923
+	{"model", "models/items/chaos_knight/rising_chaos_steed/rising_chaos_steed.vmdl"},--5924
+	{"model", "models/items/chaos_knight/rising_chaos_shield/rising_chaos_shield.vmdl"},--5925
+
+	--E6 00 models/heroes/nerubian_assassin/nerubian_assassin.vmdl
+	{"model", "models/items/nerubian_assassin/nyx_dusky_back/nyx_dusky_back.vmdl"},--5567
+	{"model", "models/items/nerubian_assassin/nyx_dusky_head/nyx_dusky_head.vmdl"},--5568
+	{"model", "models/items/nerubian_assassin/nyx_dusky_misc/nyx_dusky_misc.vmdl"},--5569
+	{"model", "models/items/nerubian_assassin/nyx_dusky_weapon/nyx_dusky_weapon.vmdl"},--5570
+
+	--E6 10	
+	{"model", "models/items/nerubian_assassin/spines_of_the_predator/spines_of_the_predator.vmdl"},--5201
+	{"model", "models/items/nerubian_assassin/mind_piercer_of_the_predator/mind_piercer_of_the_predator.vmdl"},--5202
+	{"model", "models/items/nerubian_assassin/preyfinders_of_the_predator/preyfinders_of_the_predator.vmdl"},--5203
+	{"model", "models/items/nerubian_assassin/blades_of_the_predator/blades_of_the_predator.vmdl"},--5204
+
+	--E6 11 models/heroes/broodmother/broodmother.vmdl (和E6 10模型不一样)
+	{"model", "models/items/broodmother/abdomen_of_perception/abdomen_of_perception.vmdl"},--5854
+	{"model", "models/items/broodmother/crown_of_perception/crown_of_perception.vmdl"}, --5891
+	{"model", "models/items/broodmother/legs_of_perception/legs_of_perception.vmdl"}, --5892
+	
+	--E6 1a  models/heroes/broodmother/spiderling.vmdl
+
+
+
+
+
+
+
+
 
 
 	}
+
+
 	     
 	print("loading shiping")
 	local t=#zr;
