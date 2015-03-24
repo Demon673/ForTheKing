@@ -89,7 +89,7 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/sven/sven_ceremonialgreathelmofthemyrmidon/sven_ceremonialgreathelmofthemyrmidon.vmdl"},
 	{"model", "models/items/sven/sven_ceremonialshieldbladeofthemyrmidon/sven_ceremonialshieldbladeofthemyrmidon.vmdl"},
 	{"model", "models/items/sven/sven_ceremonialshoulderbladesofthemyrmidon/sven_ceremonialshoulderbladesofthemyrmidon.vmdl"},
-	{"particle", "particles/econ/items/phantom_assassin/phantom_assassin_weapon_hells_guide/hells_guide_smoke.vpcf"},
+	{"particle", "particles/units/heroes/hero_queenofpain/queen_shadow_strike_smoke.vpcf"},
 	{"particle", "particles/econ/courier/courier_tinkbot/courier_tinkbot_flying_ambient_b.vpcf"},
 
 
