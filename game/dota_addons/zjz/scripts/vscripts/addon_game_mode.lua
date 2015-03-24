@@ -295,8 +295,19 @@ function CbtfGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 0.1 )
     --GameRules:GetGameModeEntity():SetThink( "RoundThinker", self, "GlobalThink", 1 )
     --GameRules:GetGameModeEntity():SetContextThink(DoUniqueString("RoundThinker"), "RoundThinker", 0.1)
-    --设置游戏准备时间
+    
+    --隐藏原有面板
+    mode = GameRules:GetGameModeEntity()
+    mode:SetHUDVisible(1, false) --顶部英雄栏
+    mode:SetHUDVisible(9, false) --信使栏
+    mode:SetHUDVisible(12, false) --推荐物品栏
+    mode:SetHUDVisible(8, false)  --快速购买
 
+    Convars:SetInt("dota_render_crop_height", 0)
+	Convars:SetInt("dota_render_y_inset", 0)
+
+
+    --设置游戏准备时间
     GameRules:SetPreGameTime( 15)
 	--重复选择英雄
 	GameRules:SetSameHeroSelectionEnabled(true)    
