@@ -312,10 +312,10 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/shadowshaman/visage_of_eki_bukaw/visage_of_eki_bukaw.vmdl"},--5548
 
 	--E1 00 models/heroes/tiny_02/tiny_02.vmdl
-	{"model", "models/heroes/tiny_02/tiny_02_body.vmdl"},--494
-	{"model", "models/heroes/tiny_02/tiny_02_head.vmdl"},--493
-	{"model", "models/heroes/tiny_02/tiny_02_left_arm.vmdl"},--495
-	{"model", "models/heroes/tiny_02/tiny_02_right_arm.vmdl"},--496
+	{"model", "models/heroes/tiny_01/tiny_01_body.vmdl"},--494
+	{"model", "models/heroes/tiny_01/tiny_01_head.vmdl"},--493
+	{"model", "models/heroes/tiny_01/tiny_01_left_arm.vmdl"},--495
+	{"model", "models/heroes/tiny_01/tiny_01_right_arm.vmdl"},--496
 
 	--E1 10  
 	{"model", "models/items/tiny/scarletquarry_arms/scarletquarry_arms.vmdl"},--6886

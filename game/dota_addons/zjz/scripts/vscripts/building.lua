@@ -32,6 +32,47 @@ building_tech.t_tech["W1_20"] = {}
 building_tech.t_tech["W1_11"] = {"W1_21"}
 building_tech.t_tech["W1_21"] = {}
 
+building_tech.t_tech["W2_00"] = {"W2_10",}
+building_tech.t_tech["W2_10"] = {"W2_20",}
+building_tech.t_tech["W2_20"] = {}
+
+building_tech.t_tech["W3_00"] = {"W3_10",}
+building_tech.t_tech["W3_10"] = {"W3_20",}
+building_tech.t_tech["W3_20"] = {}
+
+building_tech.t_tech["W4_00"] = {"W4_10",}
+building_tech.t_tech["W4_10"] = {"W4_20",}
+building_tech.t_tech["W4_20"] = {}
+
+building_tech.t_tech["W5_00"] = {"W5_10",}
+building_tech.t_tech["W5_10"] = {"W5_20","W5_21",}
+building_tech.t_tech["W5_20"] = {}
+building_tech.t_tech["W5_21"] = {}
+
+building_tech.t_tech["E1_00"] = {"E1_10",}
+building_tech.t_tech["E1_10"] = {}
+
+
+building_tech.t_tech["E2_00"] = {"E2_10",}
+building_tech.t_tech["E2_10"] = {}
+
+building_tech.t_tech["E3_00"] = {"E3_10",}
+building_tech.t_tech["E3_10"] = {}
+
+building_tech.t_tech["E4_00"] = {"E4_10",}
+building_tech.t_tech["E4_10"] = {"E4_20",}
+building_tech.t_tech["E4_20"] = {}
+
+building_tech.t_tech["E5_00"] = {"E5_10",}
+building_tech.t_tech["E5_10"] = {"E5_20","E5_21",}
+building_tech.t_tech["E5_20"] = {}
+building_tech.t_tech["E5_21"] = {}
+
+building_tech.t_tech["E6_00"] = {"E6_10",}
+building_tech.t_tech["E6_10"] = {"E6_20","E6_21",}
+building_tech.t_tech["E6_20"] = {}
+building_tech.t_tech["E6_21"] = {}
+
 
 function building_tech:ApplyTechSkills( u_building )
 
