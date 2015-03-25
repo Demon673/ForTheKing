@@ -582,7 +582,7 @@ end
 --单位被杀死
 function CbtfGameMode:OnEntityKilled(keys)
 	local killed_unit = EntIndexToHScript( keys.entindex_killed )
-	print(killed_unit:GetUnitName() ..":I'm fucking dead!")
+-
 	if killed_unit == king_left then
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 	end
