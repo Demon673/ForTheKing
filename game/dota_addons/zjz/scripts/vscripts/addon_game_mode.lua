@@ -212,6 +212,7 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/heroes/techies/techies_spleen_weapon.vmdl"},
 	{"model", "models/heroes/techies/techies_cart.vmdl"},
 	{"model", "models/heroes/techies/techies_spleen_costume.vmdl"},
+	{"model", "models/heroes/techies/techies_squee_costume.vmdl"},
 	--W1 20
 	{"model", "models/items/sniper/wildwest_weapon/wildwest_weapon.vmdl"},
 	{"model", "models/items/sniper/wildwest_head/wildwest_head.vmdl"},
@@ -352,7 +353,6 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/heroes/shredder/shredder_chainsaw.vmdl"},--388(注意不连贯)
 	{"model", "models/heroes/shredder/shredder_shoulders.vmdl"},--389
 	{"model", "models/heroes/shredder/shredder_body.vmdl"},--390
-	{"model", "models/heroes/shredder/shredder_blade.vmdl"},--400
 	{"model", "models/heroes/shredder/shredder_armor.vmdl"},--401
 	{"model", "models/heroes/shredder/shredder_hook.vmdl"},--402
 

@@ -57,7 +57,6 @@ function RoundThinker()
 					if newb:IsAlive()  then
 						newb.Sale = newb.Sale/2
 						newb:FindAbilityByName("Sale_Build"):SetLevel(2)
-
 					end
 				end
 			end

@@ -643,7 +643,7 @@
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
     "Model"                     "models/heroes/abaddon/abaddon.mdl"   // 模型
-    "ModelScale"                "2.4" //模型尺寸
+    "ModelScale"                "2.1" //模型尺寸
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程
     "AttackDamageMin"           "100"                         // 最小伤害
     "AttackDamageMax"           "100"                         // 最大伤害
@@ -3767,7 +3767,7 @@
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
     "Model"                     "models/heroes/techies/techies.vmdl"   // 模型
     "ModelScale"                "0.3"
-    "BuildScale"                "0.5" //自定义建筑模型尺寸
+    //"BuildScale"                "0.5" //自定义建筑模型尺寸
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程
     "AttackDamageMin"           "101"                         // 最小伤害
     "AttackDamageMax"           "104"                         // 最大伤害
@@ -5986,7 +5986,7 @@
     //----------------------------------------------------------------
     "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
     "RingRadius"                "50"                    // 选择圈范围
-    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+    "HealthBarOffset"           "200"                    // 血条偏移量(Z轴)
  
     // Movement
     //----------------------------------------------------------------
@@ -6117,7 +6117,7 @@
     //----------------------------------------------------------------
     "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
     "RingRadius"                "50"                    // 选择圈范围
-    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+    "HealthBarOffset"           "100"                    // 血条偏移量(Z轴)
  
     // Movement
     //----------------------------------------------------------------
@@ -6801,7 +6801,7 @@
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
     "Model"                     "models/heroes/shredder/shredder.vmdl"   // 模型
-        "ModelScale"                 "1"
+        "ModelScale"                 "0.7"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
     "AttackDamageMin"           "35"                         // 最小伤害
     "AttackDamageMax"           "68"                         // 最大伤害
@@ -6917,13 +6917,9 @@
                     }
                     "Wearable5"
                     {
-                        "ItemDef"           "400"  
-                    }
-                    "Wearable6"
-                    {
                         "ItemDef"           "401"  
                     }
-                    "Wearable7"
+                    "Wearable6"
                     {
                         "ItemDef"           "402"  
                     }
@@ -6941,7 +6937,7 @@
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
     "Model"                     "models/heroes/shredder/shredder.vmdl"   // 模型
-        "ModelScale"                 "1"
+        "ModelScale"                 "0.75"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
     "AttackDamageMin"           "65"                         // 最小伤害
     "AttackDamageMax"           "98"                         // 最大伤害
