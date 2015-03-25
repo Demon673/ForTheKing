@@ -1,31 +1,31 @@
-//小小
+//山岭石人
     "npc_unit_E1_00_BC"
 
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
-    "Model"                     "models/heroes/tiny_02/tiny_02.vmdl"   // 模型
-    "ModelScale"                 "1"
-    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程
-    "AttackDamageMin"           "75"                         // 最小伤害
-    "AttackDamageMax"           "76"                         // 最大伤害
-    "AttackRate"                "1.5"                       // 攻击间隔
+    "Model"                     "models/heroes/tiny_01/tiny_01.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "35"                         // 最小伤害
+    "AttackDamageMax"           "40"                         // 最大伤害
+    "AttackRate"                "2.5"                       // 攻击间隔
     "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
     "ProjectileSpeed"           "900"                       // 投射速率
-    "AttackRange"               "90"                       // 攻击范围
+    "AttackRange"               "100"                       // 攻击范围
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"             "3"         // 基础护甲
+    "ArmorPhysical"             "0"         // 基础护甲
     "MagicalResistance"         "0"         // 基础魔抗
     // 打死这个单位所获得的奖励
     //----------------------------------------------------------------
-    "BountyGoldMin"             "6"         // 最小金钱奖励
-    "BountyGoldMax"             "6"         // 最大金钱奖励
+    "BountyGoldMin"             "4"         // 最小金钱奖励
+    "BountyGoldMax"             "4"         // 最大金钱奖励
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"              "1825"       // 基础生命值
+    "StatusHealth"              "1330"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
     "StatusMana"                "60"         // 基础魔法值
-    "StatusManaRegen"           "0.8"         // 魔法恢复速度
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
@@ -64,7 +64,7 @@
     // Bounds
     //----------------------------------------------------------------
     "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
-    "RingRadius"                "120"                    // 选择圈范围
+    "RingRadius"                "50"                    // 选择圈范围
     "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
  
     // Movement
@@ -83,7 +83,7 @@
     "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
     "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
     "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
-    "UnitRelationshipClass"     "DOTA_npc_build_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
      
     // Vision
     //----------------------------------------------------------------
@@ -108,22 +108,1724 @@
                     }
                     "Wearable2"
                     {
-                        "ItemDef"           "495"  
+                        "ItemDef"           "493"  
                     }
                     "Wearable3"
                     {
-                        "ItemDef"           "496"  
+                        "ItemDef"           "495"  
                     }
                     "Wearable4"
                     {
-                        "ItemDef"           "497"  
-                    }
-
-                    "Wearable5"
-                    {
-                        "ItemDef"           "493"  
+                        "ItemDef"           "496"  
                     }
                 }
     }
 
+
 }
+
+
+
+
+
+
+//擎天石柱
+    "npc_unit_E1_10_BC"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/tiny_01/tiny_01.vmdl"   // 模型
+        "ModelScale"                 "1.2"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "112"                         // 最小伤害
+    "AttackDamageMax"           "148"                         // 最大伤害
+    "AttackRate"                "2.5"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "2"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "10"         // 最小金钱奖励
+    "BountyGoldMax"             "10"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "2080"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "494"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "493"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "495"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "496"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//不朽尸王
+    "npc_unit_E2_00_BS"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/undying/undying.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "33"                         // 最小伤害
+    "AttackDamageMax"           "39"                         // 最大伤害
+    "AttackRate"                "1.9"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "90"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "2"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "4"         // 最小金钱奖励
+    "BountyGoldMax"             "4"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1080"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "392"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "393"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//永恒挽歌
+    "npc_unit_E2_10_BS"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/undying/undying_flesh_golem.vmdl"   // 模型
+    "ModelScale"                 "0.8"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "93"                         // 最小伤害
+    "AttackDamageMax"           "109"                         // 最大伤害
+    "AttackRate"                "1.9"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "90"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "4"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "10"         // 最小金钱奖励
+    "BountyGoldMax"             "10"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1500"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+
+}
+
+
+
+
+//冥魂大帝
+    "npc_unit_E3_00_BZ"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/wraith_king/wraith_king.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "42"                         // 最小伤害
+    "AttackDamageMax"           "45"                         // 最大伤害
+    "AttackRate"                "1.1"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "125"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "3"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "4"         // 最小金钱奖励
+    "BountyGoldMax"             "4"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "470"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "500"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "6172"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "6171"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "6173"  
+                    }
+
+                    "Wearable5"
+                    {
+                        "ItemDef"           "6174"  
+                    }
+                    "Wearable6"
+                    {
+                        "ItemDef"           "6175"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//冥魂领主
+    "npc_unit_E3_10_BZ"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/wraith_king/wraith_king.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "72"                         // 最小伤害
+    "AttackDamageMax"           "75"                         // 最大伤害
+    "AttackRate"                "1"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "125"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "5"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "8"         // 最小金钱奖励
+    "BountyGoldMax"             "8"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1100"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "500"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5052"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5053"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "5054"  
+                    }
+
+                    "Wearable5"
+                    {
+                        "ItemDef"           "5055"  
+                    }
+                    "Wearable6"
+                    {
+                        "ItemDef"           "5056"  
+                    }                    
+                }
+    }
+
+
+}
+
+
+
+
+
+//切割者
+    "npc_unit_E4_00_SS"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/shredder/shredder.vmdl"   // 模型
+        "ModelScale"                 "0.77"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "35"                         // 最小伤害
+    "AttackDamageMax"           "68"                         // 最大伤害
+    "AttackRate"                "1.35"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "3"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "6"         // 最小金钱奖励
+    "BountyGoldMax"             "6"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1000"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "386"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "388"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "389"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "390"  
+                    }
+                    "Wearable5"
+                    {
+                        "ItemDef"           "400"  
+                    }
+                    "Wearable6"
+                    {
+                        "ItemDef"           "401"  
+                    }
+                    "Wearable7"
+                    {
+                        "ItemDef"           "402"  
+                    }
+                }
+    }
+}
+
+
+
+
+
+//狂躁技师
+    "npc_unit_E4_10_SS"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/shredder/shredder.vmdl"   // 模型
+        "ModelScale"                 "0.8"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "65"                         // 最小伤害
+    "AttackDamageMax"           "98"                         // 最大伤害
+    "AttackRate"                "1.35"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "6"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "10"         // 最小金钱奖励
+    "BountyGoldMax"             "10"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1800"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "6519"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "6520"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "6521"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "6522"  
+                    }
+                    "Wearable5"
+                    {
+                        "ItemDef"           "6523"  
+                    }
+                    "Wearable6"
+                    {
+                        "ItemDef"           "6524"  
+                    }                    
+                }
+    }
+}
+
+
+
+
+
+//混沌骑士
+    "npc_unit_E5_00_BZ"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/chaos_knight/chaos_knight.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "27"                         // 最小伤害
+    "AttackDamageMax"           "35"                         // 最大伤害
+    "AttackRate"                "1.5"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "5"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "4"         // 最小金钱奖励
+    "BountyGoldMax"             "4"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "800"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "5980"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5981"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5982"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "5983"  
+                    }
+
+                    "Wearable5"
+                    {
+                        "ItemDef"           "5984"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//凶灾劫
+    "npc_unit_E5_10_BS"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/chaos_knight/chaos_knight.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "57"                         // 最小伤害
+    "AttackDamageMax"           "75"                         // 最大伤害
+    "AttackRate"                "1"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "5"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "8"         // 最小金钱奖励
+    "BountyGoldMax"             "8"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1220"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "5518"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5519"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5520"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "5521"  
+                    }
+
+                    "Wearable5"
+                    {
+                        "ItemDef"           "5522"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//无尽浩劫
+    "npc_unit_E5_11_BZ"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/chaos_knight/chaos_knight.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "75"                         // 最小伤害
+    "AttackDamageMax"           "85"                         // 最大伤害
+    "AttackRate"                "1.8"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "6"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "8"         // 最小金钱奖励
+    "BountyGoldMax"             "8"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1450"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "5921"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5922"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5923"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "5924"  
+                    }
+
+                    "Wearable5"
+                    {
+                        "ItemDef"           "5925"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//神选幼虫
+    "npc_unit_E6_00_LZ"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/nerubian_assassin/nerubian_assassin.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "22"                         // 最小伤害
+    "AttackDamageMax"           "38"                         // 最大伤害
+    "AttackRate"                "1.85"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "3"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "4"         // 最小金钱奖励
+    "BountyGoldMax"             "4"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "750"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "5567"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5568"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5569"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "5570"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//虫巢君王
+    "npc_unit_E6_10_LC"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/nerubian_assassin/nerubian_assassin.vmdl"   // 模型
+        "ModelScale"                 "1"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "52"                         // 最小伤害
+    "AttackDamageMax"           "68"                         // 最大伤害
+    "AttackRate"                "1.85"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "100"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "5"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "8"         // 最小金钱奖励
+    "BountyGoldMax"             "8"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1480"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "5201"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5202"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5203"  
+                    }
+                    "Wearable4"
+                    {
+                        "ItemDef"           "5204"  
+                    }
+                }
+    }
+
+
+}
+
+
+
+
+
+//育母蛛皇
+    "npc_unit_E6_11_MC"
+
+{
+    "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
+    "Model"                     "models/heroes/broodmother/broodmother.vmdl"   // 模型
+        "ModelScale"                 "0.75"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
+    "AttackDamageMin"           "85"                         // 最小伤害
+    "AttackDamageMax"           "94"                         // 最大伤害
+    "AttackRate"                "1.4"                       // 攻击间隔
+    "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+    "ProjectileSpeed"           "900"                       // 投射速率
+    "AttackRange"               "210"                       // 攻击范围
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "3"         // 基础护甲
+    "MagicalResistance"         "0"         // 基础魔抗
+    // 打死这个单位所获得的奖励
+    //----------------------------------------------------------------
+    "BountyGoldMin"             "8"         // 最小金钱奖励
+    "BountyGoldMax"             "8"         // 最大金钱奖励
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1500"       // 基础生命值
+    "StatusHealthRegen"         "0.5"         // 生命恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
+
+
+    "SoundSet"                  ""                  // 音效，
+    "Level"                     "1"                 // 单位等级
+    "IsAncient"                 "0"                 // 是否是远古生物，0代表不是
+    "IsNeutralUnitType"         "0"                 // 是否是中立单位
+    "SelectOnSpawn"             "0"                 // 创建出来之后是否立即选择
+    "CanBeDominated"            "1"                 // 可否被支配
+    "IgnoreAddSummonedToSelection" "0"              // 是否忽略左上角图标
+    "AutoAttacksByDefault"      "1"                 // 是否自动攻击
+     
+    //Ability
+    //----------------------------------------------------------------
+
+    "Ability1"                  ""          // 技能 1. 无目标
+    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability3"                  ""          // 技能 3.
+    "Ability4"                  ""          // 技能 4.
+    "Ability5"                  ""          // 技能 5.
+    "Ability6"                  ""          // 技能 6
+    "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+    "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+    "AbilityLayout"             "4"          // 技能槽数量，最低4个，最高为6个，技能不多默认即可
+ 
+    // Attack
+    //----------------------------------------------------------------
+
+    "AttackAnimationPoint"      "0.5"                      // 攻击前摇
+    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+
+
+ 
+    "BountyXP"                  "0"         // 经验奖励
+
+ 
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞类型
+    "RingRadius"                "50"                    // 选择圈范围
+    "HealthBarOffset"           "-1"                    // 血条偏移量(Z轴)
+ 
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+    "MovementSpeed"             "300"                       // 移动速度
+    "MovementTurnRate"          "0.5"                       // 转身速度
+    "HasAggressiveStance"       "0"                         // 
+    "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+    "StatusStartingMana"        "-1"        // 创建出来就是满血
+ 
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类
+     
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1100"       // 白天视野范围
+    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+     
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"              "1.0"       // 攻击欲望，AI的
+ 
+    //Inventory
+    "HasInventory"              "0"         // 是否有物品栏
+    //"vscripts"                    "WorldBoss_WuLuo.lua"
+
+    "Creature"
+    {
+         "AttachWearables"   
+                {
+                    "Wearable1"
+                    {
+                        "ItemDef"           "5854"  
+                    }
+                    "Wearable2"
+                    {
+                        "ItemDef"           "5891"  
+                    }
+                    "Wearable3"
+                    {
+                        "ItemDef"           "5892"  
+                    }
+                }
+    }
+
+
+}
+
+

@@ -1555,7 +1555,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q1_00_BZ"
+        "new_build"         "npc_unit_Q1_00_BZ" // "npc_build_Q1_00_BZ"
         //"Food"          "1"
       }
     }

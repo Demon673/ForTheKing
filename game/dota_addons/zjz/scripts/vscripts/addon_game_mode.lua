@@ -224,7 +224,7 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/techies/bigshot/bigshot_squee_costume.vmdl"},
 	{"model", "models/items/techies/bigshot/bigshot_barrel.vmdl"},
 	{"model", "models/items/techies/bigshot/bigshot.vmdl"},
-
+	
 	--W2 00  models/heroes/huskar/huskar.vmdl
 	{"model", "models/heroes/huskar/huskar_spear.vmdl"},--268
 	{"model", "models/heroes/huskar/huskar_dagger.vmdl"},--269
@@ -317,11 +317,11 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/heroes/tiny_02/tiny_02_left_arm.vmdl"},--495
 	{"model", "models/heroes/tiny_02/tiny_02_right_arm.vmdl"},--496
 
-	--E1 10 models/heroes/tiny_04/tiny_04.vmdl
-	{"model", "models/heroes/tiny_04/tiny_04_body.vmdl"},--494
-	{"model", "models/heroes/tiny_04/tiny_04_head.vmdl"},--493
-	{"model", "models/heroes/tiny_04/tiny_04_left_arm.vmdl"},--495
-	{"model", "models/heroes/tiny_04/tiny_04_right_arm.vmdl"},--496
+	--E1 10  
+	{"model", "models/items/tiny/scarletquarry_arms/scarletquarry_arms.vmdl"},--6886
+	{"model", "models/items/tiny/scarletquarry_offhand/scarletquarry_offhand.vmdl"},--6998
+	{"model", "models/items/tiny/scarletquarry_head/scarletquarry_head.vmdl"},--6999
+	{"model", "models/items/tiny/scarletquarry_armor/scarletquarry_armor.vmdl"},--7000
 
 
 	--E2 00 models/heroes/undying/undying.vmdl

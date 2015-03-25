@@ -85,9 +85,11 @@ function UnitManager:GetDefendTypeFromName( s_unit_name )
 end
 
 function UnitManager:CreateUnitByBuilding( u_building )
-    local s_building_name = u_building:GetUnitName() 
-    local s_unit_type = string.sub(s_building_name, -8, -4)
-    local s_unit_name = "npc_unit_" .. string.sub(s_building_name, 11, -1) 
+    --local s_building_name = u_building:GetUnitName() 
+    
+    --local s_unit_name = "npc_unit_" .. string.sub(s_building_name, 11, -1) 
+    local s_unit_name = u_building:GetUnitName() 
+    local s_unit_type = string.sub(s_unit_name, -8, -4)
     local v_unit_point = u_building:GetAbsOrigin() 
     local i_teamnumber = u_building:GetTeamNumber() 
     local p_owner = u_building:GetOwner()

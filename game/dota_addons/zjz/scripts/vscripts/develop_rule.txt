@@ -24,4 +24,10 @@ require('require_everything')
 其他lua都通过require_everything
 
 
+2015年3月25日
+计划： 取消npc_build_的设定
+直接使用npc_unit_  创建后添加技能 build_base  设置攻击类型为无 设置移动类型为无 设置模型大小
+取消KV里的AandD，和build_base，转成LUA添加。
+
+
 ]]

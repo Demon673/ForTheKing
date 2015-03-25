@@ -1533,7 +1533,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //"Food"          "1"
+        
         }
     }
 
@@ -1542,8 +1542,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q1_00_BZ"
-        //"Food"          "1"
+        "new_build"           "npc_unit_Q1_00_BZ"//test "npc_unit_Q1_00_BZ"
+        
       }
     }
     
@@ -1574,7 +1574,6 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //        //"Food"          "1"//人口
         }
     }
 
@@ -1583,8 +1582,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q1_10_BZ" //新单位
-        //        //"Food"          "1"//人口
+        "new_build"           "npc_unit_Q1_10_BZ" //新单位
+
       }
     }
     
@@ -1625,7 +1624,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q1_20_BZ" //新单位
+        "new_build"           "npc_unit_Q1_20_BZ" //新单位
 
       }
     }
@@ -1667,7 +1666,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q1_21_BZ" //新单位
+        "new_build"           "npc_unit_Q1_21_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -1700,7 +1699,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //        //"Food"          "1"//人口
+        
         }
     }
 
@@ -1709,8 +1708,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_W1_00_PS" //新单位
-        //        //"Food"          "1"//人口
+        "new_build"           "npc_unit_W1_00_PS" //新单位
+        
       }
     }
     
@@ -1742,7 +1741,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //        //"Food"          "1"//人口
+        
         }
     }
 
@@ -1751,8 +1750,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_W1_10_PS" //新单位
-        //        //"Food"          "1"//人口
+        "new_build"           "npc_unit_W1_10_PS" //新单位
+        
       }
     }
     
@@ -1784,7 +1783,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //        //"Food"          "1"//人口
+        
         }
     }
 
@@ -1793,8 +1792,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_W1_11_SW" //新单位
-        //        //"Food"          "1"//人口
+        "new_build"           "npc_unit_W1_11_SW" //新单位
+        
       }
     }
     
@@ -1826,7 +1825,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //        //"Food"          "1"//人口
+        
         }
     }
 
@@ -1835,8 +1834,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_W1_20_PS" //新单位
-        //        //"Food"          "1"//人口
+        "new_build"           "npc_unit_W1_20_PS" //新单位
+        
       }
     }
     
@@ -1869,7 +1868,7 @@
         { 
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
-        //        //"Food"          "1"//人口
+        
         }
     }
 
@@ -1878,8 +1877,8 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_W1_21_SW" //新单位
-        //        //"Food"          "1"//人口
+        "new_build"           "npc_unit_W1_21_SW" //新单位
+        
       }
     }
     
@@ -1920,7 +1919,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q2_00_BZ" //新单位
+        "new_build"           "npc_unit_Q2_00_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -1962,7 +1961,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q2_10_BZ" //新单位
+        "new_build"           "npc_unit_Q2_10_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2003,7 +2002,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q2_20_BZ" //新单位
+        "new_build"           "npc_unit_Q2_20_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2044,7 +2043,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q2_21_BZ" //新单位
+        "new_build"           "npc_unit_Q2_21_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2083,7 +2082,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q3_00_BZ" //新单位
+        "new_build"           "npc_unit_Q3_00_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2122,7 +2121,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q3_10_BZ" //新单位
+        "new_build"           "npc_unit_Q3_10_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2160,7 +2159,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q3_20_BZ" //新单位
+        "new_build"           "npc_unit_Q3_20_BZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2198,7 +2197,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q4_00_PZ" //新单位
+        "new_build"           "npc_unit_Q4_00_PZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2236,7 +2235,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q4_10_PZ" //新单位
+        "new_build"           "npc_unit_Q4_10_PZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2274,7 +2273,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q4_20_PZ" //新单位
+        "new_build"           "npc_unit_Q4_20_PZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2312,7 +2311,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q5_00_PZ" //新单位
+        "new_build"           "npc_unit_Q5_00_PZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2350,7 +2349,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q5_10_PZ" //新单位
+        "new_build"           "npc_unit_Q5_10_PZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2388,7 +2387,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q5_20_PZ" //新单位
+        "new_build"           "npc_unit_Q5_20_PZ" //新单位
         //"Food"          "3"//人口
       }
     }
@@ -2426,7 +2425,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_build_Q5_21_SZ" //新单位
+        "new_build"           "npc_unit_Q5_21_SZ" //新单位
       }
     }
     

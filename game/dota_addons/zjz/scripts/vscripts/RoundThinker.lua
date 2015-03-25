@@ -100,8 +100,8 @@ function RoundThinker()
 				for _,build in pairs(build_table) do
 					if build:IsAlive() == true then
 
-						if string.sub( build:GetUnitName(), 1, 9 ) == "npc_build"  then
-
+						--if string.sub( build:GetUnitName(), 1, 9 ) == "npc_build"  then
+						if build:HasAbility("build_base") then
 							CFunit = UnitManager:CreateUnitByBuilding( build )
 
 						end

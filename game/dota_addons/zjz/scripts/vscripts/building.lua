@@ -44,7 +44,7 @@ function building_tech:ApplyTechSkills( u_building )
 		end
 	end
 	AbilityManager:AddAndSet( u_building, "Sale_Build" )
-
+	AbilityManager:AddAndSet( u_building, "build_base" )
 end
 --original functions
 
@@ -71,6 +71,8 @@ function buildbuilding( keys )--建筑完成
 	--创建新的建筑
 		local build = CreateUnitByName(new_build, BuildPoint, false, old_build:GetOwner(), old_build:GetOwner(), TeamNumber) 
 		print(old_build:GetOwner())
+
+	--设置控制权和加入表	
 		build:SetControllableByPlayer(pid, true) 
 		table.insert(PlayerS[pid].NewBuild,build)
 		table.insert(PlayerS[pid].Build,build)
@@ -108,6 +110,11 @@ function buildbuilding( keys )--建筑完成
 	--兵力增加
 		PlayerS[pid].Score = PlayerS[pid].Score + cost
 
+	--单位建筑化
+		
+		build:SetMoveCapability(DOTA_UNIT_CAP_MOVE_NONE)
+		build:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK) 
+		build:SetModelScale(0.95) 
 	--增加升级
 		building_tech:ApplyTechSkills( build )
 
