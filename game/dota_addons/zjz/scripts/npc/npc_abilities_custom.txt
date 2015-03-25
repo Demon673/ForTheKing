@@ -29,6 +29,10 @@
                       "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
                       "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"//不在小地图显示
                     }
+                    "Properties"
+                    {
+                        "MODIFIER_PROPERTY_MODEL_SCALE"         "100"
+                    }
 
                 }
                "modifier_buildbase_partic"
@@ -1152,12 +1156,6 @@
                 "Duration"          "5" //这个Modifier的持续时间
                 "IsPurgable"        "0" //能否被净化
 
-                "Properties" //BUFF
-                {
-
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"            "%bonus_movespeed" //移动速度降低
-                    "MODIFIER_PROPERTY_MOVESPEED_MAX"                         "0"
-                }
                 "States"
                 {
                     "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"//禁止移动
@@ -3552,7 +3550,7 @@
       "RunScript"
       { "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "buildbuilding"
-        "new_build"           "npc_unit_E6_10_LZ" //新单位 
+        "new_build"           "npc_unit_E6_00_LZ" //新单位 
         
       }
     }

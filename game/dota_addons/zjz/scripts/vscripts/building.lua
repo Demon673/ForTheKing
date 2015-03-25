@@ -62,15 +62,13 @@ building_tech.t_tech["E3_10"] = {}
 building_tech.t_tech["E4_00"] = {"E4_10",}
 building_tech.t_tech["E4_10"] = {}
 
-building_tech.t_tech["E5_00"] = {"E5_10",}
-building_tech.t_tech["E5_10"] = {"E5_20","E5_21",}
-building_tech.t_tech["E5_20"] = {}
-building_tech.t_tech["E5_21"] = {}
+building_tech.t_tech["E5_00"] = {"E5_10","E5_11",}
+building_tech.t_tech["E5_10"] = {}
+building_tech.t_tech["E5_11"] = {}
 
-building_tech.t_tech["E6_00"] = {"E6_10",}
-building_tech.t_tech["E6_10"] = {"E6_20","E6_21",}
-building_tech.t_tech["E6_20"] = {}
-building_tech.t_tech["E6_21"] = {}
+building_tech.t_tech["E6_00"] = {"E6_10","E6_11",}
+building_tech.t_tech["E6_10"] = {}
+building_tech.t_tech["E6_11"] = {}
 
 
 function building_tech:ApplyTechSkills( u_building )
@@ -156,7 +154,7 @@ function buildbuilding( keys )--建筑完成
 		build:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK) 
 		local f_scale = build.BuildScale
 
-			build:SetModelScale(1.2) --待修改
+			--build:SetModelScale(1.2) --待修改
 
 	--增加升级
 		building_tech:ApplyTechSkills( build )

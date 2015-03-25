@@ -48,6 +48,7 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/heroes/pedestal/pedestal_1.vmdl"},
 	{"model", "models/courier/frull/frull_courier_flying.vmdl"},
 	{"model", "models/items/courier/gnomepig/gnomepig_flying.vmdl"},
+	{"particle","particle/farmer/farmer.vpcf"},
 	
 	 --left king
 	{"model", "models/heroes/chen/chen.vmdl"},
@@ -581,6 +582,7 @@ end
 --单位被杀死
 function CbtfGameMode:OnEntityKilled(keys)
 	local killed_unit = EntIndexToHScript( keys.entindex_killed )
+	print(killed_unit:GetUnitName() ..":I'm fucking dead!")
 	if killed_unit == king_left then
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 	end

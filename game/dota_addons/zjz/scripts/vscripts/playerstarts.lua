@@ -13,8 +13,8 @@ end
 
 AllTypes = {}
 AllTypes["Q"] = { "Q1_00","Q2_00","Q3_00","Q4_00","Q5_00", }
-AllTypes["W"] = {"W1_00",} --"W1_00","W2_00","W3_00","W4_00","W5_00", }
-AllTypes["E"] = {"E4_00" ,}--"E1_00","E2_00","E3_00","E4_00","E5_00","E6_00",}
+AllTypes["W"] = { "W1_00","W2_00","W3_00","W4_00","W5_00", }
+AllTypes["E"] = { "E1_00","E2_00","E3_00","E4_00","E5_00","E6_00",}
 AllTypes["R"] = { "Q3_00" }
 AllTypes["T"] = { "Q4_00" }
 AllTypes["Y"] = { "Q5_00" }
@@ -82,12 +82,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
         PlayerS[i].NewHire = {}                                 
         PlayerS[i].Light = 1                                                                          --圣光数量
         PlayerS[i].Abhere = false                                                                     --固守状态
-        if i >= 5 then
-            PlayerS[i].Team = right
-        else
-            PlayerS[i].Team = left
-        end                            --设置阵营
-        table.insert( AllPlayers, player)                                                         --加入全部玩家队伍
+
                       
         local lib_ent = Entities:FindByName(nil, "player_"..tostring(i).."_farmer_4")   --player_i_lib
         PlayerS[i].Lib =  CreateUnitByName("npc_dummy_lib", lib_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
@@ -97,7 +92,19 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
         local pig_ent = Entities:FindByName(nil, "player_"..tostring(i).."_farmer_3")   --player_i_lib
         PlayerS[i].Pig =  CreateUnitByName("npc_dummy_pig", pig_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
         PlayerS[i].Pig:SetControllableByPlayer(i, true)
-                      
+
+         if i >= 5 then
+            PlayerS[i].Team = right
+            PlayerS[i].Pig:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+            PlayerS[i].Lib:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+        else
+            PlayerS[i].Team = left
+            PlayerS[i].Pig:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
+            PlayerS[i].Lib:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+        end                            --设置阵营
+
+        table.insert( AllPlayers, player)                                                         --加入全部玩家队伍       
+
 
 
         if player ~= nil then
