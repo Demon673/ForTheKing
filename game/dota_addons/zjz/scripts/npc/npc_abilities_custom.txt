@@ -1780,7 +1780,7 @@
     "OnSpellStart"
     { 
         "RunScript"
-        { 
+        {
         "ScriptFile"      "scripts/vscripts/building.lua"
         "Function"        "conditions"
         
