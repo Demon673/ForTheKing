@@ -7478,7 +7478,7 @@
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
     "Model"                     "models/heroes/nerubian_assassin/nerubian_assassin.vmdl"   // 模型
-        "ModelScale"                 "0.8"
+    "ModelScale"                 "0.8"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程 射程大于120都算远程
     "AttackDamageMin"           "22"                         // 最小伤害
     "AttackDamageMax"           "38"                         // 最大伤害

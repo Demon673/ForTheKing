@@ -7,7 +7,6 @@ require('global_function')
 require('popupNumbers')
 require('playerstarts')
 require('RoundThinker')
-require('resources')
 require('timers')
 require('building')
 -- 传送函数

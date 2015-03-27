@@ -455,7 +455,7 @@ C_INIT_InitialVelocityNoise C_INIT_InitialVelocityNoise_9
 C_INIT_RandomColor C_INIT_RandomColor_10
 {
 	uint(4) m_ColorMin = ( 0, 0, 255, 255 )
-	uint(4) m_ColorMax = ( 0, 255, 255, 255 )
+	uint(4) m_ColorMax = ( 41, 98, 255, 255 )
 	uint(4) m_TintMin = ( 0, 0, 0, 0 )
 	uint(4) m_TintMax = ( 85, 170, 255, 255 )
 	float m_flTintPerc = 0.000000

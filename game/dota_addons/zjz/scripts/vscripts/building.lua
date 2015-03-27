@@ -408,18 +408,26 @@ function UpFarmerStart(keys)
 PlayerS[pid].CurFood = PlayerS[pid].CurFood + 1 --增加人口
 
 	if	FarmerNum >= 8 then
-
 		BTFGeneral:ShowError("#MaxFarmerNum", pid) --最大采集者数量警告信息
 		caster:Stop() --升级中断
 		PlayerS[pid].FarmerNum = 8
-
 	else
-
 		if  CurFood + 1 > FullFood  then
 
 			BTFGeneral:ShowError("#NoEnoughFood", pid) --人口不足警告信息
 			caster:Stop() --升级中断
-			
+		else
+			if FarmerNum < 4 then
+				if Score <600 then
+					BTFGeneral:ShowError("#NoEnoughScore600", pid) --兵力不足警告信息
+					caster:Stop() --升级中断
+				end
+			else
+				if Score <1000 then
+					BTFGeneral:ShowError("#NoEnoughScore1000", pid) --兵力不足警告信息
+					caster:Stop() --升级中断				
+				end
+			end
 		end
 
 	end

@@ -48,7 +48,7 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/heroes/pedestal/pedestal_1.vmdl"},
 	{"model", "models/courier/frull/frull_courier_flying.vmdl"},
 	{"model", "models/items/courier/gnomepig/gnomepig_flying.vmdl"},
-	{"particle","particle/farmer/farmer.vpcf"},
+
 	
 	 --left king
 	{"model", "models/heroes/chen/chen.vmdl"},
@@ -460,9 +460,8 @@ function Precache( context )
 	time = time - GameRules:GetGameTime()
 	print("DONE PRECACHEING IN:"..tostring(time).."Seconds")
 
-	--PrecacheParticle( "particles/econ/events/ti4/teleport_start_ti4.vpcf", context )
+	PrecacheParticle( "particle/farmer/farmer.vpcf", context )
 	PrecacheParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context )
-	
 
 end
 
@@ -485,7 +484,8 @@ function CbtfGameMode:InitGameMode()
     mode:SetHUDVisible(9, false) --信使栏
     mode:SetHUDVisible(12, false) --推荐物品栏
     mode:SetHUDVisible(8, false)  --快速购买
-
+    mode:SetHUDVisible(2, false) --隐藏推荐攻略
+    
     Convars:SetInt("dota_render_crop_height", 0)
 	Convars:SetInt("dota_render_y_inset", 0)
 
@@ -547,20 +547,14 @@ function CbtfGameMode:OnNPCSpawned( keys )
 		if player.Init == nil then
 			playerstarts:init(pid,trigger_unit) 
 		end
-		--chushihua:SetConKing(pid) --设置王的控制权
-		--chushihua:SetConKing(trigger_unit) --设置王的控制权
+
 		local start_ent = Entities:FindByName(nil,  "portal"..tostring(pid+1)) or  Entities:FindByName(nil,  "startpoint"..tostring(pid))
         local start_point = start_ent:GetAbsOrigin() 
         player:SetContextThink(DoUniqueString("telepor_later"), function() FindClearSpaceForUnit(trigger_unit, start_point, true) end, 0.1)--传送到开始点
         PlayerS[pid].Hero = trigger_unit				--传递参数给玩家表
         PlayerResource:SetCameraTarget(pid, trigger_unit) --锁定并移动镜头 	
 		PlayerResource:SetGold(pid,PlayerS[pid].Gold, false) --设置初始金钱
-        --[[
-        print(PlayerS[pid].StartPoint)
-        print(trigger_unit:GetOrigin())
-        print("its ok")
-        print(PlayerS[pid].Hero:GetName())
-        --]]
+
         player:SetContextThink(DoUniqueString("camera_later"), function() PlayerResource:SetCameraTarget(pid, nil)  end, 3)--3秒后解锁
    		trigger_unit:SetAbilityPoints(0)                --取消技能点
 		    
@@ -582,7 +576,7 @@ end
 --单位被杀死
 function CbtfGameMode:OnEntityKilled(keys)
 	local killed_unit = EntIndexToHScript( keys.entindex_killed )
--
+
 	if killed_unit == king_left then
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 	end
@@ -605,10 +599,10 @@ end
 
 --循环计时器 循环检查当前游戏规则
 function CbtfGameMode:OnThink()  
-
+			self.UpdateScoreboard()
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-			self.UpdateScoreboard()
+			
 			RoundThinker()
 		--print("is runing")
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -643,6 +637,8 @@ function CbtfGameMode:UpdateScoreboard()
 		local FarmerNum = PlayerS[pid].FarmerNum
 		local ScoreNum = PlayerS[pid].Score
 		local IncomeNum = PlayerS[pid].Income
+		local ArmsNum = PlayerS[pid].Arms
+		BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum)
 		--print("player  "..pid.."lum is " .. LumberNum)
 		pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
 		--print("The pid used to print is " .. tostring(pid))
@@ -661,6 +657,9 @@ function CbtfGameMode:UpdateScoreboard()
 		UTIL_MessageText( pid,"#ScoreboardSeparator", 255, 255, 255, 255 )
 		UTIL_MessageText_WithContext( pid,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
 		UTIL_MessageText( pid,"#ScoreboardSeparator", 255, 255, 255, 255 )
+		--顶部UI
+		
+
 
 	end
 	if king_left ~= nil and king_right~= nil then
