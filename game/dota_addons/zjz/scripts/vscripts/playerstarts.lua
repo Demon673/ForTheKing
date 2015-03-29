@@ -64,7 +64,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
                                       
         PlayerS[i].StartPoint = start_point  
         PlayerS[i].Gold = 60000                    --定义初始金钱 600
-        PlayerS[i].Lumber = 0                   --定义初始木材  0
+        PlayerS[i].Lumber = 60000                   --定义初始木材  0
         PlayerS[i].CurFood = 1                      --初始当前人口
         PlayerS[i].FullFood = 16                     --初始最大人口            每次提升8
         PlayerS[i].FarmerNum = 1                    --初始采集者数量          最多为8
@@ -84,7 +84,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
         --PlayerS[i].Light = 1                                                                          --圣光数量
         PlayerS[i].Abhere = false                                                                     --固守状态
 
-                      
+        PlayerResource:SetGold(i,PlayerS[i].Gold, false) --设置初始金钱        
         local lib_ent = Entities:FindByName(nil, "player_"..tostring(i).."_farmer_4")   --player_i_lib
         PlayerS[i].Lib =  CreateUnitByName("npc_dummy_lib", lib_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
         PlayerS[i].Lib:SetControllableByPlayer(i, true)
@@ -96,15 +96,15 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
 
          if i >= 5 then
             PlayerS[i].Team = right
-            PlayerS[i].Pig:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
-            PlayerS[i].Lib:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+            --PlayerS[i].Pig:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+            --PlayerS[i].Lib:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
         else
             PlayerS[i].Team = left
-            PlayerS[i].Pig:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
-            PlayerS[i].Lib:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝左
+            --PlayerS[i].Pig:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
+            --PlayerS[i].Lib:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
         end                            --设置阵营
 
-        table.insert( AllPlayers, player)                                                         --加入全部玩家队伍       
+        table.insert( AllPlayers, i)                                                         --加入全部玩家队伍       
 
 
 
@@ -140,12 +140,13 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
 
                 playerstarts:RollBuilds(buildbase) -- （地基单位；重选哪种兵种,nil为全选；是否reroll）
                 
-
-
             end
+
             local farmer_ent = Entities:FindByName(nil, "player_"..tostring(i).."_farmer_1") 
             local farmer = CreateUnitByName("npc_dummy_farmer", farmer_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
             table.insert(PlayerS[i].Farmer, farmer)
+
+
 
 
         end 

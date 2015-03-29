@@ -14,31 +14,28 @@ function chushihua:SpawnBuildBase()
 	king_left = CreateUnitByName("npc_king_left_LC",left_p, true, nil, nil,2)
 	king_right = CreateUnitByName("npc_king_right_LC",right_p, true, nil, nil,3)
 
-	face_l = (right_p - left_p):Normalized()
-	face_r = (left_p - right_p):Normalized()
+	--face_l = (right_p - left_p):Normalized()
+	--face_r = (left_p - right_p):Normalized()
 	self.king_left = king_left
 	self.king_right = king_right
 
-	king_left:SetForwardVector(face_l)
-	king_right:SetForwardVector(face_r)
+	--king_left:SetForwardVector(face_l)
+	--king_right:SetForwardVector(face_r)
 	print("Spawn King Done")
 
-	--king_left:ApplyDataDrivenModifier(king_left,king_left,"modifier_medusa_stone_split_shot",nil)
-	--给王物品 **
-	--local spilt_left = CreateItem("item_left_spilt",king_left:GetOwner(),king_left:GetOwner())
-	--king_left:AddItem(spilt_left) 
 
-	--ListenToGameEvent( "entity_killed", Dynamic_Wrap( chushihua, 'OnEntityKilled' ), self )
 end
 
 --function chushihua:SetConKing(unit)
 	--给双方玩家 共享单位控制权
 function chushihua:SetConKing()
-
-	for _, player in pairs( AllPlayers ) do
-
-		local pid = player:GetPlayerID()
+	
+	--for _, player in pairs( AllPlayers ) do
+	
+		--local pid = player:GetPlayerID()
 		
+	for _, pid in pairs( AllPlayers ) do
+
 		print("Goint to set player " .. tostring(pid) .. " able to control his King.")
 
 		if pid<=3 then

@@ -37,8 +37,10 @@ function RoundThinker()
 		RoundThinker_next = 1
 ---------------------------回合开始------------------------------------
 			
-		for _, player in pairs( AllPlayers ) do
-			local pid = player:GetPlayerID()
+		--for _, player in pairs( AllPlayers ) do
+		for _, pid in pairs( AllPlayers ) do
+			--local pid = player:GetPlayerID()
+			
 			--print("Now make a round of player " .. tostring(pid))
 			local Gold = PlayerResource:GetGold(pid) 
 			local Lumber = PlayerS[pid].Lumber
@@ -96,15 +98,16 @@ function RoundThinker()
 
 				local build_point_ent =Entities:FindByName(nil, "player_"..tostring(pid).."_farmer_1")  
 				local build_table = Entities:FindAllByClassnameWithin("npc_dota_creature", build_point_ent:GetAbsOrigin() , 3000)
-						ShowCustomHeaderMessage("#Arouse", pid, pid, 5)--冲锋号令 
+						--ShowCustomHeaderMessage("#Arouse", pid, pid, 5)--冲锋号令  多次提示
 				for _,build in pairs(build_table) do
-					if build:IsAlive() == true then
+					if IsValidEntity(build) then
+						if build:IsAlive() == true then
 
-						--if string.sub( build:GetUnitName(), 1, 9 ) == "npc_build"  then
-						if build:HasAbility("build_base") then
+							--if string.sub( build:GetUnitName(), 1, 9 ) == "npc_build"  then
+							if build:HasAbility("build_base") then
 
-							CFunit = UnitManager:CreateUnitByBuilding( build )
-
+								CFunit = UnitManager:CreateUnitByBuilding( build )
+							end
 						end
 					end
 				end
@@ -186,9 +189,9 @@ function RoundThinker()
 		RoundThinker_lumber_i = RoundThinker_lumber_i + 1
 	else
 		RoundThinker_lumber_i = 1
-		for _, player in pairs( AllPlayers ) do
-		
-			local pid = player:GetPlayerID()
+		--for _, player in pairs( AllPlayers ) do
+		--	local pid = player:GetPlayerID()
+			for _, pid in pairs( AllPlayers ) do
 			--local Gold = PlayerResource:GetGold(pid) 
 			local Lumber = PlayerS[pid].Lumber
 			local Tech = PlayerS[pid].Tech

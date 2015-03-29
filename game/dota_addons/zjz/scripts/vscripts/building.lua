@@ -118,12 +118,12 @@ function buildbuilding( keys )--建筑完成
 	    local min = GetGroundPosition(BuildPoint,build)
 
 	    build:SetOrigin(Vector(BuildPoint.x,BuildPoint.y,min.z+30))
-	--设置朝向
-		if TeamNumber == 2 then
-			build:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
-		else
-			build:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
-		end
+	--设置朝向(在单位出生事件统一设置了)
+		--if TeamNumber == 2 then
+		--	build:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
+		--else
+		--	build:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+		--end
 
 	--设置归属玩家和设置贩售金钱
 		build.Player = player

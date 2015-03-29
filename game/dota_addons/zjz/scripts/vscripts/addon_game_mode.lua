@@ -503,6 +503,10 @@ function CbtfGameMode:InitGameMode()
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(CbtfGameMode, "OnNPCSpawned"), self) --单位重生和创建
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(CbtfGameMode, "OnEntityKilled"), self) 	--单位被杀死
 	ListenToGameEvent("dota_unit_event", Dynamic_Wrap(CbtfGameMode, "OnEvent"), self) 	--???
+	ListenToGameEvent("player_connect_full", Dynamic_Wrap(CbtfGameMode,"OnPlayerConnectFull" ),self) --某玩家成功载入
+	ListenToGameEvent("hero_in_game",Dynamic_Wrap(CbtfGameMode,"OnHeroInGame" ),self)  --英雄进入游戏
+
+
 
 end
 
@@ -536,6 +540,15 @@ end
 --触发事件 单位重生和创建
 function CbtfGameMode:OnNPCSpawned( keys )
 	local trigger_unit = EntIndexToHScript(keys.entindex)
+	local trigger_unit_team_number = trigger_unit:GetTeamNumber() 
+
+	--设置新生单位的朝向
+	if trigger_unit_team_number == DOTA_TEAM_GOODGUYS then
+		trigger_unit:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
+	else
+		trigger_unit:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
+	end
+
 	--是英雄的话 传送到开始点
 	if trigger_unit:IsRealHero() ==true then
 		print("One hero has entered the game.")
@@ -553,7 +566,7 @@ function CbtfGameMode:OnNPCSpawned( keys )
         player:SetContextThink(DoUniqueString("telepor_later"), function() FindClearSpaceForUnit(trigger_unit, start_point, true) end, 0.1)--传送到开始点
         PlayerS[pid].Hero = trigger_unit				--传递参数给玩家表
         PlayerResource:SetCameraTarget(pid, trigger_unit) --锁定并移动镜头 	
-		PlayerResource:SetGold(pid,PlayerS[pid].Gold, false) --设置初始金钱
+
 
         player:SetContextThink(DoUniqueString("camera_later"), function() PlayerResource:SetCameraTarget(pid, nil)  end, 3)--3秒后解锁
    		trigger_unit:SetAbilityPoints(0)                --取消技能点
@@ -625,8 +638,10 @@ function CbtfGameMode:UpdateScoreboard()
 	UTIL_MessageTextAll_WithContext( "#ScoreboardNextWave", 255, 255, 255, 255, {value = RoundThinker_wave+1} ) 
 	UTIL_MessageTextAll_WithContext( "#ScoreboardNextTime", 255, 255, 255, 255, {value = NextTime+1 } )
 	UTIL_MessageTextAll( "#ScoreboardSeparator", 255, 255, 255, 255 )
-	for _, player in pairs( AllPlayers ) do
-		local pid = player:GetPlayerID() 
+	--for _, player in pairs( AllPlayers ) do
+		--local pid = player:GetPlayerID() 
+	for _, pid in pairs( AllPlayers ) do
+ 
 		--print("The gotten pid in AllPlayers is " .. tostring(pid))
 		PlayerS[pid].Gold = PlayerResource:GetGold(pid)  --金币绑定
 		local GoldNum = PlayerS[pid].Gold
@@ -640,6 +655,7 @@ function CbtfGameMode:UpdateScoreboard()
 		local ArmsNum = PlayerS[pid].Arms
 		BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum)
 		--print("player  "..pid.."lum is " .. LumberNum)
+		local player = PlayerCalc:GetPlayerByPosition(pid)
 		pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
 		--print("The pid used to print is " .. tostring(pid))
 
@@ -674,6 +690,21 @@ function CbtfGameMode:UpdateScoreboard()
 
 end	
 
+--某玩家成功载入
+function CbtfGameMode:OnPlayerConnectFull(keys)
+	print("someone connect full")
+	DeepPrintTable(keys)
+	print("keys.index = "..keys.index)
+	local ConnectPlayer = PlayerCalc:GetPlayerByIndex(keys.index + 1)
+	local PlayerID = PlayerCalc:GetPlayerPosition(ConnectPlayer)
+	print("This One PlayerID is "..PlayerID)
+end
+
+
+function CbtfGameMode:OnHeroInGame(keys)
+	print("one hero in game")
+	DeepPrintTable(keys)
+end
 
 
 --建立带有默认值的表

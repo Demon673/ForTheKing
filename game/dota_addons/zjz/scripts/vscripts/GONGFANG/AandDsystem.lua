@@ -75,8 +75,10 @@ function AandDsystem( keys )
 			local a_type = string.sub(a_name, -2, -2) --攻击类型
 			local base_damage = keys.DamageTaken
 			local TargetHealth = target:GetHealth() 
-			if TargetHealth > 3 then
-				target:SetHealth(target:GetHealth() + base_damage)
+			if IsValidEntity(target) then
+				if TargetHealth > 3 then
+					target:SetHealth(target:GetHealth() + base_damage)
+				end
 			end
 					
 			CustonDamage( caster, target, a_type, base_damage, true )
