@@ -3,3 +3,5 @@ This is a test for fucking github.
 haha, there there,don't worry,be happy! :)
 
 Github is stupid.
+
+Test for push.
