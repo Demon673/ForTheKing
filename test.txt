@@ -5,3 +5,5 @@ haha, there there,don't worry,be happy! :)
 Github is stupid.
 
 Test for push.
+
+Test for push after merge.
