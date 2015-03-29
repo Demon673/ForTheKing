@@ -29,6 +29,10 @@
                       "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" //无碰撞
                       "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"//不在小地图显示
                     }
+                    "Properties"
+                    {
+                        "MODIFIER_PROPERTY_MODEL_SCALE"         "100"
+                    }
 
                 }
                "modifier_buildbase_partic"
@@ -914,7 +918,7 @@
                 "RunScript"
                 {
                     "ScriptFile"                            "scripts/vscripts/GONGFANG/AandDsystem.lua"
-                    "Target"                                "UNIT"
+                    "Target"                                "TARGET"
                     "Function"                              "DuoChongGongJiDamage"
                 }
             }
@@ -930,7 +934,7 @@
                                     "RunScript"
                                         {
                                             "ScriptFile"        "scripts/vscripts/GONGFANG/AandDsystem.lua"
-                                            "Target"            "UNIT"
+                                            "Target"            "TARGET"
                                             "Function"          "DuoChongGongJi"
                                             "attack_effect"     "particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
                                             "attack_count"      "%attack_count"
@@ -1152,12 +1156,6 @@
                 "Duration"          "5" //这个Modifier的持续时间
                 "IsPurgable"        "0" //能否被净化
 
-                "Properties" //BUFF
-                {
-
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"            "%bonus_movespeed" //移动速度降低
-                    "MODIFIER_PROPERTY_MOVESPEED_MAX"                         "0"
-                }
                 "States"
                 {
                     "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"//禁止移动
@@ -1682,218 +1680,8 @@
 
   }
 
-//人族20
-  "W1_00"                      
-  {
-    "BaseClass" "ability_datadriven"
-    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-    
-    "AbilityTextureName" "W1_00"//图标
-    "AbilityChannelTime" "1.5"
-    "AbilityGoldCost"         "110" //花费金钱
-    "AbilityManaCost"          "1"//花费人口
-    "HotKeyOverride"    "W"//快捷键
-    "OnSpellStart"
-    { 
-        "RunScript"
-        { 
-        "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "conditions"
-        
-        }
-    }
-
-    "OnChannelSucceeded"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "buildbuilding"
-        "new_build"           "npc_unit_W1_00_PS" //新单位
-        
-      }
-    }
-    
-    "OnChannelInterrupted"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "CancelBuild"
-      }
-    }
 
 
-  }
-
-//人族21
-  "W1_10"                      
-  {
-    "BaseClass" "ability_datadriven"
-    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-    
-    "AbilityTextureName" "W1_10"//图标
-    "AbilityChannelTime" "1.5"
-    "AbilityGoldCost"         "180" //花费金钱
-    "AbilityManaCost"          "1"//花费人口
-    "HotKeyOverride"    "W"//快捷键
-    "OnSpellStart"
-    { 
-        "RunScript"
-        { 
-        "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "conditions"
-        
-        }
-    }
-
-    "OnChannelSucceeded"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "buildbuilding"
-        "new_build"           "npc_unit_W1_10_PS" //新单位
-        
-      }
-    }
-    
-    "OnChannelInterrupted"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "CancelBuild"
-      }
-    }
-
-
-  }
-
-//人族215
-  "W1_11"                      
-  {
-    "BaseClass" "ability_datadriven"
-    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-    
-    "AbilityTextureName" "W1_11"//图标
-    "AbilityChannelTime" "1.5"
-    "AbilityGoldCost"         "240" //花费金钱
-    "AbilityManaCost"          "1"//花费人口
-    "HotKeyOverride"    "Y"//快捷键
-    "OnSpellStart"
-    { 
-        "RunScript"
-        {
-        "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "conditions"
-        
-        }
-    }
-
-    "OnChannelSucceeded"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "buildbuilding"
-        "new_build"           "npc_unit_W1_11_SW" //新单位
-        
-      }
-    }
-    
-    "OnChannelInterrupted"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "CancelBuild"
-      }
-    }
-
-
-  }
-
-//人族22
-  "W1_20"                      
-  {
-    "BaseClass" "ability_datadriven"
-    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-    
-    "AbilityTextureName" "W1_20"//图标
-    "AbilityChannelTime" "1.5"
-    "AbilityGoldCost"         "280" //花费金钱
-    "AbilityManaCost"          "1"//花费人口
-    "HotKeyOverride"    "W"//快捷键
-    "OnSpellStart"
-    { 
-        "RunScript"
-        { 
-        "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "conditions"
-        
-        }
-    }
-
-    "OnChannelSucceeded"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "buildbuilding"
-        "new_build"           "npc_unit_W1_20_PS" //新单位
-        
-      }
-    }
-    
-    "OnChannelInterrupted"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "CancelBuild"
-      }
-    }
-
-
-  }
-
-
-//人族225
-  "W1_21"                      
-  {
-    "BaseClass" "ability_datadriven"
-    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-    
-    "AbilityTextureName" "W1_21"//图标
-    "AbilityChannelTime" "1.5"
-    "AbilityGoldCost"         "260" //花费金钱
-    "AbilityManaCost"          "1"//花费人口
-    "HotKeyOverride"    "Y"//快捷键
-    "OnSpellStart"
-    { 
-        "RunScript"
-        { 
-        "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "conditions"
-        
-        }
-    }
-
-    "OnChannelSucceeded"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "buildbuilding"
-        "new_build"           "npc_unit_W1_21_SW" //新单位
-        
-      }
-    }
-    
-    "OnChannelInterrupted"
-    {
-      "RunScript"
-      { "ScriptFile"      "scripts/vscripts/building.lua"
-        "Function"        "CancelBuild"
-      }
-    }
-
-
-  }
-
-//Q2 00
   "Q2_00"                      
   {
     "BaseClass" "ability_datadriven"
@@ -2437,6 +2225,1442 @@
       }
     }
   }
+
+//人族20
+  "W1_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W1_00"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "110" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W1_00_PS" //新单位
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+  "W1_10"                      
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W1_10"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "180" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W1_10_PS" //新单位
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+}
+
+
+  "W1_11"                      
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W1_11"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "240" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "Y"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        {
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W1_11_SW" //新单位
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+}
+
+
+  "W1_20"                      
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W1_20"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "280" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W1_20_PS" //新单位
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+}
+
+
+  "W1_21"                      
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W1_21"//图标
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "260" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "Y"//快捷键
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W1_21_SW" //新单位
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+}
+
+  "W2_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W2_00"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "75" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W2_00_PS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W2_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W2_10"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "150" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W2_10_PS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W2_20"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W2_20"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "245" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W2_20_PS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W3_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W3_00"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "75" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W3_00_PW" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W3_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W3_10"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "140" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W3_10_PW" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W3_20"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W3_20"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "210" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W3_20_PW" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W4_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W4_00"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "90" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W4_00_PS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W4_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W4_10"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "130" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W4_10_PS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W4_20"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W4_20"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "230" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W4_20_PS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W5_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W5_00"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "70" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W5_00_BS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W5_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W5_10"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "180" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W5_10_BS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W5_20"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W5_20"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "200" //花费金钱
+    "AbilityManaCost"          "1"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W5_20_BS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+ "W5_21"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "W5_21"//图标 和技能同名
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "350" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "W"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_W5_21_BS" //新单位  
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+"E1_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E1_00"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "275" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E1_00_BC" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E1_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E1_10"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "475" //花费金钱
+    "AbilityManaCost"          "3"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E1_10_BC" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E2_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E2_00"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "240" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E2_00_BS" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E2_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E2_10"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "510" //花费金钱
+    "AbilityManaCost"          "3"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E2_10_BS" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E3_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E3_00"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "325" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E3_00_BZ" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E3_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E3_10"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "375" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E3_10_BZ" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E4_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E4_00"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "300" //花费金钱
+    "AbilityManaCost"          "3"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E4_00_SS" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E4_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E4_10"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "300" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E4_10_SS" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E5_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E5_00"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "220" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E5_00_BZ" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E5_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E5_10"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "335" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E5_10_BS" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E5_11"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E5_11"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "375" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E5_11_BZ" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E6_00"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E6_00"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "255" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E6_00_LZ" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E6_10"                      
+  {
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E6_10"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "420" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E6_10_LC" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+"E6_11"                      
+{
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    
+    "AbilityTextureName" "E6_11"//图标 
+    "AbilityChannelTime" "1.5"
+    "AbilityGoldCost"         "445" //花费金钱
+    "AbilityManaCost"          "2"//花费人口
+    "HotKeyOverride"    "E"//快捷键 
+    "OnSpellStart"
+    { 
+        "RunScript"
+        { 
+        "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "conditions"
+        
+        }
+    }
+
+    "OnChannelSucceeded"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "buildbuilding"
+        "new_build"           "npc_unit_E6_11_MC" //新单位 
+        
+      }
+    }
+    
+    "OnChannelInterrupted"
+    {
+      "RunScript"
+      { "ScriptFile"      "scripts/vscripts/building.lua"
+        "Function"        "CancelBuild"
+      }
+    }
+
+}
+
 
     //====================================================================
     //=================          注册技能Buff          ===================

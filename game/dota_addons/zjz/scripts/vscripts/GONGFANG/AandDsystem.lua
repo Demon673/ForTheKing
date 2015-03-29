@@ -74,7 +74,10 @@ function AandDsystem( keys )
 			local a_name = caster:GetUnitName()  --攻击者名字
 			local a_type = string.sub(a_name, -2, -2) --攻击类型
 			local base_damage = keys.DamageTaken
-			target:SetHealth(target:GetHealth() + base_damage)
+			local TargetHealth = target:GetHealth() 
+			if TargetHealth > 3 then
+				target:SetHealth(target:GetHealth() + base_damage)
+			end
 					
 			CustonDamage( caster, target, a_type, base_damage, true )
 
@@ -94,9 +97,6 @@ function AandDsystem( keys )
 	 								}
 	 
 					ExecuteOrderFromTable(newOrder)
-					--target:PerformAttack(caster,true, false, true, true) 
-					--print("jiao ni dalaozi")
-
 				end
 			end
 

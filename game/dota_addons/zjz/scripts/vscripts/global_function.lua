@@ -10,11 +10,9 @@ function BTFGeneral:ShowError(msg, playerid)
 end
 
 
-function BTFGeneral:GetGold(n,playerid,unit)
-	local u = unit
-	if 	u == nil	then
-		u=PlayerS[25]
-	end
+function BTFGeneral:ToTopBarUI(playerid,IncomeNum,Farmer,TechNum,Score,Arms)
+
+         FireGameEvent('UpdateTopBar', {PID = playerid ,income=IncomeNum, FarmerNum= Farmer,Tech=Tech,troops= Score,arms=Arms})
 
 end
 

@@ -32,6 +32,44 @@ building_tech.t_tech["W1_20"] = {}
 building_tech.t_tech["W1_11"] = {"W1_21"}
 building_tech.t_tech["W1_21"] = {}
 
+building_tech.t_tech["W2_00"] = {"W2_10",}
+building_tech.t_tech["W2_10"] = {"W2_20",}
+building_tech.t_tech["W2_20"] = {}
+
+building_tech.t_tech["W3_00"] = {"W3_10",}
+building_tech.t_tech["W3_10"] = {"W3_20",}
+building_tech.t_tech["W3_20"] = {}
+
+building_tech.t_tech["W4_00"] = {"W4_10",}
+building_tech.t_tech["W4_10"] = {"W4_20",}
+building_tech.t_tech["W4_20"] = {}
+
+building_tech.t_tech["W5_00"] = {"W5_10",}
+building_tech.t_tech["W5_10"] = {"W5_20","W5_21",}
+building_tech.t_tech["W5_20"] = {}
+building_tech.t_tech["W5_21"] = {}
+
+building_tech.t_tech["E1_00"] = {"E1_10",}
+building_tech.t_tech["E1_10"] = {}
+
+
+building_tech.t_tech["E2_00"] = {"E2_10",}
+building_tech.t_tech["E2_10"] = {}
+
+building_tech.t_tech["E3_00"] = {"E3_10",}
+building_tech.t_tech["E3_10"] = {}
+
+building_tech.t_tech["E4_00"] = {"E4_10",}
+building_tech.t_tech["E4_10"] = {}
+
+building_tech.t_tech["E5_00"] = {"E5_10","E5_11",}
+building_tech.t_tech["E5_10"] = {}
+building_tech.t_tech["E5_11"] = {}
+
+building_tech.t_tech["E6_00"] = {"E6_10","E6_11",}
+building_tech.t_tech["E6_10"] = {}
+building_tech.t_tech["E6_11"] = {}
+
 
 function building_tech:ApplyTechSkills( u_building )
 
@@ -114,12 +152,13 @@ function buildbuilding( keys )--建筑完成
 		
 		build:SetMoveCapability(DOTA_UNIT_CAP_MOVE_NONE)
 		build:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK) 
-		build:SetModelScale(0.95) 
+		local f_scale = build.BuildScale
+
+			--build:SetModelScale(1.2) --待修改
+
 	--增加升级
 		building_tech:ApplyTechSkills( build )
-
 end
-
 
 
 function conditions(keys) --开始建筑
@@ -369,18 +408,26 @@ function UpFarmerStart(keys)
 PlayerS[pid].CurFood = PlayerS[pid].CurFood + 1 --增加人口
 
 	if	FarmerNum >= 8 then
-
 		BTFGeneral:ShowError("#MaxFarmerNum", pid) --最大采集者数量警告信息
 		caster:Stop() --升级中断
 		PlayerS[pid].FarmerNum = 8
-
 	else
-
 		if  CurFood + 1 > FullFood  then
 
 			BTFGeneral:ShowError("#NoEnoughFood", pid) --人口不足警告信息
 			caster:Stop() --升级中断
-			
+		else
+			if FarmerNum < 4 then
+				if Score <600 then
+					BTFGeneral:ShowError("#NoEnoughScore600", pid) --兵力不足警告信息
+					caster:Stop() --升级中断
+				end
+			else
+				if Score <1000 then
+					BTFGeneral:ShowError("#NoEnoughScore1000", pid) --兵力不足警告信息
+					caster:Stop() --升级中断				
+				end
+			end
 		end
 
 	end

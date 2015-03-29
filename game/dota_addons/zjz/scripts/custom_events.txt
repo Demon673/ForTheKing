@@ -7,10 +7,20 @@
 	}
 
 
-	"custom_get_gold"//自定义获得金钱
+//	"custom_get_gold"//自定义获得金钱
+//	{
+//		"player_ID"		"short"
+//		"number"		"int"
+//	}
+
+	"UpdateTopBar"
 	{
-		"player_ID"		"short"
-		"number"		"int"
+		"PID"			"short" 
+		"income"	"long"
+		"FarmerNum" "long"
+		"Tech"  	"long"
+		"troops"	"long"
+		"arms"	    "long"
 	}
 
 

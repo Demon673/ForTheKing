@@ -57,7 +57,6 @@ function RoundThinker()
 					if newb:IsAlive()  then
 						newb.Sale = newb.Sale/2
 						newb:FindAbilityByName("Sale_Build"):SetLevel(2)
-
 					end
 				end
 			end
@@ -93,15 +92,17 @@ function RoundThinker()
 
 			PlayerS[pid].NewHire={}
 --------------------------冲锋------------------------------------------
+				
 
 				local build_point_ent =Entities:FindByName(nil, "player_"..tostring(pid).."_farmer_1")  
 				local build_table = Entities:FindAllByClassnameWithin("npc_dota_creature", build_point_ent:GetAbsOrigin() , 3000)
-							
+						ShowCustomHeaderMessage("#Arouse", pid, pid, 5)--冲锋号令 
 				for _,build in pairs(build_table) do
 					if build:IsAlive() == true then
 
 						--if string.sub( build:GetUnitName(), 1, 9 ) == "npc_build"  then
 						if build:HasAbility("build_base") then
+
 							CFunit = UnitManager:CreateUnitByBuilding( build )
 
 						end
