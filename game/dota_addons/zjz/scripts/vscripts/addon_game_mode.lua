@@ -504,8 +504,7 @@ function CbtfGameMode:InitGameMode()
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(CbtfGameMode, "OnEntityKilled"), self) 	--单位被杀死
 	ListenToGameEvent("dota_unit_event", Dynamic_Wrap(CbtfGameMode, "OnEvent"), self) 	--???
 	ListenToGameEvent("player_connect_full", Dynamic_Wrap(CbtfGameMode,"OnPlayerConnectFull" ),self) --某玩家成功载入
-	ListenToGameEvent("hero_in_game",Dynamic_Wrap(CbtfGameMode,"OnHeroInGame" ),self)  --英雄进入游戏
-
+	ListenToGameEvent("player_reconnected", Dynamic_Wrap(CbtfGameMode, "OnPlayerReconnected" ), self ) --玩家重连事件
 
 
 end
@@ -566,8 +565,6 @@ function CbtfGameMode:OnNPCSpawned( keys )
         player:SetContextThink(DoUniqueString("telepor_later"), function() FindClearSpaceForUnit(trigger_unit, start_point, true) end, 0.1)--传送到开始点
         PlayerS[pid].Hero = trigger_unit				--传递参数给玩家表
         PlayerResource:SetCameraTarget(pid, trigger_unit) --锁定并移动镜头 	
-
-
         player:SetContextThink(DoUniqueString("camera_later"), function() PlayerResource:SetCameraTarget(pid, nil)  end, 3)--3秒后解锁
    		trigger_unit:SetAbilityPoints(0)                --取消技能点
 		    
@@ -655,24 +652,25 @@ function CbtfGameMode:UpdateScoreboard()
 		local ArmsNum = PlayerS[pid].Arms
 		BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum)
 		--print("player  "..pid.."lum is " .. LumberNum)
-		local player = PlayerCalc:GetPlayerByPosition(pid)
-		pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
+		--local player = PlayerCalc:GetPlayerByPosition(pid)
+		--pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
 		--print("The pid used to print is " .. tostring(pid))
+		pid_index = PlayerS[pid].Index
 
-		--UTIL_MessageText_WithContext( pid,"#ScoreboardPlayerID", 255, 204, 51, 255, { value = pid } ) --test
-		UTIL_MessageText_WithContext( pid,"#ScoreboardGold", 255, 204, 51, 255, { value = GoldNum } )
-		UTIL_MessageText_WithContext( pid,"#ScoreboardLumber", 0, 255, 255, 255, { value = LumberNum } )
-		UTIL_MessageText( pid,"#ScoreboardSeparator", 255, 255, 255, 255 )
-		UTIL_MessageText_WithContext( pid,"#ScoreboardCurFood", 255, 177, 102, 255, { value = CurFoodNum})
+		--UTIL_MessageText_WithContext( pid_index,"#ScoreboardPlayerID", 255, 204, 51, 255, { value = pid_index } ) --test
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardGold", 255, 204, 51, 255, { value = GoldNum } )
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardLumber", 0, 255, 255, 255, { value = LumberNum } )
+		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardCurFood", 255, 177, 102, 255, { value = CurFoodNum})
 		--print(tostring(FullFoodNum))
-		UTIL_MessageText_WithContext( pid,"#ScoreboardFullFood", 255, 128, 0, 255, { value = FullFoodNum})
-		UTIL_MessageText( pid,"#ScoreboardSeparator", 255, 255, 255, 255 )
-		UTIL_MessageText_WithContext( pid,"#ScoreboardFarmerNum", 51, 255, 153, 255, { value = FarmerNum } )			
-		UTIL_MessageText_WithContext( pid,"#ScoreboardTech", 0, 255, 92, 255, { value = TechNum } )
-		UTIL_MessageText_WithContext( pid,"#ScoreboardIncome", 255, 204, 51, 255, { value = IncomeNum } )
-		UTIL_MessageText( pid,"#ScoreboardSeparator", 255, 255, 255, 255 )
-		UTIL_MessageText_WithContext( pid,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
-		UTIL_MessageText( pid,"#ScoreboardSeparator", 255, 255, 255, 255 )
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardFullFood", 255, 128, 0, 255, { value = FullFoodNum})
+		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardFarmerNum", 51, 255, 153, 255, { value = FarmerNum } )			
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardTech", 0, 255, 92, 255, { value = TechNum } )
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardIncome", 255, 204, 51, 255, { value = IncomeNum } )
+		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+		UTIL_MessageText_WithContext( pid_index,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
+		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
 		--顶部UI
 		
 
@@ -698,13 +696,25 @@ function CbtfGameMode:OnPlayerConnectFull(keys)
 	local ConnectPlayer = PlayerCalc:GetPlayerByIndex(keys.index + 1)
 	local PlayerID = PlayerCalc:GetPlayerPosition(ConnectPlayer)
 	print("This One PlayerID is "..PlayerID)
+    
+    if PlayerS[PlayerID] == nil then
+        PlayerS[PlayerID] = {}
+    end
+    PlayerS[PlayerID].Index = keys.index + 1
+
 end
 
 
-function CbtfGameMode:OnHeroInGame(keys)
-	print("one hero in game")
-	DeepPrintTable(keys)
+--玩家重连
+function CbtfGameMode:OnPlayerReconnected(keys)
+	local nReconnectedPlayerID = event.PlayerID
+	print("Reconnected Player is "..event.PlayerID)
+
+	PlayerResource:SetCameraTarget(nReconnectedPlayerID, nil) --解锁镜头 	
+
+
 end
+
 
 
 --建立带有默认值的表

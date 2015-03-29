@@ -84,6 +84,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
         --PlayerS[i].Light = 1                                                                          --圣光数量
         PlayerS[i].Abhere = false                                                                     --固守状态
 
+
         PlayerResource:SetGold(i,PlayerS[i].Gold, false) --设置初始金钱        
         local lib_ent = Entities:FindByName(nil, "player_"..tostring(i).."_farmer_4")   --player_i_lib
         PlayerS[i].Lib =  CreateUnitByName("npc_dummy_lib", lib_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
