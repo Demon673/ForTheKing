@@ -460,7 +460,7 @@ function Precache( context )
 	time = time - GameRules:GetGameTime()
 	print("DONE PRECACHEING IN:"..tostring(time).."Seconds")
 
-	PrecacheParticle( "particle/farmer/farmer.vpcf", context )
+	PrecacheParticle( "particles/farmer/farmer.vpcf", context )
 	PrecacheParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context )
 
 end
@@ -780,7 +780,7 @@ end
 
 	AandD_table = 	table_new(100) 
 				{ 
-						BZ = 9,
+						BZ = 90,
 						BS = 130,
 						BW = 80,
 						BC = 90,

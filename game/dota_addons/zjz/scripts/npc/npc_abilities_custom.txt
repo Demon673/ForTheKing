@@ -223,7 +223,7 @@
                                         "Target"                    "CASTER"
                                         "ControlPoints"
                                                             {
-                                                                "00"                        "0 0 50"
+                                                                "00"                        "0 0 0"
                                                             }
 
                                 }
