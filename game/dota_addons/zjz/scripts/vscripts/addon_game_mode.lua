@@ -506,6 +506,9 @@ function CbtfGameMode:InitGameMode()
 	ListenToGameEvent("player_connect_full", Dynamic_Wrap(CbtfGameMode,"OnPlayerConnectFull" ),self) --某玩家成功载入
 	ListenToGameEvent("player_reconnected", Dynamic_Wrap(CbtfGameMode, "OnPlayerReconnected" ), self ) --玩家重连事件
 
+	--设置王的生命数量
+	KING_LIFE_RIGHT = 4
+	KING_LIFE_LEFT  = 4
 
 end
 
@@ -522,16 +525,17 @@ function CbtfGameMode:OnGameRulesStateChange( keys )
     --开始选择英雄
     elseif newState==DOTA_GAMERULES_STATE_HERO_SELECTION then
    	    runTable()
+   	           	chushihua:SpawnBuildBase() --刷王和地基等物体
     --游戏开始
     elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
         print("Player ready game begin")  --玩家处于游戏准备状态
 		playerstarts:playertable()
-       	chushihua:SpawnBuildBase() --刷王和地基等物体
+
 
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         print("Player game begin")  --玩家开始游戏
-		chushihua:SetConKing()
+		--chushihua:SetConKing()
 	        
     end
 end
@@ -565,11 +569,10 @@ function CbtfGameMode:OnNPCSpawned( keys )
         player:SetContextThink(DoUniqueString("telepor_later"), function() FindClearSpaceForUnit(trigger_unit, start_point, true) end, 0.1)--传送到开始点
         PlayerS[pid].Hero = trigger_unit				--传递参数给玩家表
         PlayerResource:SetCameraTarget(pid, trigger_unit) --锁定并移动镜头 	
-        player:SetContextThink(DoUniqueString("camera_later"), function() PlayerResource:SetCameraTarget(pid, nil)  end, 3)--3秒后解锁
+        player:SetContextThink(DoUniqueString("camera_later"), function() PlayerResource:SetCameraTarget(pid, nil)  end, 2)--2秒后解锁
    		trigger_unit:SetAbilityPoints(0)                --取消技能点
 		    
-		local j=0
-      
+		--local j=0
 		for j = 0,5,1 do
 		    local temp=trigger_unit:GetAbilityByIndex(j) --获取技能实体
 
@@ -610,9 +613,7 @@ end
 --循环计时器 循环检查当前游戏规则
 function CbtfGameMode:OnThink()  
 			self.UpdateScoreboard()
-
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-			
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then			
 			RoundThinker()
 		--print("is runing")
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -651,31 +652,29 @@ function CbtfGameMode:UpdateScoreboard()
 		local IncomeNum = PlayerS[pid].Income
 		local ArmsNum = PlayerS[pid].Arms
 		BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum)
-		--print("player  "..pid.."lum is " .. LumberNum)
-		--local player = PlayerCalc:GetPlayerByPosition(pid)
-		--pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
-		--print("The pid used to print is " .. tostring(pid))
-		pid_index = PlayerS[pid].Index
+	--print("player  "..pid.."lum is " .. LumberNum)
+	local player = PlayerCalc:GetPlayerByPosition(pid)
+	--pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
+	--print("The pid used to print is " .. tostring(pid))
+	pid_index = PlayerS[pid].Index
 
-		--UTIL_MessageText_WithContext( pid_index,"#ScoreboardPlayerID", 255, 204, 51, 255, { value = pid_index } ) --test
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardGold", 255, 204, 51, 255, { value = GoldNum } )
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardLumber", 0, 255, 255, 255, { value = LumberNum } )
-		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardCurFood", 255, 177, 102, 255, { value = CurFoodNum})
-		--print(tostring(FullFoodNum))
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardFullFood", 255, 128, 0, 255, { value = FullFoodNum})
-		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardFarmerNum", 51, 255, 153, 255, { value = FarmerNum } )			
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardTech", 0, 255, 92, 255, { value = TechNum } )
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardIncome", 255, 204, 51, 255, { value = IncomeNum } )
-		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
-		UTIL_MessageText_WithContext( pid_index,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
-		UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardPlayerID", 255, 204, 51, 255, { value = pid_index } ) --test
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardGold", 255, 204, 51, 255, { value = GoldNum } )
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardLumber", 0, 255, 255, 255, { value = LumberNum } )
+	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardCurFood", 255, 177, 102, 255, { value = CurFoodNum})
+	--print(tostring(FullFoodNum))
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardFullFood", 255, 128, 0, 255, { value = FullFoodNum})
+	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardFarmerNum", 51, 255, 153, 255, { value = FarmerNum } )			
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardTech", 0, 255, 92, 255, { value = TechNum } )
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardIncome", 255, 204, 51, 255, { value = IncomeNum } )
+	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+	UTIL_MessageText_WithContext( pid_index,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
+	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
 		--顶部UI
-		
-
-
 	end
+
 	if king_left ~= nil and king_right~= nil then
 		local leftHP = king_left:GetHealthPercent()
 		local rightHP = king_right:GetHealthPercent()
@@ -696,11 +695,43 @@ function CbtfGameMode:OnPlayerConnectFull(keys)
 	local ConnectPlayer = PlayerCalc:GetPlayerByIndex(keys.index + 1)
 	local PlayerID = PlayerCalc:GetPlayerPosition(ConnectPlayer)
 	print("This One PlayerID is "..PlayerID)
-    
+    if PlayerID ==-1 then
+    	PlayerID = 0
+    end
+
     if PlayerS[PlayerID] == nil then
         PlayerS[PlayerID] = {}
     end
+
     PlayerS[PlayerID].Index = keys.index + 1
+    table.insert( AllPlayers, PlayerID)                                                         --加入全部玩家队伍
+
+    local start_ent = Entities:FindByName(nil,  "startpoint"..tostring(PlayerID)) or Entities:FindByName(nil,  "portal"..tostring(PlayerID+1)) 
+    local start_point = start_ent:GetAbsOrigin() 
+                                      
+        PlayerS[PlayerID].StartPoint = start_point  
+
+        PlayerS[PlayerID].Lumber = 60000                   --定义初始木材  0
+        PlayerS[PlayerID].CurFood = 1                      --初始当前人口
+        PlayerS[PlayerID].FullFood = 16                     --初始最大人口            每次提升8
+        PlayerS[PlayerID].FarmerNum = 1                    --初始采集者数量          最多为8
+        PlayerS[PlayerID].Tech = 0                         --初始采集科技等级        最多为8
+        PlayerS[PlayerID].Score = 1800                        --初始兵力
+        PlayerS[PlayerID].Income = 0                       --初始收入
+        PlayerS[PlayerID].Arms = 0             
+                          --print(PlayerS[PlayerID].Gold)
+                          --print("player"..tostring(i).." gold is  "..PlayerS[PlayerID].Gold)
+
+        PlayerS[PlayerID].Unit = {}                                                                          --玩家单位 
+        PlayerS[PlayerID].Farmer = {}                                                                        --玩家采集者单位
+        PlayerS[PlayerID].Build = {}                                                                         --玩家的建筑
+        PlayerS[PlayerID].NewBuild = {}                                                                      --未出兵的建筑
+        PlayerS[PlayerID].Hire = {}                                                                          --玩家的佣兵
+        PlayerS[PlayerID].NewHire = {}                                 
+        --PlayerS[PlayerID].Light = 1                                                                          --圣光数量
+        PlayerS[PlayerID].Abhere = false                                                                     --固守状态
+
+
 
 end
 
@@ -711,7 +742,6 @@ function CbtfGameMode:OnPlayerReconnected(keys)
 	print("Reconnected Player is "..event.PlayerID)
 
 	PlayerResource:SetCameraTarget(nReconnectedPlayerID, nil) --解锁镜头 	
-
 
 end
 
@@ -750,7 +780,7 @@ end
 
 	AandD_table = 	table_new(100) 
 				{ 
-						BZ = 90,
+						BZ = 9,
 						BS = 130,
 						BW = 80,
 						BC = 90,

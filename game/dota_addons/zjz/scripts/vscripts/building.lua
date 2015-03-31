@@ -118,12 +118,7 @@ function buildbuilding( keys )--建筑完成
 	    local min = GetGroundPosition(BuildPoint,build)
 
 	    build:SetOrigin(Vector(BuildPoint.x,BuildPoint.y,min.z+30))
-	--设置朝向(在单位出生事件统一设置了)
-		--if TeamNumber == 2 then
-		--	build:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右
-		--else
-		--	build:SetForwardVector((Vector(-2000,0,0) - Vector(2000,0,0)):Normalized())--朝左
-		--end
+
 
 	--设置归属玩家和设置贩售金钱
 		build.Player = player
@@ -152,9 +147,9 @@ function buildbuilding( keys )--建筑完成
 		
 		build:SetMoveCapability(DOTA_UNIT_CAP_MOVE_NONE)
 		build:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK) 
-		local f_scale = build.BuildScale
-
-			--build:SetModelScale(1.2) --待修改
+		--local f_scale = build:GetModelScale() 
+		--print("this building model scale is "..f_scale)
+		--build:SetModelScale(f_scale+0.6) --待修改
 
 	--增加升级
 		building_tech:ApplyTechSkills( build )

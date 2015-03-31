@@ -196,12 +196,13 @@ function RoundThinker()
 			local Lumber = PlayerS[pid].Lumber
 			local Tech = PlayerS[pid].Tech
 			local Farmer = PlayerS[pid].FarmerNum
-			PlayerS[pid].Lumber  =  Lumber + Farmer*(2+Tech)
-
-			for __,farmer in pairs (PlayerS[pid].Farmer) do
-				PopupHealing(farmer, 2+Tech )
+			if Lumber and Tech and Farmer then
+				PlayerS[pid].Lumber  =  Lumber + Farmer*(2+Tech)
+			
+				for __,farmer in pairs (PlayerS[pid].Farmer) do
+					PopupHealing(farmer, 2+Tech )
+				end
 			end
-
 		end
 
 	end

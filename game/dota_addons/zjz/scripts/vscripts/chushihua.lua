@@ -28,27 +28,27 @@ end
 
 --function chushihua:SetConKing(unit)
 	--给双方玩家 共享单位控制权
-function chushihua:SetConKing()
+--function chushihua:SetConKing()
 	
 	--for _, player in pairs( AllPlayers ) do
 	
 		--local pid = player:GetPlayerID()
 		
-	for _, pid in pairs( AllPlayers ) do
+	--for _, pid in pairs( AllPlayers ) do
 
-		print("Goint to set player " .. tostring(pid) .. " able to control his King.")
+	--	print("Goint to set player " .. tostring(pid) .. " able to control his King.")
 
-		if pid<=3 then
+	--	if pid<=3 then
 			--if PlayerInstanceFromIndex(pid) ~= nil then
-				print("He is going to control good guy.")
-				self.king_left:SetControllableByPlayer(pid, true) 
+	--			print("He is going to control good guy.")
+	--			self.king_left:SetControllableByPlayer(pid, true) 
 			--end
-		else	
+	--	else	
 			--if PlayerInstanceFromIndex(pid) ~= nil then
-				print("He is going to control bad guy.")
-				self.king_right:SetControllableByPlayer(pid, true) 
+	--			print("He is going to control bad guy.")
+	--			self.king_right:SetControllableByPlayer(pid, true) 
 			--end
-		end
-		print("And it is the end of setting.")
-	end
-end
+	--	end
+	--	print("And it is the end of setting.")
+	--end
+--end

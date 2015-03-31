@@ -12,7 +12,7 @@ end
 
 function BTFGeneral:ToTopBarUI(playerid,IncomeNum,Farmer,TechNum,Score,Arms)
 
-         FireGameEvent('UpdateTopBar', {PID = playerid ,income=IncomeNum, FarmerNum= Farmer,Tech=Tech,troops= Score,arms=Arms})
+         FireGameEvent('UpdateTopBar', {PID = playerid ,income=IncomeNum, FarmerNum= Farmer,Tech=TechNum,troops= Score,arms=Arms})
 
 end
 
