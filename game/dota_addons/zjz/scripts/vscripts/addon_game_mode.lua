@@ -716,9 +716,9 @@ function CbtfGameMode:OnPlayerConnectFull(keys)
         PlayerS[PlayerID].FullFood = 16                     --初始最大人口            每次提升8
         PlayerS[PlayerID].FarmerNum = 1                    --初始采集者数量          最多为8
         PlayerS[PlayerID].Tech = 0                         --初始采集科技等级        最多为8
-        PlayerS[PlayerID].Score = 1800                        --初始兵力
-        PlayerS[PlayerID].Income = 0                       --初始收入
-        PlayerS[PlayerID].Arms = 0             
+        PlayerS[PlayerID].Score = 1800                      --初始兵力
+        PlayerS[PlayerID].Income = 20                       --初始收入
+        PlayerS[PlayerID].Arms = 100 						--初始军备             
                           --print(PlayerS[PlayerID].Gold)
                           --print("player"..tostring(i).." gold is  "..PlayerS[PlayerID].Gold)
 
@@ -728,7 +728,7 @@ function CbtfGameMode:OnPlayerConnectFull(keys)
         PlayerS[PlayerID].NewBuild = {}                                                                      --未出兵的建筑
         PlayerS[PlayerID].Hire = {}                                                                          --玩家的佣兵
         PlayerS[PlayerID].NewHire = {}                                 
-        --PlayerS[PlayerID].Light = 1                                                                          --圣光数量
+        PlayerS[PlayerID].ItemNum = 1 		                                                                 --可拥有道具数量
         PlayerS[PlayerID].Abhere = false                                                                     --固守状态
 
 

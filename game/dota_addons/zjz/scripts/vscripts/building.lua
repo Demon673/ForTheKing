@@ -206,24 +206,23 @@ function UpFoodStart(keys)
 	local FullFood = PlayerS[pid].FullFood
 	local money = PlayerResource:GetGold(pid) 
 	local lumber = PlayerS[pid].Lumber
-	local cost = 20+5*(FullFood/8)
+
+	local cost_money = keys.ability:GetGoldCost(keys.ability:GetLevel() - 1)
+	local cost_lumber = keys.ability:GetManaCost(keys.ability:GetLevel() - 1)
 
 	if FullFood < 184 then
-		if money < cost then
-			BTFGeneral:ShowError("#NoEnoughMoney", pid) --警告信息  
-			caster:Stop()
-		else
-			if lumber < cost*2 then
+
+			if lumber < cost_lumber then
 				BTFGeneral:ShowError("#NoEnoughLumber", pid) --警告信息
 				caster:Stop()
 			end
-		end
+
 	else
 		BTFGeneral:ShowError("#MaxFullFood", pid) --警告信息  
 		caster:Stop()	
 	end
-	PlayerS[pid].Lumber = PlayerS[pid].Lumber - cost * 2
-	PlayerResource:SetGold(pid,money-cost, false)
+	PlayerS[pid].Lumber = PlayerS[pid].Lumber - cost_lumber
+
 end
 
 function UpFoodSuccess(keys)
@@ -235,7 +234,7 @@ function UpFoodSuccess(keys)
 	local FullFood = PlayerS[pid].FullFood
 	local money = PlayerResource:GetGold(pid) 
 	local lumber = PlayerS[pid].Lumber
-	local cost = 20+5*(FullFood/8)
+
 	local name = keys.ability:GetAbilityName()
 	local lv = keys.ability:GetLevel()
 	local lvnum = string.sub(name,-1,-1)
@@ -273,9 +272,11 @@ function UpFoodCancel(keys)
 	local FullFood = PlayerS[pid].FullFood
 	local money = PlayerResource:GetGold(pid) 
 	local lumber = PlayerS[pid].Lumber
-	local cost = 20+5*(FullFood/8)
-	PlayerS[pid].Lumber = PlayerS[pid].Lumber + cost * 2
-	PlayerResource:SetGold(pid,money+cost, false)
+	local cost_money = keys.ability:GetGoldCost(keys.ability:GetLevel() - 1)
+	local cost_lumber = keys.ability:GetManaCost(keys.ability:GetLevel() - 1)
+	PlayerS[pid].Lumber = PlayerS[pid].Lumber + cost_lumber
+	PlayerResource:SetGold(pid,money+cost_money, false)
+
 
 end
 
@@ -288,9 +289,10 @@ function UpTechStart(keys)
 	local money = PlayerResource:GetGold(pid) 
 	local Score = PlayerS[pid].Score
 	local lumber = PlayerS[pid].Lumber
-	local cost = keys.ability:GetGoldCost(keys.ability:GetLevel() - 1)
+	local cost_money = keys.ability:GetGoldCost(keys.ability:GetLevel() - 1)
+	local cost_lumber = keys.ability:GetManaCost(keys.ability:GetLevel() - 1)
 	print("pid is  "..pid)
-	print("cost is  "..cost)
+
 	print("money is "..money)
 	if Tech >= 8 then
 		BTFGeneral:ShowError("#MaxTechLevel", pid) --警告信息
@@ -300,7 +302,7 @@ function UpTechStart(keys)
 			BTFGeneral:ShowError("#NoEnoughScore2000", pid) --警告信息	
 			caster:Stop()
 		else
-			if lumber < cost then
+			if lumber < cost_lumber then
 				BTFGeneral:ShowError("#NoEnoughLumber", pid) --警告信息
 				caster:Stop()
 			else
@@ -308,7 +310,7 @@ function UpTechStart(keys)
 			end
 		end
 	end
-	PlayerS[pid].Lumber = PlayerS[pid].Lumber - 125
+	PlayerS[pid].Lumber = PlayerS[pid].Lumber - cost_lumber
 
 
 end
@@ -321,15 +323,14 @@ function UpTechCancel(keys)
 	local pid = caster:GetPlayerOwnerID() 
 
 	local money = PlayerResource:GetGold(pid) 
+	local cost_money = keys.ability:GetGoldCost(keys.ability:GetLevel() - 1)
+	local cost_lumber = keys.ability:GetManaCost(keys.ability:GetLevel() - 1)
+	print("TechUP cancel pid is  "..pid)
 
-	local cost = keys.ability:GetGoldCost(keys.ability:GetLevel() - 1)
-	print("pid is  "..pid)
-	print("cost is  "..cost)
-	print("money is "..money)
 
-	PlayerS[pid].Lumber = PlayerS[pid].Lumber + 125
+	PlayerS[pid].Lumber = PlayerS[pid].Lumber + cost_lumber
 ---------------------退还金钱--------------------------------
-	PlayerResource:SetGold(pid,money+125, false)
+	PlayerResource:SetGold(pid,money+cost_money, false)
 
 
 end
@@ -339,11 +340,12 @@ function UpTechSuccess(keys)
 	local player = caster:GetPlayerOwner()
 	local pid = caster:GetPlayerOwnerID() 
 	local FullFood = PlayerS[pid].FullFood
-	local money = PlayerResource:GetGold(pid) 
-	local lumber = PlayerS[pid].Lumber
-	local cost = 125
-
+	local Ability = keys.ability
+	local Tech  = PlayerS[pid].Tech
 			PlayerS[pid].Tech = PlayerS[pid].Tech+1
+
+	print(Tech)
+	Ability:SetLevel(PlayerS[pid].Tech+1)
 
 end
 

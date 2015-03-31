@@ -1191,7 +1191,8 @@
     "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
     "HotKeyOverride"    "Z"//快捷键
     "MaxLevel"                  "7"
-
+    "AbilityGoldCost"         "30 35 40 45 50 55 60" //花费金钱
+    "AbilityManaCost"         "60 70 80 90 100 110 120" //花费木材
 
     "OnSpellStart"
     { 
@@ -1248,7 +1249,8 @@
     "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
     "HotKeyOverride"    "Z"//快捷键
     "MaxLevel"                  "7"
-
+    "AbilityGoldCost"         "65 70 75 80 85 90 95" //花费金钱
+    "AbilityManaCost"         "130 140 150 160 170 180 190" //花费木材
 
     "OnSpellStart"
     { 
@@ -1304,7 +1306,8 @@
     "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
     "HotKeyOverride"    "Z"//快捷键
     "MaxLevel"                  "7"
-
+    "AbilityGoldCost"         "100 105 110 115 120 125 130" //花费金钱
+    "AbilityManaCost"         "200 210 220 230 240 250 260" //花费木材
 
     "OnSpellStart"
     { 
@@ -1362,9 +1365,9 @@
     "AbilityChannelTime" "5"
     "AbilityType" "DOTA_ABILITY_TYPE_BASIC"
     "HotKeyOverride"    "T"//快捷键
-    "MaxLevel"                  "1"
-    "AbilityGoldCost"         "125" //花费金钱
-    "AbilityManaCost"         "125" //花费木材
+    "MaxLevel"                  "9"
+    "AbilityGoldCost"         "100 150 200 250 300 350 400 450" //花费金钱
+    "AbilityManaCost"         "100 110 120 130 140 150 160 170" //花费木材
 
     "OnSpellStart"
     { 
@@ -1391,6 +1394,22 @@
         "Function"        "UpTechSuccess"
         }
     }
+                   "AbilitySpecial"
+                {
+
+                        "01" //金钱消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "money"                        "100 150 200 250 300 350 400 450"
+                        }
+
+                        "02" //水晶消耗
+                        {
+                                "var_type"                "FIELD_INTEGER"
+                                "lumber"                        "100 110 120 130 140 150 160 170"
+                        }
+
+                }
 
 }
 
