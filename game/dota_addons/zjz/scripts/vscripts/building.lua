@@ -121,7 +121,7 @@ function buildbuilding( keys )--建筑完成
 
 
 	--设置归属玩家和设置贩售金钱
-		build.Player = player
+		--build.Player = player
 		build.Sale = old_sale + cost
 		build.Food = old_food + food
 		build.Score = old_score + cost
@@ -356,7 +356,7 @@ end
 
 function SaleBuild(keys)
 	local sale_build  = keys.caster
-	local player = sale_build.Player
+	local player =sale_build:GetPlayerOwner()  --sale_build.Player
 	local pid = player:GetPlayerID() 
 	local sale_money = sale_build.Sale
 	local player_money = PlayerResource:GetGold(pid)
@@ -370,7 +370,7 @@ function SaleBuild(keys)
 	sale_build:SetOrigin(Vector(7000,-7000,-400))
 ---------------------创建新的建筑---------------------
     local buildbase = CreateUnitByName("npc_dummy_build_base", p, false, owner, owner,player:GetTeam()) --地基单位
-    buildbase.Player = player
+    --buildbase.Player = player
     table.insert(PlayerS[pid].BuildBase, buildbase)
     buildbase:SetControllableByPlayer(pid, true) 
     local min = GetGroundPosition(p,buildbase)

@@ -565,12 +565,13 @@ function CbtfGameMode:OnNPCSpawned( keys )
 
 		local start_ent = Entities:FindByName(nil,  "portal"..tostring(pid+1)) or  Entities:FindByName(nil,  "startpoint"..tostring(pid))
         local start_point = start_ent:GetAbsOrigin() 
+        PlayerS[pid].StartPoint = start_point
         player:SetContextThink(DoUniqueString("telepor_later"), function() FindClearSpaceForUnit(trigger_unit, start_point, true) end, 0.1)--传送到开始点
         PlayerS[pid].Hero = trigger_unit				--传递参数给玩家表
         PlayerResource:SetCameraTarget(pid, trigger_unit) --锁定并移动镜头 	
         player:SetContextThink(DoUniqueString("camera_later"), function() PlayerResource:SetCameraTarget(pid, nil)  end, 2)--2秒后解锁
-   		trigger_unit:SetAbilityPoints(0)                --取消技能点
-		    
+   		
+   		trigger_unit:SetAbilityPoints(0)                --取消技能点   
 		--local j=0
 		for j = 0,5,1 do
 		    local temp=trigger_unit:GetAbilityByIndex(j) --获取技能实体
