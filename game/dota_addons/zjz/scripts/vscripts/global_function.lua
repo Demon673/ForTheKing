@@ -297,8 +297,8 @@ function AIManager:IsSkillAble( t_skill )
 
 end
 
-if ModifierManager == nil then
-    ModifierManager = {}
+if BuffManager == nil then
+    BuffManager = {}
 end
 
 function BuffManager:AddBuff( u_unit, s_modifier, particle_function, b_stick ) -- particle_function 要return粒子特效的ID
@@ -318,11 +318,11 @@ function BuffManager:AddBuff( u_unit, s_modifier, particle_function, b_stick ) -
         t_buff_type.buffs = brain.buffs
         brain.buffs[s_modifier] = t_buff_type
     else
-        t_buff_type == brain.buffs[s_modifier]
+        t_buff_type = brain.buffs[s_modifier]
     end
 
     if (#t_buff_type == 0) then
-        AbilityManager:GetBuffRegister( u_self ):ApplyDataDrivenModifier( u_self, u_self, s_modifier, nil )
+        AbilityManager:GetBuffRegister( u_unit ):ApplyDataDrivenModifier( u_unit, u_unit, s_modifier, nil )
         t_buff = {}
         table.insert(t_buff_type, t_buff)
         t_buff.particle = particle_function(u_unit)
@@ -334,7 +334,7 @@ function BuffManager:AddBuff( u_unit, s_modifier, particle_function, b_stick ) -
             table.insert(t_buff_type, t_buff)
             t_buff.particle = particle_function(u_unit)
             i_stack_count = #t_buff_type
-            u_self:SetModifierStackCount(s_modifier, u_self, i_stack_count)
+            u_unit:SetModifierStackCount(s_modifier, u_unit, i_stack_count)
 
             return t_buff
         else
@@ -367,7 +367,7 @@ function BuffManager:RemoveBuff( u_unit, s_modifier )
     end
 
     t_buff = brain.buffs[s_modifier][i_length]
-    ParticleManager:DestroyParticle(t_buff.particle , true)
+    ParticleManager:DestroyParticle(t_buff.particle , false)
     table.remove(brain.buffs[s_modifier], i_length)
 
     return true
@@ -387,14 +387,20 @@ function BuffManager:SetBuffCount( u_unit, s_modifier, particle_function, i_stac
     end
 
     if (brain.buffs[s_modifier] == nil) then
-        return false
+        t_buff_type = {}
+        t_buff_type.buffs = brain.buffs
+        brain.buffs[s_modifier] = t_buff_type
+    else
+        t_buff_type = brain.buffs[s_modifier]
     end
 
-    while (#brain.buffs[s_modifier] > i_stack_count) do
+    while (#t_buff_type > i_stack_count) do
+        print("BuffManager:SetBuffCount: Remove")
         BuffManager:RemoveBuff( u_unit, s_modifier )
     end
 
-    while (#brain.buffs[s_modifier] < i_stack_count) do
+    while (#t_buff_type < i_stack_count) do
+        print("BuffManager:SetBuffCount: Add")
         BuffManager:AddBuff( u_unit, s_modifier, particle_function, true )
     end
 

@@ -82,7 +82,6 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/sven/mono_militis_head.vmdl"},
 	{"model", "models/items/sven/mono_militis_shoulder.vmdl"},
 	{"model", "models/items/sven/mono_militis_weapon.vmdl"},
-	{"particle", "particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explode_points.vpcf"},
 
 	--Q1 20
 	{"model", "models/items/sven/ceremonialtassetsofthemyrmidon/ceremonialtassetsofthemyrmidon.vmdl"},
@@ -90,8 +89,7 @@ function PrecacheEveryThingFromKV( context )
 	{"model", "models/items/sven/sven_ceremonialgreathelmofthemyrmidon/sven_ceremonialgreathelmofthemyrmidon.vmdl"},
 	{"model", "models/items/sven/sven_ceremonialshieldbladeofthemyrmidon/sven_ceremonialshieldbladeofthemyrmidon.vmdl"},
 	{"model", "models/items/sven/sven_ceremonialshoulderbladesofthemyrmidon/sven_ceremonialshoulderbladesofthemyrmidon.vmdl"},
-	{"particle", "particles/units/heroes/hero_queenofpain/queen_shadow_strike_smoke.vpcf"},
-	{"particle", "particles/econ/courier/courier_tinkbot/courier_tinkbot_flying_ambient_b.vpcf"},
+	{"particle", "particles/zjz_units/q1_20_skill02.vpcf"},
 
 
 	--Q1 21

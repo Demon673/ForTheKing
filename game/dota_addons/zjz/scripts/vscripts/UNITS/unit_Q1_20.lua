@@ -6,11 +6,11 @@ local brain_OnAttacked = function( u_self, u_attacker, f_damage )
 end
 
 local brain_OnTakenDamage = function( u_self, u_attacker, f_damage )
-	u_self.brain.skill[2].fun( u_self, u_attacker)
+	u_self.brain.skills[2].fun( u_self, u_attacker)
 end
 
 local brain_OnHealthRegain = function( u_self, u_healer, f_number )
-	u_self.brain.skill[2].fun( u_self, u_healer)
+	u_self.brain.skills[2].fun( u_self, u_healer)
 end
 ---------- Order System ----------
 
@@ -48,15 +48,25 @@ local skill_01_cast = function( u_self, u_target )
 end
 
 local skill_02_passive = function( u_self, u_target )
-	if (not (u_self:HasModifier("modifier_Q1_20_attack_speed"))) then
-		AbilityManager:GetBuffRegister( u_self ):ApplyDataDrivenModifier( u_self, u_self, "modifier_Q1_20_attack_speed", nil )
+
+	local particle_function = function( u_unit )
+		local i_particle = ParticleManager:CreateParticle(
+								"particles/zjz_units/q1_20_skill02.vpcf",
+							 	PATTACH_CUSTOMORIGIN_FOLLOW,
+								u_unit
+							 )
+		print("Try to set particle" .. u_unit:GetUnitName())
+		ParticleManager:SetParticleControlEnt(i_particle, 3, u_unit, 5, "attach_hitloc", u_unit:GetOrigin(), true) -- CP3
+
+		return i_particle
 	end
 
 	local f_self_health = u_self:GetHealth()
 	local f_self_health_max = u_self:GetMaxHealth()
 	local f_health_percentage = u_self:GetHealth() / u_self:GetMaxHealth()
-	local i_stack_count = math.floor((1 - f_health_percentage) * 20)
-	u_self:SetModifierStackCount("modifier_Q1_20_attack_speed", u_self, i_stack_count)
+	local i_stack_count = math.floor((1 - f_health_percentage) * 20) + 1
+	print("Calculated to set stack count to " .. tostring(i_stack_count))
+	BuffManager:SetBuffCount( u_self, "modifier_Q1_20_attack_speed", particle_function, i_stack_count )
 
 end
 
