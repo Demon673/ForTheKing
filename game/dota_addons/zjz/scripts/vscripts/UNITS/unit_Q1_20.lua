@@ -63,18 +63,13 @@ end
 ---------- Initialize Function ----------
 
 local brain_inititlize = function( u_unit )
-	local brain = {}
-	brain.unit = u_unit
-	u_unit.brain = brain
+	brain = AIManager:InitBrain( u_unit )
 
-	brain.action_function = {}
 	brain.action_function["AttackOthers"] = brain_OnAttackOthers
 	brain.action_function["Attacked"] = brain_OnAttacked
 	brain.action_function["TakenDamage"] = brain_OnTakenDamage
 	brain.action_function["HealthRegain"] = brain_OnHealthRegain
-	brain.action_function.brain = brain
 
-	brain.order_function = {}
 	brain.order_function["Heal"] = brain_OnGetOrderHeal
 	brain.order_function["Concentrate"] = brain_OnGetOrderConcentrate
 	brain.order_function["AttackBuff"] = brain_OnGetOrderAttackBuff
@@ -83,16 +78,11 @@ local brain_inititlize = function( u_unit )
 	brain.order_function["Kill"] = brain_OnGetOrderKill
 	brain.order_function["KillStart"] = brain_OnGetOrderKillStart
 	brain.order_function["LastHit"] = brain_OnGetOrderLastHit
-	brain.order_function.brain = brain
 
-	brain.criticle_function = {}
 	brain.criticle_function[1] = criticle
-	brain.criticle_function.brain = brain
 
-	brain.skill = {}
-	brain.skill[1] = AIManager:AddSkill( "Criticle when low health", brain.skill, 0.0, 7.0, skill_01_cast )
-	brain.skill[2] = AIManager:AddSkill( "AttackSpeed when low health", brain.skill, 0.0, 0.0, skill_02_passive )
-	brain.skill.brain = brain
+	brain.skills[1] = AIManager:AddSkill( "Criticle when low health", brain.skills, 0.0, 7.0, skill_01_cast )
+	brain.skills[2] = AIManager:AddSkill( "AttackSpeed when low health", brain.skills, 0.0, 0.0, skill_02_passive )
 
 	AbilityManager:AddAndSet( u_unit, "listener_OnHealthRegain" )
 

@@ -126,12 +126,10 @@ function UnitManager:CreateUnitByBuilding( u_building )
     local init_function = nil
 
     if (AIManager.AItable[s_unit_type] == true) then
-        init_function = require(s_file_name)
+        AIManager:AddBrain( u_unit, s_file_name )
     else
-        init_function = require("UNITS/default")
+        AIManager:AddBrain( u_unit, "UNITS/default" )
     end
-    
-    init_function(u_unit)
 
     return u_unit
 end
@@ -143,6 +141,55 @@ if AIManager == nil then
     AIManager.AItable["Q1_00"] = true
     AIManager.AItable["Q1_10"] = true
     AIManager.AItable["Q1_20"] = true
+end
+
+function AIManager:AddBrain( u_unit, s_file_name )
+    if (AIManager:HasBrain( u_unit ) == false) then
+        init_function = require(s_file_name)
+        init_function(u_unit)
+        return true
+    else
+        return false
+    end
+end
+
+function AIManager:InitBrain( u_unit )
+
+    if AIManager:HasBrain( u_unit ) then
+        brain = u_unit.brain
+    else
+        u_unit.brain = {}
+        brain = u_unit.brain
+    end
+
+    brain.unit = u_unit
+
+    if (brain.action_function == nil) then
+        brain.action_function = {}
+        brain.action_function.brain = brain
+    end
+    if (brain.order_function == nil) then
+        brain.order_function = {}
+        brain.order_function.brain = brain
+    end
+    if (brain.criticle_function == nil) then
+        brain.criticle_function = {}
+        brain.criticle_function.brain = brain
+    end
+    if (brain.skills == nil) then
+        brain.skills = {}
+        brain.skills.brain = brain
+    end
+    if (brain.buffs == nil) then
+        brain.buffs = {}
+        brain.buffs.brain = brain
+    end
+    if (brain.auras == nil) then
+        brain.auras = {}
+        brain.auras.brain = brain
+    end
+
+    return brain
 end
 
 function AIManager:HasBrain( u_unit )
@@ -250,15 +297,111 @@ function AIManager:IsSkillAble( t_skill )
 
 end
 
+if ModifierManager == nil then
+    ModifierManager = {}
+end
 
+function BuffManager:AddBuff( u_unit, s_modifier, particle_function, b_stick ) -- particle_function 要return粒子特效的ID
+
+    if (AIManager:HasBrain( u_unit ) == false) then
+        return false
+    end
+
+    brain = u_unit.brain
+
+    if (brain.buffs == nil) then
+        return false
+    end
+
+    if (brain.buffs[s_modifier] == nil) then
+        t_buff_type = {}
+        t_buff_type.buffs = brain.buffs
+        brain.buffs[s_modifier] = t_buff_type
+    else
+        t_buff_type == brain.buffs[s_modifier]
+    end
+
+    if (#t_buff_type == 0) then
+        AbilityManager:GetBuffRegister( u_self ):ApplyDataDrivenModifier( u_self, u_self, s_modifier, nil )
+        t_buff = {}
+        table.insert(t_buff_type, t_buff)
+        t_buff.particle = particle_function(u_unit)
+
+        return t_buff
+    else
+        if (b_stick) then
+            t_buff = {}
+            table.insert(t_buff_type, t_buff)
+            t_buff.particle = particle_function(u_unit)
+            i_stack_count = #t_buff_type
+            u_self:SetModifierStackCount(s_modifier, u_self, i_stack_count)
+
+            return t_buff
+        else
+            return false
+        end
+    end
+
+end
+
+function BuffManager:RemoveBuff( u_unit, s_modifier )
+
+    if (AIManager:HasBrain( u_unit ) == false) then
+        return false
+    end
+
+    brain = u_unit.brain
+
+    if (brain.buffs == nil) then
+        return false
+    end
+
+    if (brain.buffs[s_modifier] == nil) then
+        return false
+    end
+
+    i_length = #brain.buffs[s_modifier]
+
+    if (i_length == 0) then
+        return false
+    end
+
+    t_buff = brain.buffs[s_modifier][i_length]
+    ParticleManager:DestroyParticle(t_buff.particle , true)
+    table.remove(brain.buffs[s_modifier], i_length)
+
+    return true
+
+end
+
+function BuffManager:SetBuffCount( u_unit, s_modifier, particle_function, i_stack_count )
+
+    if (AIManager:HasBrain( u_unit ) == false) then
+        return false
+    end
+
+    brain = u_unit.brain
+
+    if (brain.buffs == nil) then
+        return false
+    end
+
+    if (brain.buffs[s_modifier] == nil) then
+        return false
+    end
+
+    while (#brain.buffs[s_modifier] > i_stack_count) do
+        BuffManager:RemoveBuff( u_unit, s_modifier )
+    end
+
+    while (#brain.buffs[s_modifier] < i_stack_count) do
+        BuffManager:AddBuff( u_unit, s_modifier, particle_function, true )
+    end
+
+    return true
+
+end
 
 function listener_OnHealthRegain(keys)
-    --[[
-    print("UnitManager:HealthListener -- Listen to health")
-    for k,v in pairs(keys) do
-        print(tostring(k) .. " -- " .. tostring(v))
-    end
-    ]]--
-
     AIManager:SendAction( keys.caster, keys.caster, 0, "HealthRegain" )
 end
