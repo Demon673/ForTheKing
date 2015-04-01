@@ -50,7 +50,8 @@ function RoundThinker()
 			local Farmer = PlayerS[pid].FarmerNum
 			local Score = PlayerS[pid].Score
 			local Income = PlayerS[pid].Income
-			local Portal_point = PlayerS[pid].Portal:GetAbsOrigin() 
+			--local build_point_ent =Entities:FindByName(nil, "player_"..tostring(pid).."_farmer_1")  
+			local Portal_point = Entities:FindByName(nil,"portal"..tostring(pid+1)):GetAbsOrigin() 
 -----------------------设置售价为半价----------------------------------
 			for __, newb in pairs( PlayerS[pid].NewBuild ) do
 
@@ -74,9 +75,9 @@ function RoundThinker()
 
 				FindClearSpaceForUnit(newh, Portal_point, true)  --完成传送
 				if pid <= 3 then
-	            	local OrderPoint=Vector(Portal_point.x+8000 , Portal_point.y,Portal_point.z)
+	            	local OrderPoint=Vector(Portal_point.x+8500 , Portal_point.y,Portal_point.z)
 	        	else
-	        		local OrderPoint=Vector(Portal_point.x-8000 , Portal_point.y,Portal_point.z)
+	        		local OrderPoint=Vector(Portal_point.x-8500 , Portal_point.y,Portal_point.z)
 	        	end
 
 	            --trigger.activator:MoveToPositionAggressive(point2)
@@ -96,8 +97,8 @@ function RoundThinker()
 --------------------------冲锋------------------------------------------
 				
 
-				local build_point_ent =Entities:FindByName(nil, "player_"..tostring(pid).."_farmer_1")  
-				local build_table = Entities:FindAllByClassnameWithin("npc_dota_creature", build_point_ent:GetAbsOrigin() , 3000)
+				
+				local build_table = Entities:FindAllByClassnameWithin("npc_dota_creature", Portal_point , 3000)
 						--ShowCustomHeaderMessage("#Arouse", pid, pid, 5)--冲锋号令  多次提示
 				for _,build in pairs(build_table) do
 					if IsValidEntity(build) then
@@ -105,13 +106,13 @@ function RoundThinker()
 
 							--if string.sub( build:GetUnitName(), 1, 9 ) == "npc_build"  then
 							if build:HasAbility("build_base") then
-
 								CFunit = UnitManager:CreateUnitByBuilding( build )
 							end
 						end
 					end
 				end
-
+		end
+	
 --------------------------护卫队------------------------------------------
 			if RoundThinker_wave <=100 then
 				for left = 1,3 do --左边护卫队
@@ -177,7 +178,11 @@ function RoundThinker()
 				end
 				
 			end
-		end
+
+
+
+
+
 	end
 
 

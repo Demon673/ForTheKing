@@ -128,9 +128,10 @@ function order_portal_player (trigger)
             local unit = trigger.activator
             local player = unit:GetPlayerOwner()
             --if player ~= nil then
-                local pid = player:GetPlayerID() 
+                local pid = unit:GetPlayerOwnerID()  
+
             --end
-            print(player)
+            --print(player)
             local n = pid + 6
             print("n =  "..n)
             local ent = Entities:FindByName(nil,    "portal"..tostring(n))
@@ -166,10 +167,9 @@ function order_portal_player2 (trigger)
 
         if nt ==3 then
             local unit = trigger.activator
-            local player = unit.Player
-            if player == nil then return false end
-            local pid = player:GetPlayerID() 
-
+            --local player = unit.Player
+            --if player == nil then return false end
+            local pid = unit:GetPlayerOwnerID() 
             print("com2")
             local n = pid - 4
             print("n =  "..n)

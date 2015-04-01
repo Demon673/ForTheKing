@@ -26,9 +26,7 @@ function playerstarts:playertable()
 
         local n = i + 1
 
-        if PlayerS[i] == nil then
-            PlayerS[i] = {}
-        end      
+    
                          --设置传送门马甲
         if i <= 3 then
             local left_p = Entities:FindByName(nil,"portal"..tostring(n))
@@ -50,9 +48,7 @@ end
 function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函数
 
     if ((i~=4) and (i~=8)) then
-        if PlayerS[i] == nil then
-            PlayerS[i] = {}
-        end
+
         --print("fst playerID is "..i)
                   --local player = PlayerResource:GetPlayer(i)  
         local player = hero:GetOwner() 
@@ -87,7 +83,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
 
 
 
-        if player ~= nil then
+        if player then
             local ent =  Entities:FindAllByName("player"..tostring(i+1)) --这里返回一个表
             --print("Spawn BuildBase Done")
             PlayerS[i].BuildBase = {}                                                              --设置初始的地基
@@ -106,7 +102,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
                 buildbase:SetControllableByPlayer(i, true)
                 --print(buildbase:GetPlayerOwnerID() )
 
-                buildbase.Player = player --设置地基的player
+                --buildbase.Player = player --设置地基的player
                 buildbase.Score = 0 -- 兵力提升值
                 buildbase.Sale = 0 -- 贩卖后退还金额
                 buildbase.Food = 0

@@ -490,7 +490,7 @@
     "npc_king_left_LC"
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
-    "Model"                     "models/heroes/chen/chen.mdl"   // 模型
+    "Model"                     "models/heroes/chen/chen.vmdl"   // 模型
     "ModelScale"                "2.4" //模型尺寸
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程
     "AttackDamageMin"           "100"                         // 最小伤害
@@ -632,6 +632,8 @@
                 }
     }
 
+    "ConsideredHero" "1" //血条和小地图
+
 }
 
 
@@ -642,7 +644,7 @@
     "npc_king_right_LC"
 {
     "BaseClass"                 "npc_dota_creature"     // 单位继承的类，这个类有很多，一般我们用npc_dota_creature
-    "Model"                     "models/heroes/abaddon/abaddon.mdl"   // 模型
+    "Model"                     "models/heroes/abaddon/abaddon.vmdl"   // 模型
     "ModelScale"                "2.1" //模型尺寸
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   //攻击类型 "NO_ATTACK"无  "MELEE_ATTACK" 近战 "RANGED_ATTACK" 远程
     "AttackDamageMin"           "100"                         // 最小伤害
@@ -667,7 +669,7 @@
     "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
-    "SoundSet"                  "hero_Crystal"      // 音效，
+    "SoundSet"                  ""      // 音效，
     "Level"                     "10"                 // 单位等级
     "IsAncient"                 "1"                 // 是否是远古生物，0代表不是
     "IsNeutralUnitType"         "0"                 // 是否是中立单位
@@ -736,7 +738,7 @@
     //Inventory
     "HasInventory"              "0"         // 是否有物品栏
     //"vscripts"                    "WorldBoss_WuLuo.lua"
-
+    "ConsideredHero" "1" //血条和小地图
 
     "Creature"
     {
@@ -766,6 +768,8 @@
 
                 }
     }
+
+
 
 }
 
