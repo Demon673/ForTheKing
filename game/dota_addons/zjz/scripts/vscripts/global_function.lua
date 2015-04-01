@@ -104,9 +104,9 @@ function UnitManager:CreateUnitByBuilding( u_building )
     local v_order = nil
 
     if i_playerID <= 3 then
-        v_order = Vector( 8000, 0, 0 )
+        v_order = Vector( 8200, 0, 0 )
     else
-        v_order = Vector( -8000, 0, 0 )
+        v_order = Vector( -8200, 0, 0 )
     end
 
     local t_order = 

@@ -535,7 +535,6 @@ function CbtfGameMode:OnGameRulesStateChange( keys )
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         print("Player game begin")  --玩家开始游戏
-		--chushihua:SetConKing()
 	        
     end
 end
@@ -556,10 +555,10 @@ function CbtfGameMode:OnNPCSpawned( keys )
 	if trigger_unit:IsRealHero() ==true then
 		print("One hero has entered the game.")
 		local player = trigger_unit:GetOwner() 
-		trigger_unit.Player=player
+		--trigger_unit.Player=player
 		local pid = player:GetPlayerID()
 		print("The player ID of that hero is " .. tostring(pid))
-		print(tostring(player))
+
 		if player.Init == nil then
 			playerstarts:init(pid,trigger_unit) 
 		end
@@ -612,9 +611,10 @@ end
 
 --循环计时器 循环检查当前游戏规则
 function CbtfGameMode:OnThink()  
-			self.UpdateScoreboard()
+			
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then			
 			RoundThinker()
+			self.UpdateScoreboard()
 		--print("is runing")
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
@@ -701,13 +701,11 @@ function CbtfGameMode:OnPlayerConnectFull(keys)
 
     if PlayerS[PlayerID] == nil then
         PlayerS[PlayerID] = {}
-    end
+        PlayerS[PlayerID].Index = keys.index + 1
+	    table.insert( AllPlayers, PlayerID)                                                         --加入全部玩家队伍
 
-    PlayerS[PlayerID].Index = keys.index + 1
-    table.insert( AllPlayers, PlayerID)                                                         --加入全部玩家队伍
-
-    local start_ent = Entities:FindByName(nil,  "startpoint"..tostring(PlayerID)) or Entities:FindByName(nil,  "portal"..tostring(PlayerID+1)) 
-    local start_point = start_ent:GetAbsOrigin() 
+	    local start_ent = Entities:FindByName(nil,  "startpoint"..tostring(PlayerID)) or Entities:FindByName(nil,  "portal"..tostring(PlayerID+1)) 
+   		local start_point = start_ent:GetAbsOrigin() 
                                       
         PlayerS[PlayerID].StartPoint = start_point  
 
@@ -731,15 +729,16 @@ function CbtfGameMode:OnPlayerConnectFull(keys)
         PlayerS[PlayerID].ItemNum = 1 		                                                                 --可拥有道具数量
         PlayerS[PlayerID].Abhere = false                                                                     --固守状态
 
-
+	end
 
 end
 
 
 --玩家重连
 function CbtfGameMode:OnPlayerReconnected(keys)
-	local nReconnectedPlayerID = event.PlayerID
-	print("Reconnected Player is "..event.PlayerID)
+	DeepPrintTable(keys)    --详细打印传递进来的表
+	local nReconnectedPlayerID = keys.PlayerID
+	print("Reconnected Player is "..keys.PlayerID)
 
 	PlayerResource:SetCameraTarget(nReconnectedPlayerID, nil) --解锁镜头 	
 
