@@ -23,14 +23,15 @@ AllTypes["Y"] = { "Q5_00" }
 function playerstarts:playertable()
 
     for i = 0,8,1 do
-
+    --for _, i in pairs( AllPlayers ) do
         local n = i + 1
-
-    
-                         --设置传送门马甲
+            if PlayerS[i]== nil then
+                PlayerS[i]={}
+            end                         --设置传送门马甲
         if i <= 3 then
             local left_p = Entities:FindByName(nil,"portal"..tostring(n))
             local por_left = CreateUnitByName("npc_dummy_portal",left_p:GetAbsOrigin(),true, nil, nil,2)
+
             PlayerS[i].Portal = por_left
         end
 

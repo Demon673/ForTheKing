@@ -51,7 +51,7 @@ function RoundThinker()
 			local Score = PlayerS[pid].Score
 			local Income = PlayerS[pid].Income
 			--local build_point_ent =Entities:FindByName(nil, "player_"..tostring(pid).."_farmer_1")  
-			local Portal_point = Entities:FindByName(nil,"portal"..tostring(pid+1)):GetAbsOrigin() 
+			local Portal_point = PlayerS[pid].StartPoint
 -----------------------设置售价为半价----------------------------------
 			for __, newb in pairs( PlayerS[pid].NewBuild ) do
 
