@@ -22,15 +22,12 @@ local criticle = function( u_self, u_target )
 	local f_random = RandomFloat( 0, 100 )
 	if ( f_random < 20 ) then
 
-		--[[
-		print("Critical Strike !!")
-		local ptc_effect = ParticleManager:CreateParticle(
-				"particles/units/heroes/hero_rubick/rubick_base_attack_launch.vpcf",
-				PATTACH_ABSORIGIN,
-				u_target
-			)
-		ParticleManager:SetParticleControlEnt(ptc_effect, 0, u_target, 5, "attach_hitloc", u_target:GetOrigin(), true)
-		]]--
+		local i_particle = ParticleManager:CreateParticle(
+								"particles/base_attacks/ranged_badguy_explosion.vpcf",
+							 	PATTACH_CUSTOMORIGIN_FOLLOW,
+								u_target
+							 )
+		ParticleManager:SetParticleControlEnt(i_particle, 3, u_target, 5, "attach_hitloc", u_target:GetOrigin(), true)
 
 		return 2
 	else
@@ -39,24 +36,16 @@ local criticle = function( u_self, u_target )
 end
 
 local brain_inititlize = function( u_unit )
-	local brain = {}
-	brain.unit = u_unit
-	u_unit.brain = brain
+	brain = AIManager:InitBrain( u_unit )
 
-	brain.action_function = {}
 	brain.action_function["AttackOthers"] = brain_OnAttackOthers
-	brain.action_function.brain = brain
 
-	brain.order_function = {}
 	brain.order_function["Concentrate"] = brain_OnGetOrderConcentrate
-	brain.order_function.brain = brain
 
-	brain.criticle_function = {}
 	brain.criticle_function[1] = criticle
-	brain.criticle_function.brain = brain
 
-	brain.skill = {}
-	brain.skill.brain = brain
+	brain.skills = {}
+	brain.skills.brain = brain
 
 end
 

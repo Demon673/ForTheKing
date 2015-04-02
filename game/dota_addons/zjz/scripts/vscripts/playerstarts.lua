@@ -17,7 +17,7 @@ AllTypes["W"] = { "W1_00","W2_00","W3_00","W4_00","W5_00", }
 AllTypes["E"] = { "E1_00","E2_00","E3_00","E4_00","E5_00","E6_00",}
 AllTypes["R"] = { "Q3_00" }
 AllTypes["T"] = { "Q4_00" }
-AllTypes["Y"] = { "Q5_00" }
+AllTypes["Y"] = { "Q1_00" }
 
 
 function playerstarts:playertable()

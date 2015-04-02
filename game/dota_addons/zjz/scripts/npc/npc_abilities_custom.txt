@@ -3696,41 +3696,17 @@
         {
             "modifier_Q1_20_attack_speed"
             {
-                /*
-                "EffectName"    "particles/econ/courier/courier_tinkbot/courier_tinkbot_flying_ambient_b.vpcf"
-                "EffectAttachType"      "follow_origin"
-                */
-
-                /*
-                "EffectName"    "particles/econ/courier/courier_tinkbot/courier_tinkbot_flying_ambient_b.vpcf"
-                "EffectAttachType"  "start_at_customorigin"
-                "Target"                           "CASTER"
-                "ControlPointEntities"
-                {
-                    "CASTER"                "attach_hitloc"        //CP0
-                    "CASTER"                "attach_hitloc"        //CP1
-                    "CASTER"                "attach_hitloc"        //CP2
-                    "CASTER"                "attach_hitloc"        //CP3
-                }
-                */
-
-
-                "EffectName"                "particles/units/heroes/hero_ursa/ursa_overpower_buff.vpcf"
-                "EffectAttachType"  "start_at_customorigin"
-                "Target"                           "CASTER"
-                "ControlPointEntities"
-                {
-                    "CASTER"                "attach_head"        //CP0 
-                    "CASTER"                "attach_hitloc"        //CP1
-                    "CASTER"                "attach_hitloc"        //CP2
-                    "CASTER"                "attach_hitloc"        //CP3
-                }
-
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "8"
                 }
             }
+
+            "modifier_Q1_20_criticle"
+            {
+            
+            }
+
         }
     }
 
