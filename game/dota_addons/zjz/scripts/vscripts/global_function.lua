@@ -259,7 +259,11 @@ function AIManager:SendOrder( u_sender, u_target, f_number, s_order )
     end
 end
 
-function AIManager:AddSkill( s_name, t_skill_table, f_mana_cost, f_cool_down, fun )
+if SkillManager == nil then
+    SkillManager = {}
+end
+
+function SkillManager:AddSkill( s_name, t_skill_table, f_mana_cost, f_cool_down, fun )
     local t_skill = {}
     t_skill.name = s_name
     t_skill.cooldown = f_cool_down
@@ -271,7 +275,7 @@ function AIManager:AddSkill( s_name, t_skill_table, f_mana_cost, f_cool_down, fu
     return t_skill
 end
 
-function AIManager:IsSkillAble( t_skill )
+function SkillManager:IsAble( t_skill )
 
     if (t_skill.cooldown < 0.0) and (t_skill.lasttime > 0.0) then -- 检查技能是否只能用一次
         print("AIManager:IsSkillAble -- [once]!")
@@ -297,11 +301,49 @@ function AIManager:IsSkillAble( t_skill )
 
 end
 
+function SkillManager:SetCast( t_skill )
+
+    t_skill.lasttime = GameRules:GetDOTATime(false, false)
+
+    local u_unit = t_skill.table.brain.unit
+    u_unit:SetMana(u_unit:GetMana() - t_skill.manacost)
+
+end
+
 if BuffManager == nil then
     BuffManager = {}
 end
 
-function BuffManager:AddBuff( u_unit, s_modifier, particle_function, b_stick ) -- particle_function 要return粒子特效的ID
+function BuffManager:GetCount( u_unit, s_modifier ) -- particle_function 要return粒子特效的ID
+
+    if (u_unit == nil) then
+        return false
+    end
+
+    if (AIManager:HasBrain( u_unit ) == false) then
+        return false
+    end
+
+    brain = u_unit.brain
+
+    if (brain.buffs == nil) then
+        return false
+    end
+
+    if (brain.buffs[s_modifier] == nil) then
+        return 0
+    else
+        t_buff_type = brain.buffs[s_modifier]
+        return #t_buff_type
+    end
+
+end
+
+function BuffManager:Add( u_unit, s_modifier, particle_function, b_stick ) -- particle_function 要return粒子特效的ID
+
+    if (u_unit == nil) then
+        return false
+    end
 
     if (AIManager:HasBrain( u_unit ) == false) then
         return false
@@ -344,7 +386,11 @@ function BuffManager:AddBuff( u_unit, s_modifier, particle_function, b_stick ) -
 
 end
 
-function BuffManager:RemoveBuff( u_unit, s_modifier )
+function BuffManager:Remove( u_unit, s_modifier )
+
+    if (u_unit == nil) then
+        return false
+    end
 
     if (AIManager:HasBrain( u_unit ) == false) then
         return false
@@ -370,11 +416,19 @@ function BuffManager:RemoveBuff( u_unit, s_modifier )
     ParticleManager:DestroyParticle(t_buff.particle , false)
     table.remove(brain.buffs[s_modifier], i_length)
 
+    if (#brain.buffs[s_modifier] == 0) then
+        u_unit:RemoveModifierByName(s_modifier)
+    end
+
     return true
 
 end
 
-function BuffManager:SetBuffCount( u_unit, s_modifier, particle_function, i_stack_count )
+function BuffManager:SetCount( u_unit, s_modifier, particle_function, i_stack_count )
+
+    if (u_unit == nil) then
+        return false
+    end
 
     if (AIManager:HasBrain( u_unit ) == false) then
         return false
@@ -395,13 +449,11 @@ function BuffManager:SetBuffCount( u_unit, s_modifier, particle_function, i_stac
     end
 
     while (#t_buff_type > i_stack_count) do
-        print("BuffManager:SetBuffCount: Remove")
-        BuffManager:RemoveBuff( u_unit, s_modifier )
+        BuffManager:Remove( u_unit, s_modifier )
     end
 
     while (#t_buff_type < i_stack_count) do
-        print("BuffManager:SetBuffCount: Add")
-        BuffManager:AddBuff( u_unit, s_modifier, particle_function, true )
+        BuffManager:Add( u_unit, s_modifier, particle_function, true )
     end
 
     return true

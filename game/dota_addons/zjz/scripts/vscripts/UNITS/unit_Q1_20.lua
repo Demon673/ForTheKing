@@ -1,5 +1,10 @@
 local brain_OnAttackOthers = function( u_self, u_target, f_damage )
 	AIManager:SendOrder( u_self, u_target, 1, "LastHit" )
+
+	if (SkillManager:IsAble(brain.skills[1])) then
+		SkillManager:SetCast( brain.skills[1] )
+		brain.skills[1].fun( u_self )
+	end
 end
 
 local brain_OnAttacked = function( u_self, u_attacker, f_damage )
@@ -34,7 +39,20 @@ end
 
 local criticle = function( u_self, u_target )
 	local f_random = RandomFloat( 0, 100 )
-	if ( f_random < 20 ) then
+	if ( BuffManager:GetCount( u_self, "modifier_Q1_20_criticle" ) > 0 ) then
+		f_chance = 105
+	else
+		f_chance = 20
+	end
+	if ( f_random < f_chance ) then
+
+		local i_particle = ParticleManager:CreateParticle(
+								"particles/base_attacks/ranged_badguy_explosion.vpcf",
+							 	PATTACH_CUSTOMORIGIN_FOLLOW,
+								u_target
+							 )
+		ParticleManager:SetParticleControlEnt(i_particle, 3, u_target, 5, "attach_hitloc", u_target:GetOrigin(), true)
+
 		return 2
 	else
 		return 1
@@ -43,11 +61,32 @@ end
 
 ---------- Skill Table ----------
 
-local skill_01_cast = function( u_self, u_target )
-	
+local skill_01_cast = function( u_self )
+
+	local particle_function = function( u_unit )
+		local i_particle = ParticleManager:CreateParticle(
+								"particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf",
+							 	PATTACH_ROOTBONE_FOLLOW,
+								u_unit
+							 )
+		ParticleManager:SetParticleControlEnt(i_particle, 3, u_unit, 5, "attach_hitloc", u_unit:GetOrigin(), true) -- CP3
+
+		return i_particle
+	end
+
+	BuffManager:Add( u_self, "modifier_Q1_20_criticle", particle_function, true )
+
+
+	GameRules:GetGameModeEntity():SetContextThink(
+			DoUniqueString("modifier_Q1_20_criticle"),
+			function( )
+				BuffManager:Remove( u_self, "modifier_Q1_20_criticle" )
+			end,	--End Think Function
+			3.0
+		)
 end
 
-local skill_02_passive = function( u_self, u_target )
+local skill_02_passive = function( u_self )
 
 	local particle_function = function( u_unit )
 		local i_particle = ParticleManager:CreateParticle(
@@ -55,7 +94,6 @@ local skill_02_passive = function( u_self, u_target )
 							 	PATTACH_CUSTOMORIGIN_FOLLOW,
 								u_unit
 							 )
-		print("Try to set particle" .. u_unit:GetUnitName())
 		ParticleManager:SetParticleControlEnt(i_particle, 3, u_unit, 5, "attach_hitloc", u_unit:GetOrigin(), true) -- CP3
 
 		return i_particle
@@ -66,7 +104,7 @@ local skill_02_passive = function( u_self, u_target )
 	local f_health_percentage = u_self:GetHealth() / u_self:GetMaxHealth()
 	local i_stack_count = math.floor((1 - f_health_percentage) * 20) + 1
 	print("Calculated to set stack count to " .. tostring(i_stack_count))
-	BuffManager:SetBuffCount( u_self, "modifier_Q1_20_attack_speed", particle_function, i_stack_count )
+	BuffManager:SetCount( u_self, "modifier_Q1_20_attack_speed", particle_function, i_stack_count )
 
 end
 
@@ -91,8 +129,8 @@ local brain_inititlize = function( u_unit )
 
 	brain.criticle_function[1] = criticle
 
-	brain.skills[1] = AIManager:AddSkill( "Criticle when low health", brain.skills, 0.0, 7.0, skill_01_cast )
-	brain.skills[2] = AIManager:AddSkill( "AttackSpeed when low health", brain.skills, 0.0, 0.0, skill_02_passive )
+	brain.skills[1] = SkillManager:AddSkill( "Criticle when low health", brain.skills, 0.0, 7.0, skill_01_cast )
+	brain.skills[2] = SkillManager:AddSkill( "AttackSpeed when low health", brain.skills, 0.0, 0.0, skill_02_passive )
 
 	AbilityManager:AddAndSet( u_unit, "listener_OnHealthRegain" )
 
