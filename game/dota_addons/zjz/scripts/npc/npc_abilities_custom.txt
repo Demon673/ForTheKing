@@ -3681,6 +3681,45 @@
 }
 
 
+"HolyLight"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        "Modifiers"
+        {
+            "modifier_never_dead"
+            {
+                "Passive"        "1"
+                "IsHidden"                "0"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MIN_HEALTH"  "1"
+                }
+                "OnCreated"     //创建时设置4层
+                {
+                    "RunScript" 
+                    {
+                        "ScriptFile"    "scripts/vscripts/UNITS/king.lua"
+                        "Function"      "Ability_holylight_Created" 
+                        "ability"       "HolyLight"
+                    }
+                }
+                "OnTakeDamage"   
+                {
+                    "RunScript" 
+                    {
+                        "ScriptFile"    "scripts/vscripts/UNITS/king.lua"
+                        "Function"      "Ability_holylight" 
+                        "ability"       "HolyLight"
+                    }
+                }
+            }
+        }
+    }
+
+
+
     //====================================================================
     //=================          注册技能Buff          ===================
     //====================================================================

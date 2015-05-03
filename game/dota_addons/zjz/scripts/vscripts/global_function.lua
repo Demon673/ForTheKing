@@ -10,11 +10,17 @@ function BTFGeneral:ShowError(msg, playerid)
 end
 
 
-function BTFGeneral:ToTopBarUI(playerid,IncomeNum,Farmer,TechNum,Score,Arms)
+function BTFGeneral:ToTopBarUI(playerid,IncomeNum,Farmer,TechNum,Score,Arms,Lumber,CurFood,FullFood)
 
-         FireGameEvent('UpdateTopBar', {PID = playerid ,income=IncomeNum, FarmerNum= Farmer,Tech=TechNum,troops= Score,arms=Arms})
+    FireGameEvent('UpdateTopBar', {PID = playerid,income=IncomeNum, FarmerNum= Farmer,Tech=TechNum,troops= Score,arms=Arms,source=Lumber,curPopulation=CurFood,Population=FullFood})
 
 end
+function BTFGeneral:ToKingBarUI(LeftHP,RightHP)
+
+    FireGameEvent('UpdateTopBar', {health1=LeftHP,health2=RightHP})
+
+end
+
 
 if PlayerCalc == nil then
     PlayerCalc = class({})

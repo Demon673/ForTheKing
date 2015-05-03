@@ -329,7 +329,7 @@
     "StatusHealth"              "200"       // 基础生命值
     "StatusHealthRegen"         ""         // 生命恢复速度
     "StatusMana"                "660"         // 基础魔法值
-    "StatusManaRegen"           "500"         // 魔法恢复速度
+    "StatusManaRegen"           "300"         // 魔法恢复速度
      
     //Ability
     //----------------------------------------------------------------
@@ -417,7 +417,7 @@
     "StatusHealth"              "200"       // 基础生命值
     "StatusHealthRegen"         ""         // 生命恢复速度
     "StatusMana"                "660"         // 基础魔法值
-    "StatusManaRegen"           "500"         // 魔法恢复速度
+    "StatusManaRegen"           "300"         // 魔法恢复速度
      
     //Ability
     //----------------------------------------------------------------
@@ -531,7 +531,7 @@
     "Ability2"                  ""          // 技能 2. 点目标
     "Ability3"                  ""          // 技能 3.
     "Ability4"                  ""          // 技能 4.
-    "Ability5"                  ""          // 技能 5.
+    "Ability5"                  "HolyLight"          // 技能 5.
     "Ability6"                  "AL"          // 技能 6
     "Ability7"                  "DC"          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
     "Ability8"                  "AandD"          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
@@ -685,7 +685,7 @@
     "Ability2"                  ""          // 技能 2. 点目标
     "Ability3"                  ""          // 技能 3.
     "Ability4"                  ""          // 技能 4.
-    "Ability5"                  ""          // 技能 5.
+    "Ability5"                  "HolyLight"          // 技能 5.
     "Ability6"                  "AL"          // 技能 6
     "Ability7"                  "DC"          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
     "Ability8"                  "AandD"         // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
@@ -2331,6 +2331,7 @@
     //Inventory
     "HasInventory"              "0"         // 是否有物品栏
     //"vscripts"                    "WorldBoss_WuLuo.lua"
+
 
 }
 
@@ -7972,12 +7973,84 @@
 //    TEST 
 //======================================================================================
 
+"shield_modifier" 
+{     
+    "Passive" "1"     
+    "IsHidden" "1"     
+    "Properties"
+    {
+        "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+    }     
+    "OnCreated"
+    {
+        "Random"
+        {
+            "Chance" "%block_chance"
+            "OnSuccess"
+            {
+                "ApplyModifier"
+                {          
+                    "Target" "CASTER"
+                    "ModifierName" "block_modifier"
+                }             
+            }         
+        }     
+    }     
 
+        "OnAttacked"     
+            {         
+                "Random"         
+                    {             
+                        "Chance" "%block_chance"             
+                        "OnSuccess"             
+                            {                 
+                                "ApplyModifier"
+                                    {                     
+                                        "Target" "CASTER"
+                                        "ModifierName" "block_modifier"
+                                    }             
+                            }             
+                        "OnFailure"             
+                            {                 
+                                "RemoveModifier"
+                                    {
+                                        "Target" "CASTER"
+                                        "ModifierName" "block_modifier"
+                                    }             
+                            }         
+                    }
+            }
+}  
 
+    "block_modifier" 
+        {     
+            "IsBuff" "1"
+            "IsHidden" "1"     
+            "Properties"     
+                {         
+                    "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "%damage_blocked"
+                }     
+            "OnAttacked"     
+                {         
+                    "RemoveModifier"         
+                        {             
+                            "Target" "CASTER"             
+                            "ModifierName" "block_modifier"         
+                        }    
+                } 
+        }
 
 
 
 
 }
+
+
+
+
+
+
+
+
 
 

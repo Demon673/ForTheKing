@@ -12,7 +12,7 @@ jointeam bad
 dota_create_unit 
 -createhero npc_unit_Q1_0_BZ
 -createhero npc_nature_10_PW enemy
--createhero npc_unit_W1_25_SW enemy
+-createhero npc_unit_W1_21_SW enemy
 
 dota_create_unit npc_nature_10_PW
 dota_create_unit npc_unit_hum10_BZ

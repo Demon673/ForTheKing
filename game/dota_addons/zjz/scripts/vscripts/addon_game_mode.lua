@@ -639,6 +639,15 @@ function CbtfGameMode:UpdateScoreboard()
 	UTIL_MessageTextAll( "#ScoreboardSeparator", 255, 255, 255, 255 )
 	--for _, player in pairs( AllPlayers ) do
 		--local pid = player:GetPlayerID() 
+	--if king_left  and king_right then
+		local leftHP = king_left:GetHealthPercent()
+		local rightHP = king_right:GetHealthPercent()
+
+		UTIL_MessageTextAll_WithContext( "#ScoreboardleftHP", 255, 255, 255, 255, { value = leftHP } )
+		UTIL_MessageTextAll_WithContext( "#ScoreboardrightHP", 255, 255, 255, 255, { value = rightHP } )
+		UTIL_MessageTextAll( "#ScoreboardSeparator", 255, 255, 255, 255 )
+		--BTFGeneral:ToKingBarUI(leftHP,rightHP)
+	--end
 	for _, pid in pairs( AllPlayers ) do
  
 		--print("The gotten pid in AllPlayers is " .. tostring(pid))
@@ -652,7 +661,8 @@ function CbtfGameMode:UpdateScoreboard()
 		local ScoreNum = PlayerS[pid].Score
 		local IncomeNum = PlayerS[pid].Income
 		local ArmsNum = PlayerS[pid].Arms
-		BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum)
+		--BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum,LumberNum,CurFoodNum,FullFoodNum)
+FireGameEvent('UpdateTopBar', {PID = pid,income=IncomeNum, FarmerNum=FarmerNum,Tech=TechNum,troops= ScoreNum,arms=ArmsNum,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP,health2=rightHP})
 	--print("player  "..pid.."lum is " .. LumberNum)
 	local player = PlayerCalc:GetPlayerByPosition(pid)
 	--pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
@@ -676,14 +686,7 @@ function CbtfGameMode:UpdateScoreboard()
 		--顶部UI
 	end
 
-	if king_left ~= nil and king_right~= nil then
-		local leftHP = king_left:GetHealthPercent()
-		local rightHP = king_right:GetHealthPercent()
 
-		UTIL_MessageTextAll_WithContext( "#ScoreboardleftHP", 255, 255, 255, 255, { value = leftHP } )
-		UTIL_MessageTextAll_WithContext( "#ScoreboardrightHP", 255, 255, 255, 255, { value = rightHP } )
-		UTIL_MessageTextAll( "#ScoreboardSeparator", 255, 255, 255, 255 )
-	end
 
 
 end	
