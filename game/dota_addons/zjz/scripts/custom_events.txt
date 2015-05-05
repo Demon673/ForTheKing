@@ -21,15 +21,16 @@
 		"Tech"  	"long"
 		"troops"	"long"
 		"arms"	    "long"
+	}
+
+	"UpdateInfoPanel2"
+	{
+		"PID"			"short" 
 		"health1"	"float" 
 		"health2"	"float"
 		"source"	"long"//水晶
 		"curPopulation""long"//当前人口
 		"Population"	"long"//总人口
-
-
-
 	}
-
 
 }

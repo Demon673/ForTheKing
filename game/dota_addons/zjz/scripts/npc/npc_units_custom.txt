@@ -834,7 +834,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.3"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -867,8 +867,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -943,7 +943,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.3"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -976,8 +976,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1053,7 +1053,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1086,8 +1086,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1186,7 +1186,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1219,8 +1219,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1309,7 +1309,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1342,8 +1342,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1441,7 +1441,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1474,8 +1474,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1576,7 +1576,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1609,8 +1609,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1709,7 +1709,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1742,8 +1742,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1843,7 +1843,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -1876,8 +1876,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -1978,7 +1978,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2011,8 +2011,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2082,7 +2082,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2115,8 +2115,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2185,7 +2185,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2218,8 +2218,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2288,7 +2288,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2321,8 +2321,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2392,7 +2392,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2425,8 +2425,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2517,7 +2517,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2550,8 +2550,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2642,7 +2642,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2675,8 +2675,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2773,7 +2773,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2806,8 +2806,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -2904,7 +2904,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -2937,8 +2937,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3035,7 +3035,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3068,8 +3068,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3166,7 +3166,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3199,8 +3199,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3297,7 +3297,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3330,8 +3330,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3425,7 +3425,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3458,8 +3458,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3558,7 +3558,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.3"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3591,8 +3591,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3689,7 +3689,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.3"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3722,8 +3722,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3822,7 +3822,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.7"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3855,8 +3855,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -3953,7 +3953,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.3"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -3986,8 +3986,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4085,7 +4085,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.7"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4118,8 +4118,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4215,7 +4215,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4248,8 +4248,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4351,7 +4351,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4384,8 +4384,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4487,7 +4487,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4520,8 +4520,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4623,7 +4623,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4656,8 +4656,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4763,7 +4763,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4796,8 +4796,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -4903,7 +4903,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -4936,8 +4936,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5043,7 +5043,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5076,8 +5076,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5171,7 +5171,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5204,8 +5204,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5299,7 +5299,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5332,8 +5332,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5427,7 +5427,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5460,8 +5460,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5567,7 +5567,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5600,8 +5600,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5703,7 +5703,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5736,8 +5736,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5844,7 +5844,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -5877,8 +5877,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -5980,7 +5980,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6013,8 +6013,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6111,7 +6111,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6144,8 +6144,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6241,7 +6241,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6274,8 +6274,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6363,7 +6363,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6396,8 +6396,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6470,7 +6470,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6503,8 +6503,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6578,7 +6578,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6611,8 +6611,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6717,7 +6717,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6750,8 +6750,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6856,7 +6856,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -6889,8 +6889,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -6992,7 +6992,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7025,8 +7025,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7128,7 +7128,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7161,8 +7161,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7263,7 +7263,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7296,8 +7296,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7398,7 +7398,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7431,8 +7431,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7533,7 +7533,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7566,8 +7566,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7663,7 +7663,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7696,8 +7696,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7789,7 +7789,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7822,8 +7822,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
@@ -7911,7 +7911,7 @@
     //----------------------------------------------------------------
 
     "AttackAnimationPoint"      "0.5"                      // 攻击前摇
-    "AttackAcquisitionRange"    "1000"                       // 警戒范围
+    "AttackAcquisitionRange"    "1300"                       // 警戒范围
 
 
  
@@ -7944,8 +7944,8 @@
      
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1100"       // 白天视野范围
-    "VisionNighttimeRange"      "1100"       // 夜晚视野范围
+    "VisionDaytimeRange"        "1300"       // 白天视野范围
+    "VisionNighttimeRange"      "1300"       // 夜晚视野范围
      
     // Bots
     //----------------------------------------------------------------
