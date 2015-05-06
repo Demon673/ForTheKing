@@ -2,7 +2,7 @@ RoundThinker_i =0
 RoundThinker_wave = 0
 RoundThinker_next = 0
 RoundThinker_lumber_i = 0
-RoundThinker_OneRound = 100
+RoundThinker_OneRound = 380
 
 
 

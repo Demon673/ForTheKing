@@ -645,9 +645,9 @@ function CbtfGameMode:UpdateScoreboard()
 		local leftHP = king_left:GetHealthPercent()
 		local rightHP = king_right:GetHealthPercent()
 
-		UTIL_MessageTextAll_WithContext( "#ScoreboardleftHP", 255, 255, 255, 255, { value = leftHP } )
-		UTIL_MessageTextAll_WithContext( "#ScoreboardrightHP", 255, 255, 255, 255, { value = rightHP } )
-		UTIL_MessageTextAll( "#ScoreboardSeparator", 255, 255, 255, 255 )
+--		UTIL_MessageTextAll_WithContext( "#ScoreboardleftHP", 255, 255, 255, 255, { value = leftHP } )
+--		UTIL_MessageTextAll_WithContext( "#ScoreboardrightHP", 255, 255, 255, 255, { value = rightHP } )
+--		UTIL_MessageTextAll( "#ScoreboardSeparator", 255, 255, 255, 255 )
 		--BTFGeneral:ToKingBarUI(leftHP,rightHP)
 	--end
 	for _, pid in pairs( AllPlayers ) do
@@ -663,30 +663,37 @@ function CbtfGameMode:UpdateScoreboard()
 		local ScoreNum = PlayerS[pid].Score
 		local IncomeNum = PlayerS[pid].Income
 		local ArmsNum = PlayerS[pid].Arms
+		--print(pid)
 		--BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum,LumberNum,CurFoodNum,FullFoodNum)
+<<<<<<< HEAD
 FireGameEvent('UpdateTopBar', {PID = pid,income=IncomeNum, FarmerNum=FarmerNum,Tech=TechNum,troops= ScoreNum,arms=ArmsNum,})
 	
 FireGameEvent('UpdateInfoPanel2', {PID = pid,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP/100,health2=rightHP/100,level1=LeftLife,level2=RightLife})
+=======
+FireGameEvent('UpdateTopBar', {PID = pid,income=IncomeNum, FarmerNum=FarmerNum,Tech=TechNum,troops= ScoreNum,arms=ArmsNum})
+FireGameEvent('UpdateInfoPanel2', {PID = pid,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP/100,health2=rightHP/100})
+
+>>>>>>> 8065460983762dd17a2c8338d6f732e76e9d8ba9
 	--print("player  "..pid.."lum is " .. LumberNum)
 	local player = PlayerCalc:GetPlayerByPosition(pid)
 	--pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID
 	--print("The pid used to print is " .. tostring(pid))
 	pid_index = PlayerS[pid].Index
 
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardPlayerID", 255, 204, 51, 255, { value = pid_index } ) --test
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardGold", 255, 204, 51, 255, { value = GoldNum } )
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardLumber", 0, 255, 255, 255, { value = LumberNum } )
-	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardCurFood", 255, 177, 102, 255, { value = CurFoodNum})
-	--print(tostring(FullFoodNum))
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardFullFood", 255, 128, 0, 255, { value = FullFoodNum})
-	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardFarmerNum", 51, 255, 153, 255, { value = FarmerNum } )			
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardTech", 0, 255, 92, 255, { value = TechNum } )
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardIncome", 255, 204, 51, 255, { value = IncomeNum } )
-	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
-	UTIL_MessageText_WithContext( pid_index,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
-	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+	--UTIL_MessageText_WithContext( pid_index,"#ScoreboardPlayerID", 255, 204, 51, 255, { value = pid_index } ) --test
+	--UTIL_MessageText_WithContext( pid_index,"#ScoreboardGold", 255, 204, 51, 255, { value = GoldNum } )
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardLumber", 0, 255, 255, 255, { value = LumberNum } )
+--	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardCurFood", 255, 177, 102, 255, { value = CurFoodNum})
+--	--print(tostring(FullFoodNum))
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardFullFood", 255, 128, 0, 255, { value = FullFoodNum})
+--	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardFarmerNum", 51, 255, 153, 255, { value = FarmerNum } )			
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardTech", 0, 255, 92, 255, { value = TechNum } )
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardIncome", 255, 204, 51, 255, { value = IncomeNum } )
+--	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
+--	UTIL_MessageText_WithContext( pid_index,"#ScoreboardScore", 255, 61, 61, 255, { value = ScoreNum } )
+--	UTIL_MessageText( pid_index,"#ScoreboardSeparator", 255, 255, 255, 255 )
 		--顶部UI
 	end
 
