@@ -10,7 +10,9 @@ end
 
 
 require('require_everything')
-
+require('UNITS/king')
+LeftLife = 3 
+RightLife = 4
 
 -------------------------------------------------------------------------------------------------------------------
 local function PrecacheSound(sound, context )

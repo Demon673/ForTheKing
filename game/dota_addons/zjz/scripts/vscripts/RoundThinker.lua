@@ -4,8 +4,7 @@ RoundThinker_next = 0
 RoundThinker_lumber_i = 0
 RoundThinker_OneRound = 100
 
-LeftLife = 3 
-RightLife = 0
+
 
 function RoundThinker()
 	--if 	RoundThinker_i == nil then
