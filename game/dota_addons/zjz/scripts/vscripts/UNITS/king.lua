@@ -1,3 +1,4 @@
+
 function Ability_holylight_Created(keys) 
 
     for i,v in pairs(keys) do
@@ -23,6 +24,14 @@ function Ability_holylight(keys)
     		keys.caster:SetHealth(keys.caster:GetMaxHealth())
     		keys.caster:SetModifierStackCount('modifier_never_dead',keys.ability,life)
 		end
+        if keys.caster:GetTeamNumber() == 2 then
+            LeftLife = life
+            print("LeftLife is "..LeftLife)
+        else
+            RightLife = life
+            print("RightLife is "..life)
+        end
+
 
 	end
 end
