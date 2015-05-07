@@ -11,8 +11,8 @@ end
 
 require('require_everything')
 require('UNITS/king')
-LeftLife = 3 
-RightLife = 4
+GameRules.LeftLife = 4 
+GameRules.RightLife = 4
 
 -------------------------------------------------------------------------------------------------------------------
 local function PrecacheSound(sound, context )
@@ -668,7 +668,7 @@ function CbtfGameMode:UpdateScoreboard()
 
 FireGameEvent('UpdateTopBar', {PID = pid,income=IncomeNum, FarmerNum=FarmerNum,Tech=TechNum,troops= ScoreNum,arms=ArmsNum,})
 	
-FireGameEvent('UpdateInfoPanel2', {PID = pid,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP/100,health2=rightHP/100,level1=LeftLife,level2=RightLife})
+FireGameEvent('UpdateInfoPanel2', {PID = pid,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP/100,health2=rightHP/100,level1=GameRules.LeftLife,level2=GameRules.RightLife})
 
 	--print("player  "..pid.."lum is " .. LumberNum)
 	local player = PlayerCalc:GetPlayerByPosition(pid)
