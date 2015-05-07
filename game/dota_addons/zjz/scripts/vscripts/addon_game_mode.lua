@@ -665,15 +665,11 @@ function CbtfGameMode:UpdateScoreboard()
 		local ArmsNum = PlayerS[pid].Arms
 		--print(pid)
 		--BTFGeneral:ToTopBarUI(pid,IncomeNum,FarmerNum,TechNum,ScoreNum,ArmsNum,LumberNum,CurFoodNum,FullFoodNum)
-<<<<<<< HEAD
+
 FireGameEvent('UpdateTopBar', {PID = pid,income=IncomeNum, FarmerNum=FarmerNum,Tech=TechNum,troops= ScoreNum,arms=ArmsNum,})
 	
 FireGameEvent('UpdateInfoPanel2', {PID = pid,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP/100,health2=rightHP/100,level1=LeftLife,level2=RightLife})
-=======
-FireGameEvent('UpdateTopBar', {PID = pid,income=IncomeNum, FarmerNum=FarmerNum,Tech=TechNum,troops= ScoreNum,arms=ArmsNum})
-FireGameEvent('UpdateInfoPanel2', {PID = pid,source=LumberNum,curPopulation=CurFoodNum,Population=FullFoodNum,health1=leftHP/100,health2=rightHP/100})
 
->>>>>>> 8065460983762dd17a2c8338d6f732e76e9d8ba9
 	--print("player  "..pid.."lum is " .. LumberNum)
 	local player = PlayerCalc:GetPlayerByPosition(pid)
 	--pid = PlayerCalc:GetPlayerIndex(player) --把玩家的position的ID转化成counting的ID

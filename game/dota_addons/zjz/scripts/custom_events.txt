@@ -21,13 +21,8 @@
 		"Tech"  	"long"
 		"troops"	"long"
 		"arms"	    "long"
-<<<<<<< HEAD
-
-	}
-=======
 	}
 
->>>>>>> 8065460983762dd17a2c8338d6f732e76e9d8ba9
 	"UpdateInfoPanel2"
 	{
 		"PID"			"short" 
@@ -36,15 +31,10 @@
 		"source"	"long"//水晶
 		"curPopulation""long"//当前人口
 		"Population"	"long"//总人口
-<<<<<<< HEAD
+
 		"level1"	"short"
 		"level2"	"short"
 	}
 
 
-
-=======
-	}
-
->>>>>>> 8065460983762dd17a2c8338d6f732e76e9d8ba9
 }
