@@ -27,11 +27,11 @@ function Ability_holylight(keys)
 		end
         if keys.caster:GetTeamNumber() == 2 then
             GameRules.LeftLife = life
-            rawset(_G, 'LeftLife', life)
+            --rawset(_G, 'LeftLife', life)
             print("LeftLife is "..GameRules.LeftLife)
         else
             GameRules.RightLife = life
-            rawset(_G, 'RightLife', life)
+            --rawset(_G, 'RightLife', life)
             print("RightLife is "..GameRules.RightLife)
         end
 
