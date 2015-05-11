@@ -55,5 +55,65 @@
         }
 
 
+"item_hire_10"
+{
+    "ID"                "1011"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"//无目标技能
+    "BaseClass"         "item_datadriven"//datadriven类
+    "AbilityTextureName"        "item_hire_10"//物品图标
+    "AbilityCastPoint"      "0.0"//无施法前摇
+
+    "ItemKillable"          "0"//不可摧毁
+    "ItemCost"          "600"//价格
+
+    "ItemPermanent"         "0"//使用后消失
+    "ItemInitialCharges"        "1"//只能使用一次
+
+    "Modifiers"
+    {
+        "modifier_book_auto_applier"//自动吃书的Modifier
+        {
+            "Passive"           "1"//被动，就是当物品放到英雄身上的时候，就会自动执行OnCreated
+            "OnCreated"
+            {
+                "SpendCharge"//使用物品，因为只能使用一次，使用了之后书就消失
+                {
+                }
+
+                "RunScript" 
+                {
+                    "ScriptFile"    "scripts/vscripts/building.lua"
+                    "Function"      "Ability_holylight" 
+                    "Hire"     		"HolyLight"
+                }
+
+                //"FireEffect"//播放粒子特效，可以根据需要播放粒子特效
+                //{
+                //  "EffectName"            "xxx.vpcf"
+                //  "Target"            "CASTER"
+                //  "EffectAttachType"      "follow_origin"
+                //}
+                "RemoveModifier"
+                {
+                    "Target"        "CASTER"
+                    "ModifierName"      "modifier_book_auto_applier"
+                    //为保证安全，手动添加一个移除modifier
+                    //正常来说，当物品消失，这个modifier自然也就消失了、
+                }
+            }
+        }
+
+    }
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "bonus_str"         "7"
+        }
+    }
+}
+
+
 
 }

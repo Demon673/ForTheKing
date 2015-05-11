@@ -603,3 +603,8 @@ function ReRollBuilds(keys) --(施法单位，指定兵种[nil为所有兵种])
 
 end
 
+
+function BuyHire(keys)
+	DeepPrintTable(keys) 
+end
+

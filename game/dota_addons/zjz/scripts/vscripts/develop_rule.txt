@@ -4,6 +4,7 @@
 2.尽量避免使用数字区分。
 3.变量的前缀标识变量类型
     h = handle
+    
     s = string
     n = number
     b = boolean

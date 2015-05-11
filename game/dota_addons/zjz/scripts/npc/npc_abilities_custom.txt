@@ -3685,7 +3685,7 @@
     {
         "BaseClass"                     "ability_datadriven"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
+        "IsHidden"                "1"
         "Modifiers"
         {
             "modifier_never_dead"
