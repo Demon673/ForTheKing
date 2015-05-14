@@ -26,11 +26,20 @@ function Ability_holylight(keys)
     		keys.caster:SetModifierStackCount('modifier_never_dead',keys.ability,life)
 		end
         if keys.caster:GetTeamNumber() == 2 then
-            GameRules.LeftLife = life
+            if life > 0 then
+                GameRules.LeftLife = life
+            else
+                GameRules.LeftLife = 0
+            end
             --rawset(_G, 'LeftLife', life)
             print("LeftLife is "..GameRules.LeftLife)
         else
-            GameRules.RightLife = life
+            if life > 0 then
+                GameRules.RightLife = life
+            else
+                GameRules.RightLife = 0
+            end
+            
             --rawset(_G, 'RightLife', life)
             print("RightLife is "..GameRules.RightLife)
         end

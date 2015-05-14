@@ -606,5 +606,6 @@ end
 
 function BuyHire(keys)
 	DeepPrintTable(keys) 
+	
 end
 

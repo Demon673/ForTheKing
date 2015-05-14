@@ -115,7 +115,7 @@ function RoundThinker()
 	
 --------------------------护卫队------------------------------------------
 			if RoundThinker_wave <=100 then
-				for left = 1,3 do --左边护卫队
+				for left = 1,9 do --左边护卫队
 				
 						local leftHwd = CreateUnitByName("npc_unit_huweidui_left_BZ",Vector(-4160,20,265),false,nil,nil,DOTA_TEAM_GOODGUYS)
 								--随着时间强化
@@ -145,7 +145,7 @@ function RoundThinker()
 
 
 
-				for right = 1,3 do --右边护卫队
+				for right = 1,9 do --右边护卫队
 
 					local rightHwd = CreateUnitByName("npc_unit_huweidui_right_BZ",Vector(4160,20,265),false,nil,nil,DOTA_TEAM_BADGUYS)
 						

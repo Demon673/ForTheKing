@@ -19,6 +19,7 @@
                     "Passive"   "1"
                     "IsHidden"    "1"
                     "StatusEffectName"     "particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
+                    //"StatusEffectName"     "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
                     "StatusEffectPriority" "10"//特效优先级
                     "States"
                     {
@@ -3684,7 +3685,7 @@
 "HolyLight"
     {
         "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "IsHidden"                "1"
         "Modifiers"
         {
