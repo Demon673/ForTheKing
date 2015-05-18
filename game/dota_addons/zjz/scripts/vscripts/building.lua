@@ -135,7 +135,8 @@ function buildbuilding( keys )--建筑完成
 				end
 			end
 			, 2.6)
-
+		--设置建筑占用体积
+		 build:SetHullRadius(128)
 		--删除旧的
 		old_build:SetOrigin(Vector(7000,-7000,-400))
 		old_build:ForceKill(true)

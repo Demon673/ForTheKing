@@ -105,7 +105,7 @@ function UnitManager:CreateUnitByBuilding( u_building )
     AbilityManager:AddAndSet( u_unit, "A" .. attack_type_name )
     AbilityManager:AddAndSet( u_unit, "D" .. defend_type_name )
     u_unit.Player = p_owner 
-    u_unit:AddNewModifier(nil, nil, "modifier_phased", {duration=0.1})
+    u_unit:AddNewModifier(nil, nil, "modifier_phased", {duration=2})
     table.insert(u_unit, PlayerS[i_playerID].Unit )
     local v_order = nil
 
