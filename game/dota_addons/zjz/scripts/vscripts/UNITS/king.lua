@@ -38,8 +38,7 @@ function Ability_holylight(keys)
                 GameRules.RightLife = life
             else
                 GameRules.RightLife = 0
-            end
-            
+            end            
             --rawset(_G, 'RightLife', life)
             print("RightLife is "..GameRules.RightLife)
         end

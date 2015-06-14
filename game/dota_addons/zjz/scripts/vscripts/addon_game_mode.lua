@@ -407,12 +407,79 @@ function PrecacheEveryThingFromKV( context )
 	
 	--E6 1a  models/heroes/broodmother/spiderling.vmdl
 
+	--D1 00 models/heroes/storm_spirit/storm_spirit.vmdl
+	{"model", "models/items/storm_spirit/festive_dress_of_good_fortune/festive_dress_of_good_fortune.vmdl"}, --6019
+	{"model", "models/items/storm_spirit/ornate_hat_of_good_fortune/ornate_hat_of_good_fortune.vmdl"},--6022
+	{"model", "models/items/storm_spirit/scale_pauldrons_of_good_fortune/scale_pauldrons_of_good_fortune.vmdl"},--6023
 
+	--D1 10
+	{"model", "models/items/storm_spirit/heavenlygeneral_armor/heavenlygeneral_armor.vmdl"},--6168
+	{"model", "models/items/storm_spirit/heavenlygeneral_hat/heavenlygeneral_hat.vmdl"},--6169
+	{"model","models/items/storm_spirit/heavenlygeneral_shoulders/heavenlygeneral_shoulders.vmdl"},--6170
 
+	--D2 00 models/heroes/earth_spirit/earth_spirit.vmdl
+	{"model","models/heroes/earth_spirit/earth_spirit_head.vmdl"},--482 通用
+	{"model","models/items/earth_spirit/demon_stone_bracers/demon_stone_bracers.vmdl"},--6002
+	{"model","models/items/earth_spirit/demon_stone_belt/demon_stone_belt.vmdl"},--6003
+	{"model","models/items/earth_spirit/demon_stone_hair/demon_stone_hair.vmdl"}, --6004
+	{"model","models/items/earth_spirit/demon_stone_necklace/demon_stone_necklace.vmdl"}, --6005
+	{"model","models/items/earth_spirit/demon_stone_weapon/demon_stone_weapon.vmdl"}, --6006
 
+	--D2 10
+	{"model","models/items/earth_spirit/vanquishing_demons_arms/vanquishing_demons_arms.vmdl"},--6432
+	{"model","models/items/earth_spirit/vanquishing_demons_belt/vanquishing_demons_belt.vmdl"},--6433
+	{"model","models/items/earth_spirit/vanquishing_demons_helmet/vanquishing_demons_helmet.vmdl"},--6434
+	{"model","models/items/earth_spirit/vanquishing_demons_neck/vanquishing_demons_neck.vmdl"},--6435
+	{"model","models/items/earth_spirit/vanquishing_demons_weapon/vanquishing_demons_weapon.vmdl"},--6436
 
+	--D3 00 D3 10 models/heroes/zuus/zuus.vmdl
+	--D4 00  models/heroes/nevermore/nevermore.vmdl
+	
+	--D4 10  models/heroes/shadow_fiend/shadow_fiend.vmdl
+	{"model","models/heroes/shadow_fiend/shadow_fiend_head.vmdl"},--387
+	{"model","models/heroes/shadow_fiend/shadow_fiend_shoulders.vmdl"},--486
+	{"model","models/heroes/shadow_fiend/shadow_fiend_arms.vmdl"},--488
 
+	--D5 00 models/heroes/medusa/medusa.vmdl
+	{"model","models/heroes/medusa/medusa_bow.vmdl"},--381
+	{"model","models/heroes/medusa/medusa_veil.vmdl"},--382
+	{"model","models/heroes/medusa/medusa_torso.vmdl"},--383
+	{"model","models/heroes/medusa/medusa_arms.vmdl"},--384
+		{"model","models/heroes/medusa/medusa_tail.vmdl"},--385
 
+	--D5 10
+	{"model","models/items/medusa/forsaken_beauty_arms/forsaken_beauty_arms.vmdl"},--5004
+	{"model","models/items/medusa/forsaken_beauty_bow/forsaken_beauty_bow.vmdl"},--5005
+	{"model","models/items/medusa/forsaken_beauty_chest/forsaken_beauty_chest.vmdl"},--5006
+	{"model","models/items/medusa/forsaken_beauty_head/forsaken_beauty_head.vmdl"},--5007
+	{"model","models/items/medusa/forsaken_beauty_tail/forsaken_beauty_tail.vmdl"},--5008
+
+	--D6 00 models/heroes/drow/drow.vmdl
+	{"model","models/items/drow/gauntlets_of_the_boreal_watch/gauntlets_of_the_boreal_watch.vmdl"},--5194
+	{"model","models/items/drow/legplates_of_the_boreal_watch/legplates_of_the_boreal_watch.vmdl"},--5195
+	{"model","models/items/drow/longbow_of_the_boreal_watch/longbow_of_the_boreal_watch.vmdl"},--5196
+	{"model","models/items/drow/cowl_of_the_boreal_watch/cowl_of_the_boreal_watch.vmdl"},--5197
+	{"model","models/items/drow/pauldrons_of_the_boreal_watch/pauldrons_of_the_boreal_watch.vmdl"},--5198
+	{"model","models/items/drow/quiver_of_the_boreal_watch/quiver_of_the_boreal_watch.vmdl"},--5199
+	{"model","models/items/drow/cloak_of_the_boreal_watch/cloak_of_the_boreal_watch.vmdl"},--5120
+
+	--D6 10
+	{"model","models/items/drow/drow_sentinel_bow/drow_sentinel_bow.vmdl"},--5883
+	{"model","models/items/drow/drow_sentinel_helm/drow_sentinel_helm.vmdl"},--5974
+	{"model","models/items/drow/drow_sentintel_legs/drow_sentintel_legs.vmdl"},--5975
+	{"model","models/items/drow/drow_sentinel_quiver/drow_sentinel_quiver.vmdl"},--5979
+	{"model","models/items/drow/drow_sentinel_shoulders/drow_sentinel_shoulders.vmdl"},--5985
+	{"model","models/items/drow/drow_sentinel_gloves/drow_sentinel_gloves.vmdl"},--5986
+	{"model","models/items/drow/drow_sentinel_cloak/drow_sentinel_cloak.vmdl"},--5989
+
+	--D6 20
+	{"model","models/items/drow/black_wind_head/black_wind_head.vmdl"},--6552
+	{"model","models/items/drow/black_wind_arms/black_wind_arms.vmdl"},--6553
+	{"model","models/items/drow/black_wind_shoulders/black_wind_shoulders.vmdl"},--6554
+	{"model","models/items/drow/black_wind_legs/black_wind_legs.vmdl"},--6555
+	{"model","models/items/drow/black_wind_weapon/black_wind_weapon.vmdl"},--6556
+	{"model","models/items/drow/black_wind_quiver/black_wind_quiver.vmdl"},--6557
+	{"model","models/items/drow/black_wind_back/black_wind_back.vmdl"},--6558
 
 
 
