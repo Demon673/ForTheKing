@@ -13,11 +13,11 @@ end
 
 AllTypes = {}
 AllTypes["Q"] = { "Q1_00","Q2_00","Q3_00","Q4_00","Q5_00", }
-AllTypes["W"] = { "W5_00"}--"W1_00","W2_00","W3_00","W4_00","W5_00", }
+AllTypes["W"] = { "W1_00","W2_00","W3_00","W4_00","W5_00", }
 AllTypes["E"] = { "E1_00","E2_00","E3_00","E4_00","E5_00","E6_00",}
-AllTypes["R"] = { "Q3_00" }
-AllTypes["T"] = { "Q4_00" }
-AllTypes["Y"] = { "Q1_00" }
+AllTypes["D"] = { "Q3_00" }
+AllTypes["F"] = { "Q4_00" }
+AllTypes["R"] = { "Q1_00" }
 
 
 function playerstarts:playertable()
@@ -150,7 +150,7 @@ function playerstarts:RollBuilds(unit) --(单位，字符串，True/False)
     local player = unit:GetPlayerOwner()
     local pid  = player:GetPlayerID()
 
-    for k,supertype in pairs({"Q", "W", "E", "R", "T", "Y"}) do
+    for k,supertype in pairs({"Q", "W", "E", "D", "F", "R"}) do
         local type_string = AllTypes[supertype][PlayerS[pid].buildtype[supertype]]
         AbilityManager:AddAndSet( unit, type_string )
     end
