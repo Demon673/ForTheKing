@@ -72,7 +72,13 @@ building_tech.t_tech["E6_11"] = {}
 
 
 function building_tech:ApplyTechSkills( u_building )
-
+	for j = 0,5,1 do
+	    local temp=u_building:GetAbilityByIndex(j) --获取技能实体
+	    if temp then 
+	    	u_building:RemoveAbility(temp:GetAbilityName())
+	        --temp:SetLevel(1)                     --移除技能
+	    end
+	end
 	s_building_name = u_building:GetUnitName()
 	s_tech_name = string.sub(s_building_name, -8, -4)
 	t_building = self.t_tech[s_tech_name]
@@ -262,7 +268,7 @@ function UpFoodSuccess(keys)
 	end
 
 	PlayerS[pid].FullFood = PlayerS[pid].FullFood+8
-			
+	BTFGeneral:ShowError("#UpFoodSuccess", pid)--成功提示			
 end
 
 

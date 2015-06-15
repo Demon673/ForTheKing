@@ -10,5 +10,11 @@
 	}
 
 
-
+    "shadow_shaman_shackles"
+    {
+        "AbilityUnitTargetFlags"      "DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+        //"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_CUSTOM"
+        //"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "MaxLevel"                      "1"
+    }
 }

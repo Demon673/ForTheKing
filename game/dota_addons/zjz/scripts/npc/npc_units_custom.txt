@@ -5668,7 +5668,7 @@
     //----------------------------------------------------------------
     "StatusHealth"              "675"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "60"         // 基础魔法值
+    "StatusMana"                "6000"         // 基础魔法值
     "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
@@ -5685,7 +5685,7 @@
     //----------------------------------------------------------------
 
     "Ability1"                  ""          // 技能 1. 无目标
-    "Ability2"                  ""          // 技能 2. 点目标
+    "Ability2"                  "E6_11"          // 技能 2. 点目标
     "Ability3"                  ""          // 技能 3.
     "Ability4"                  ""          // 技能 4.
     "Ability5"                  ""          // 技能 5.
@@ -5746,7 +5746,6 @@
     {
          "AttachWearables"   
                 {
-
                     "Wearable1"
                     {
                         "ItemDef"           "251"  
@@ -5773,9 +5772,31 @@
                         "ItemDef"           "6819"  
                     }
                 }
+        "DefaultState"       "Invade"
+        "States"
+        {
+            "Invade"
+            {
+                "Name"          "Invade"
+                "Aggression"    "100.0"//进攻
+                "Avoidance"     "0.0"//逃跑
+                "Support"       "0.0"//防御
+                "RoamDistance"  "0.0"
+            }
+        }
+        "OffensiveAbilities"
+        {
+            "Ability1"               
+            {
+                "Name"                "shadow_shaman_shackles"
+                //"AOE"                "0"
+                //"Radius"             "600"
+                //"MinimumTargets"     "1"
+
+            }               
+        }
     }
-
-
+    
 }
 
 
