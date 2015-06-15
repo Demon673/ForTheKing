@@ -7989,72 +7989,7 @@
 //    TEST 
 //======================================================================================
 
-"shield_modifier" 
-{     
-    "Passive" "1"     
-    "IsHidden" "1"     
-    "Properties"
-    {
-        "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
-    }     
-    "OnCreated"
-    {
-        "Random"
-        {
-            "Chance" "%block_chance"
-            "OnSuccess"
-            {
-                "ApplyModifier"
-                {          
-                    "Target" "CASTER"
-                    "ModifierName" "block_modifier"
-                }             
-            }         
-        }     
-    }     
 
-        "OnAttacked"     
-            {         
-                "Random"         
-                    {             
-                        "Chance" "%block_chance"             
-                        "OnSuccess"             
-                            {                 
-                                "ApplyModifier"
-                                    {                     
-                                        "Target" "CASTER"
-                                        "ModifierName" "block_modifier"
-                                    }             
-                            }             
-                        "OnFailure"             
-                            {                 
-                                "RemoveModifier"
-                                    {
-                                        "Target" "CASTER"
-                                        "ModifierName" "block_modifier"
-                                    }             
-                            }         
-                    }
-            }
-}  
-
-    "block_modifier" 
-        {     
-            "IsBuff" "1"
-            "IsHidden" "1"     
-            "Properties"     
-                {         
-                    "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "%damage_blocked"
-                }     
-            "OnAttacked"     
-                {         
-                    "RemoveModifier"         
-                        {             
-                            "Target" "CASTER"             
-                            "ModifierName" "block_modifier"         
-                        }    
-                } 
-        }
 
 
 
