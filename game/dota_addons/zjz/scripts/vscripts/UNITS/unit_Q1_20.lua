@@ -129,8 +129,8 @@ local brain_inititlize = function( u_unit )
 
 	brain.criticle_function[1] = criticle
 
-	brain.skills[1] = SkillManager:AddSkill( "Criticle when low health", brain.skills, 0.0, 7.0, skill_01_cast )
-	brain.skills[2] = SkillManager:AddSkill( "AttackSpeed when low health", brain.skills, 0.0, 0.0, skill_02_passive )
+	brain.skills[1] = SkillManager:AddSkill( "Criticle when low health", brain.skills, 0.0, 7.0, -1, skill_01_cast )
+	brain.skills[2] = SkillManager:AddSkill( "AttackSpeed when low health", brain.skills, 0.0, 0.0, 0, skill_02_passive )
 
 	AbilityManager:AddAndSet( u_unit, "listener_OnHealthRegain" )
 

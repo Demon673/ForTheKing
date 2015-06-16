@@ -3715,37 +3715,6 @@
         }
     }
 
-
-
-    //====================================================================
-    //=================          注册技能Buff          ===================
-    //====================================================================
-
-    "buff_register"
-    {
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-
-        "MaxLevel"                      "1"
-
-        "Modifiers"
-        {
-            "modifier_Q1_20_attack_speed"
-            {
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "8"
-                }
-            }
-
-            "modifier_Q1_20_criticle"
-            {
-            
-            }
-
-        }
-    }
-
     //====================================================================
     //=================          单位技能              ===================
     //====================================================================
@@ -4422,6 +4391,7 @@
         }
     }
 }
+
 "jn_W5_30"
 {
     // General
@@ -4539,6 +4509,50 @@
         }
     }
 }
+
+
+
+
+
+    //====================================================================
+    //=================          注册技能Buff          ===================
+    //====================================================================
+
+    "buff_register"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_Q1_20_attack_speed"
+            {
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "8"
+                }
+            }
+
+            "modifier_Q1_20_criticle"
+            {
+            
+            }
+
+
+            "modifier_Q1_21_active"
+            {
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"              "50"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"                "30"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"               "30"
+                }
+            }
+
+        }
+    }
 
 
 }

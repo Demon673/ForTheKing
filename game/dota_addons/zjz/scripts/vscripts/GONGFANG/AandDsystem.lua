@@ -61,8 +61,6 @@ end
 	    return attack
 	end
 
-
-
 --自定义攻防
 function AandDsystem( keys )
 	
@@ -81,7 +79,7 @@ function AandDsystem( keys )
 				end
 			end
 					
-			CustonDamage( caster, target, a_type, base_damage, true )
+			DamageManager:CustonDamage( caster, target, a_type, base_damage, true )
 
 			--防止王发呆 H：
 			if target:HasAbility("spilt_right") or target:HasAbility("spilt_left")  then
@@ -116,59 +114,6 @@ function ApplyArmor( base_damage, target )
 
 end
 ]]--
-
-function CustonDamage( caster, target, a_type, base_damage, isattack )
-
-	local d_name = target:GetUnitName()
-	local d_type = string.sub(d_name, -1, -1)
-
-	local ADnumber = AandD_table[a_type..d_type] --or 100 --获取伤害比例数字
-	
-	local pure_damage =	base_damage * ADnumber / 100
-
-	--暴击系统
-	if (isattack == true) then
-		if (AIManager:HasBrain(caster)) then
-			--print("Start to apply critical function.")
-			--DeepPrintTable(caster.brain.criticle_function)
-			local f_number = 1
-
-			for k,fun in pairs(caster.brain.criticle_function) do
-				if (fun ~= caster.brain.criticle_function.brain) then
-					f_number = f_number * fun( caster, target )
-				end
-			end
-			
-			if ( f_number > 1) then
-				--print("Critical Strike: x" .. tostring(f_number))
-				pure_damage = pure_damage * f_number
-				PopupCriticalDamage( target, math.floor(pure_damage))
-			end
-			if ( f_number < 1) then
-				pure_damage = pure_damage * f_number
-			end
-		end
-
-		AIManager:SendAction( caster, target, pure_damage, "AttackOthers" )
-		AIManager:SendAction( target, caster, pure_damage, "Attacked" )
-
-	end
-
-	AIManager:SendAction( target, caster, pure_damage, "TakenDamage" )
-
-	local damageTable = 
-						{
-							victim = target,
-							attacker = caster,
-							damage = pure_damage,
-							damage_type = DAMAGE_TYPE_PURE,
-						}
-	ApplyDamage(damageTable)
-	--print(tostring(base_damage) .. " has change to " .. tostring(pure_damage))
-
-	
-
-end
 
 --多重箭
 function DuoChongGongJiDamage( keys )
