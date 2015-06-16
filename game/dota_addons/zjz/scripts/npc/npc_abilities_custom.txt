@@ -3750,7 +3750,795 @@
     //=================          单位技能              ===================
     //====================================================================
 
+"jn_W1_10"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                  "1"
+    "precache"
+    {
+        "particle"      "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+    }
+    "Modifiers"
+    {
+        "jn_W1_10_modifier"
+        {
+            "Passive"       "1"
+            "OnAttackLanded"
+            {
+                "Random"
+                {
+                    "Chance"        "20"
+                    "OnSuccess"
+                    {
+                        "Damage"
+                        {
+                            "Target"         "TARGET"
+                            "Type"           "DAMAGE_TYPE_PHYSICAL"
+                            "Damage"         "20"
+                        }
+                        "Stun"
+                        {
+                            "Target"        "TARGET"
+                            "Duration"      "0.2"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+"jn_W1_11"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                  "1"
+    "precache"
+    {
+        "particle"  "particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave.vpcf"
+    }
+    "Modifiers"
+    {
+        "jn_W1_11_modifier"
+        {
+            "Passive"       "1"
+            "OnAttackLanded"
+            {
+                "CleaveAttack"
+                {
+                    "CleavePercent"     "10"
+                    "CleaveRadius"      "100"
+                }
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+            }
+        }
+    }
+}
+"jn_W1_20"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                  "1"
+    "precache"
+    {
+        "particle"      "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+    }
+    "Modifiers"
+    {
+        "jn_W1_20_modifier"
+        {
+            "Passive"       "1"
+            "OnAttackLanded"
+            {
+                "Random"
+                {
+                    "Chance"        "30"
+                    "OnSuccess"
+                    {
+                        "Damage"
+                        {
+                            "Target"         "TARGET"
+                            "Type"           "DAMAGE_TYPE_PHYSICAL"
+                            "Damage"         "30"
+                        }
+                        "Stun"
+                        {
+                            "Target"        "TARGET"
+                            "Duration"      "0.2"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+"jn_W2_10a"
+{
+    "BaseClass"                         "ability_datadriven"
+     "AbilityBehavior"                   "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+      "precache"
+      {
+        "particle"      "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+      }
+      "Modifiers"
+        {
+            "modifier_jn_W2_10a"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
 
+                "Orb"
+                {
+                    "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"    "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+                    "CastAttack"        "1"
+                }
+
+                "OnOrbFire"
+                {
+                }
+
+                "OnOrbImpact"
+                {
+                    "RunScript"
+                    {
+                        "Target"            "TARGET"
+                        "ScriptFile"        "scripts/vscripts/abilities/jn_W2_10.lua"
+                        "Function"          "jn_W2_10_think"
+                    }
+                    "ApplyModifier"
+                    {
+                        "ModifierName"      "jn_W2_10a_effect_modifier"
+                        "Target"            "TARGET"
+                    }
+                }
+            }
+            "jn_W2_10a_effect_modifier"
+            {
+                "Duration"      "5"
+                "OnCreated"
+                {
+                    "AttachEffect"
+                    {
+                        "EffectName"        "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+                        "EffectAttachType"  "follow_origin"
+                        "Target"            "TARGET"
+                    }
+                }
+            }
+        }
+}
+"jn_W2_10b"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                  "1"
+    "precache"
+    {
+        "particle"      "particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+    }
+    "Modifiers"
+    {
+        "jn_W2_10b_modifier"
+        {
+            "Passive"       "1"
+            "OnAttackLanded"
+            {
+                "Random"
+                {
+                    "Chance"        "25"
+                    "OnSuccess"
+                    {
+                        "ApplyModifier"
+                        {
+                            "ModifierName"          "jn_W2_10b_buff"
+                            "Target"                "CASTER"
+                        }
+                    }
+                }
+            }
+        }
+        "jn_W2_10b_buff"
+        {
+            "Duration"      "5"
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+            }
+             "Properties"
+             {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"          "40"
+                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"               "5"
+                "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"            "77"
+             }
+        }
+    }
+}
+"jn_W2_20a"
+{
+    "BaseClass"                         "ability_datadriven"
+     "AbilityBehavior"                   "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+      "precache"
+      {
+        "particle"      "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+      }
+      "Modifiers"
+        {
+            "modifier_jn_W2_20a"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+                "Orb"
+                {
+                    "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"    "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+                    "CastAttack"        "1"
+                }
+
+                "OnOrbFire"
+                {
+                }
+
+                "OnOrbImpact"
+                {
+                    "RunScript"
+                    {
+                        "Target"            "TARGET"
+                        "ScriptFile"        "scripts/vscripts/abilities/jn_W2_10.lua"
+                        "Function"          "jn_W2_10_think"
+                    }
+                    "ApplyModifier"
+                    {
+                        "ModifierName"      "jn_W2_20a_effect_modifier"
+                        "Target"            "TARGET"
+                    }
+                }
+            }
+            "jn_W2_20a_effect_modifier"
+            {
+                "Duration"      "5"
+                "OnCreated"
+                {
+                    "AttachEffect"
+                    {
+                        "EffectName"        "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+                        "EffectAttachType"  "follow_origin"
+                        "Target"            "TARGET"
+                    }
+                }
+            }
+        }
+}
+"jn_W2_20b"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                  "1"
+    "precache"
+    {
+        "particle"      "particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+    }
+    "Modifiers"
+    {
+        "jn_W2_20b_modifier"
+        {
+            "Passive"       "1"
+            "OnAttackLanded"
+            {
+                "Random"
+                {
+                    "Chance"        "25"
+                    "OnSuccess"
+                    {
+                        "ApplyModifier"
+                        {
+                            "ModifierName"          "jn_W2_20b_buff"
+                            "Target"                "CASTER"
+                        }
+                    }
+                }
+            }
+        }
+        "jn_W2_20b_buff"
+        {
+            "Duration"      "5"
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+            }
+             "Properties"
+             {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"          "100"
+                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"               "15"
+                "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"            "77"
+             }
+        }
+    }
+}
+"jn_W3_10"
+{
+    "BaseClass"                         "ability_datadriven"
+     "AbilityBehavior"                   "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+      "precache"
+      {
+        "particle"      "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+      }
+      "Modifiers"
+        {
+            "modifier_jn_W3_10"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+                "Orb"
+                {
+                    "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"    "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+                    "CastAttack"        "1"
+                }
+
+                "OnOrbFire"
+                {
+                    "SpendMana"
+                    {
+                        "Mana"      "10"
+                    }
+                }
+
+                "OnOrbImpact"
+                {
+                    "Damage"
+                    {
+                        "Target"    "TARGET"
+                        "Type"      "DAMAGE_TYPE_PHYSICAL"
+                        "Damage"    "10"
+                    }
+                }
+            }
+        }
+}
+"jn_W3_20"
+{
+    "BaseClass"                         "ability_datadriven"
+     "AbilityBehavior"                   "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+      "precache"
+      {
+        "particle"      "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+      }
+      "Modifiers"
+        {
+            "modifier_jn_W3_20"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+                "Orb"
+                {
+                    "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"    "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+                    "CastAttack"        "1"
+                }
+
+                "OnOrbFire"
+                {
+                    "SpendMana"
+                    {
+                        "Mana"      "10"
+                    }
+                }
+
+                "OnOrbImpact"
+                {
+                    "Damage"
+                    {
+                        "Target"    "TARGET"
+                        "Type"      "DAMAGE_TYPE_PHYSICAL"
+                        "Damage"    "30"
+                    }
+                }
+            }
+        }
+}
+"jn_W4_10"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                  "1"
+    "precache"
+    {
+        "particle"      "particles/econ/items/luna/luna_crescent_moon/luna_glaive_bounce_crescent_moon.vpcf"
+    }
+    "OnProjectileHitUnit"  
+        {
+            "RunScript"
+            {
+                "ScriptFile"        "scripts/vscripts/abilities/jn_W4_10.lua"
+                "Function"          "jn_W4_10_attack"
+            }
+        }
+    "Modifiers"
+    {
+        "jn_W4_10_modifier"
+        {
+            "Passive"       "1"
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "scripts/vscripts/abilities/jn_W4_10.lua"
+                    "Function"          "jn_W4_10_think"
+                }
+            }
+        }
+    }
+}
+"jn_W5_10"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "shadow_shaman_shackles"
+    "AbilityCastRange"              "400"
+    "AbilityCastPoint"              "0.3"
+    "MaxLevel"                      "1"
+    "AbilityChannelTime"            "2"
+    "AbilityCooldown"               "40"
+    "AbilityDamage"                 "40"
+    "AbilityManaCost"               "60"
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf"     
+        "particle"  "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Hero_ShadowShaman.Shackles.Cast"
+            "Target"        "CASTER"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_shackles"
+            "Target"        "TARGET"
+            "Duration"      "%channel_time"
+        }
+    }
+
+    "OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_shackles"
+            "Target"        "TARGET"
+        }
+
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/hero_shadow_shaman/shackles.lua"
+            "Function"      "StopSound"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_shackles"
+        {
+            "IsDebuff"          "1"
+    
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+
+            "StatusEffectName"      "particles/status_fx/status_effect_shaman_shackle.vpcf"        
+            "StatusEffectPriority"  "10"
+
+            "OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+            "ThinkInterval"  "%tick_interval"
+            "OnIntervalThink"
+            {
+                "Damage"
+                {
+                    "Target"        "TARGET"
+                    "Type"          "DAMAGE_TYPE_MAGICAL"
+                    "Damage"        "%AbilityDamage"
+                }
+                "Heal"
+                {
+                    "HealAmount"        "%AbilityDamage"
+                    "Target"            "CASTER"
+                }
+            }
+
+            "OnCreated"
+            {
+                "FireSound"
+                {
+                    "EffectName"    "Hero_ShadowShaman.Shackles"
+                    "Target"        "TARGET"
+                }
+                
+                "AttachEffect"
+                {
+                    "EffectName"            "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+                    "EffectAttachType"      "follow_origin"
+                    "Target"                "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "CASTER"    "attach_hitloc" //Attach to the hands or any desired attach point of the hero
+                        "CASTER"    "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}
+"jn_W5_20"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "shadow_shaman_shackles"
+    "AbilityCastRange"              "400"
+    "AbilityCastPoint"              "0.3"
+    "MaxLevel"                      "1"
+    "AbilityChannelTime"            "3"
+    "AbilityCooldown"               "30"
+    "AbilityDamage"                 "80"
+    "AbilityManaCost"               "60"
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf"     
+        "particle"  "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Hero_ShadowShaman.Shackles.Cast"
+            "Target"        "CASTER"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_shackles"
+            "Target"        "TARGET"
+            "Duration"      "%channel_time"
+        }
+    }
+
+    "OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_shackles"
+            "Target"        "TARGET"
+        }
+
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/hero_shadow_shaman/shackles.lua"
+            "Function"      "StopSound"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_shackles"
+        {
+            "IsDebuff"          "1"
+    
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+
+            "StatusEffectName"      "particles/status_fx/status_effect_shaman_shackle.vpcf"        
+            "StatusEffectPriority"  "10"
+
+            "OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+            "ThinkInterval"  "%tick_interval"
+            "OnIntervalThink"
+            {
+                "Damage"
+                {
+                    "Target"        "TARGET"
+                    "Type"          "DAMAGE_TYPE_MAGICAL"
+                    "Damage"        "%AbilityDamage"
+                }
+                "Heal"
+                {
+                    "HealAmount"        "%AbilityDamage"
+                    "Target"            "CASTER"
+                }
+            }
+
+            "OnCreated"
+            {
+                "FireSound"
+                {
+                    "EffectName"    "Hero_ShadowShaman.Shackles"
+                    "Target"        "TARGET"
+                }
+                
+                "AttachEffect"
+                {
+                    "EffectName"            "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+                    "EffectAttachType"      "follow_origin"
+                    "Target"                "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "CASTER"    "attach_hitloc" //Attach to the hands or any desired attach point of the hero
+                        "CASTER"    "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}
+"jn_W5_30"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "shadow_shaman_shackles"
+    "AbilityCastRange"              "400"
+    "AbilityCastPoint"              "0.3"
+    "MaxLevel"                      "1"
+    "AbilityChannelTime"            "5"
+    "AbilityCooldown"               "20"
+    "AbilityDamage"                 "100"
+    "AbilityManaCost"               "60"
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf"     
+        "particle"  "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Hero_ShadowShaman.Shackles.Cast"
+            "Target"        "CASTER"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_shackles"
+            "Target"        "TARGET"
+            "Duration"      "%channel_time"
+        }
+    }
+
+    "OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_shackles"
+            "Target"        "TARGET"
+        }
+
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/hero_shadow_shaman/shackles.lua"
+            "Function"      "StopSound"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_shackles"
+        {
+            "IsDebuff"          "1"
+    
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+
+            "StatusEffectName"      "particles/status_fx/status_effect_shaman_shackle.vpcf"        
+            "StatusEffectPriority"  "10"
+
+            "OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+            "ThinkInterval"  "%tick_interval"
+            "OnIntervalThink"
+            {
+                "Damage"
+                {
+                    "Target"        "TARGET"
+                    "Type"          "DAMAGE_TYPE_MAGICAL"
+                    "Damage"        "%AbilityDamage"
+                }
+                "Heal"
+                {
+                    "HealAmount"        "%AbilityDamage"
+                    "Target"            "CASTER"
+                }
+            }
+
+            "OnCreated"
+            {
+                "FireSound"
+                {
+                    "EffectName"    "Hero_ShadowShaman.Shackles"
+                    "Target"        "TARGET"
+                }
+                
+                "AttachEffect"
+                {
+                    "EffectName"            "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+                    "EffectAttachType"      "follow_origin"
+                    "Target"                "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                        "CASTER"    "attach_hitloc" //Attach to the hands or any desired attach point of the hero
+                        "CASTER"    "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 }

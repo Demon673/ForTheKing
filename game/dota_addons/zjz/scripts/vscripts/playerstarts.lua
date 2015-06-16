@@ -90,7 +90,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
             PlayerS[i].BuildBase = {}                                                              --设置初始的地基
             --print("playerID is  "..player:GetPlayerID() )
             PlayerS[i].buildtype = {}
-            for k,supertype in pairs({"Q", "W", "E", "R", "T", "Y"}) do
+            for k,supertype in pairs({"Q", "W", "E", "D", "F", "R"}) do
                 PlayerS[i].buildtype[supertype] = RandomInt(1, #AllTypes[supertype])
             end
 
