@@ -148,6 +148,9 @@ if AIManager == nil then
     AIManager.AItable["Q1_10"] = true
     AIManager.AItable["Q1_20"] = true
     AIManager.AItable["Q1_21"] = true
+    AIManager.AItable["Q4_00"] = true
+    AIManager.AItable["Q4_10"] = true
+    AIManager.AItable["Q4_20"] = true
 end
 
 function AIManager:AddBrain( u_unit, s_file_name )
