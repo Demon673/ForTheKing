@@ -63,7 +63,7 @@ function playerstarts:init(i,hero) --英雄登场之后准备开始运行的函�
         PlayerS[i].Lib =  CreateUnitByName("npc_dummy_lib", lib_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
         PlayerS[i].Lib:SetControllableByPlayer(i, true)
 
-
+        PlayerS[i].Abhere = false
         local pig_ent = Entities:FindByName(nil, "player_"..tostring(i).."_farmer_3")   --player_i_lib
         PlayerS[i].Pig =  CreateUnitByName("npc_dummy_pig", pig_ent:GetAbsOrigin() , false, hero,hero ,player:GetTeam()) 
         PlayerS[i].Pig:SetControllableByPlayer(i, true)
