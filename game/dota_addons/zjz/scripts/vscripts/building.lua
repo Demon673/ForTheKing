@@ -70,15 +70,26 @@ building_tech.t_tech["E6_00"] = {"E6_10","E6_11",}
 building_tech.t_tech["E6_10"] = {}
 building_tech.t_tech["E6_11"] = {}
 
+building_tech.t_tech["D1_00"] = {"D1_10",}
+building_tech.t_tech["D1_10"] = {}
+
+building_tech.t_tech["D2_00"] = {"D2_10",}
+building_tech.t_tech["D2_10"] = {}
+
+building_tech.t_tech["D3_00"] = {"D3_10",}
+building_tech.t_tech["D3_10"] = {}
+
+building_tech.t_tech["D4_00"] = {"D4_10",}
+building_tech.t_tech["D4_10"] = {}
+
+building_tech.t_tech["D5_00"] = {"D5_10",}
+building_tech.t_tech["D5_10"] = {}
+
+building_tech.t_tech["D6_00"] = {"D6_10","D6_11",}
+building_tech.t_tech["D6_10"] = {}
+building_tech.t_tech["D6_11"] = {}
 
 function building_tech:ApplyTechSkills( u_building )
-	for j = 0,5,1 do
-	    local temp=u_building:GetAbilityByIndex(j) --获取技能实体
-	    if temp then 
-	    	u_building:RemoveAbility(temp:GetAbilityName())
-	        --temp:SetLevel(1)                     --移除技能
-	    end
-	end
 	s_building_name = u_building:GetUnitName()
 	s_tech_name = string.sub(s_building_name, -8, -4)
 	t_building = self.t_tech[s_tech_name]
@@ -157,6 +168,16 @@ function buildbuilding( keys )--建筑完成
 		--local f_scale = build:GetModelScale() 
 		--print("this building model scale is "..f_scale)
 		--build:SetModelScale(f_scale+0.6) --待修改
+		--build.FDesc:SetModelScale(f_scale+0.6)
+		--移除技能
+	for j = 0,5,1 do
+	    local temp=u_building:GetAbilityByIndex(j) --获取技能实体
+	    if temp then 
+	    	u_building:RemoveAbility(temp:GetAbilityName())
+	        temp:SetLevel(1)                     --移除技能
+	    end
+	end
+	--设置模型大小
 
 	--增加升级
 		building_tech:ApplyTechSkills( build )

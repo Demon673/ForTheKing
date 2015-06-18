@@ -147,6 +147,10 @@ if AIManager == nil then
     AIManager.AItable["Q1_00"] = true
     AIManager.AItable["Q1_10"] = true
     AIManager.AItable["Q1_20"] = true
+    AIManager.AItable["Q1_21"] = true
+    AIManager.AItable["Q4_00"] = true
+    AIManager.AItable["Q4_10"] = true
+    AIManager.AItable["Q4_20"] = true
 end
 
 function AIManager:AddBrain( u_unit, s_file_name )
@@ -269,11 +273,12 @@ if SkillManager == nil then
     SkillManager = {}
 end
 
-function SkillManager:AddSkill( s_name, t_skill_table, f_mana_cost, f_cool_down, fun )
+function SkillManager:AddSkill( s_name, t_skill_table, f_mana_cost, f_cool_down, i_times_limit, fun )
     local t_skill = {}
     t_skill.name = s_name
     t_skill.cooldown = f_cool_down
     t_skill.manacost = f_mana_cost
+    t_skill.timeslimit = i_times_limit
     t_skill.lasttime = 0.0
     t_skill.fun = fun
     t_skill.table = t_skill_table
@@ -283,7 +288,7 @@ end
 
 function SkillManager:IsAble( t_skill )
 
-    if (t_skill.cooldown < 0.0) and (t_skill.lasttime > 0.0) then -- 检查技能是否只能用一次
+    if (t_skill.timeslimit == 0) then -- 检查技能是否只能用一次
         print("AIManager:IsSkillAble -- [once]!")
         return false
     end
@@ -310,6 +315,7 @@ end
 function SkillManager:SetCast( t_skill )
 
     t_skill.lasttime = GameRules:GetDOTATime(false, false)
+    t_skill.timeslimit = t_skill.timeslimit - 1
 
     local u_unit = t_skill.table.brain.unit
     u_unit:SetMana(u_unit:GetMana() - t_skill.manacost)
@@ -463,6 +469,61 @@ function BuffManager:SetCount( u_unit, s_modifier, particle_function, i_stack_co
     end
 
     return true
+
+end
+
+if DamageManager == nil then
+    DamageManager = {}
+end
+
+function DamageManager:CustonDamage( caster, target, a_type, base_damage, isattack )
+
+    local d_name = target:GetUnitName()
+    local d_type = string.sub(d_name, -1, -1)
+
+    local ADnumber = AandD_table[a_type..d_type] --or 100 --获取伤害比例数字
+    
+    local pure_damage = base_damage * ADnumber / 100
+
+    --暴击系统
+    if (isattack == true) then
+        if (AIManager:HasBrain(caster)) then
+            --print("Start to apply critical function.")
+            --DeepPrintTable(caster.brain.criticle_function)
+            local f_number = 1
+
+            for k,fun in pairs(caster.brain.criticle_function) do
+                if (fun ~= caster.brain.criticle_function.brain) then
+                    f_number = f_number * fun( caster, target )
+                end
+            end
+            
+            if ( f_number > 1) then
+                --print("Critical Strike: x" .. tostring(f_number))
+                pure_damage = pure_damage * f_number
+                PopupCriticalDamage( target, math.floor(pure_damage))
+            end
+            if ( f_number < 1) then
+                pure_damage = pure_damage * f_number
+            end
+        end
+
+        AIManager:SendAction( caster, target, pure_damage, "AttackOthers" )
+        AIManager:SendAction( target, caster, pure_damage, "Attacked" )
+
+    end
+
+    AIManager:SendAction( target, caster, pure_damage, "TakenDamage" )
+
+    local damageTable = 
+                        {
+                            victim = target,
+                            attacker = caster,
+                            damage = pure_damage,
+                            damage_type = DAMAGE_TYPE_PURE,
+                        }
+    ApplyDamage(damageTable)
+    --print(tostring(base_damage) .. " has change to " .. tostring(pure_damage))
 
 end
 

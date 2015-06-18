@@ -134,19 +134,21 @@ function order_portal_player (trigger)
             --print(player)
             local n = pid + 6
             print("n =  "..n)
+
             local ent = Entities:FindByName(nil,    "portal"..tostring(n))
-            local OrderPoint = ent:GetAbsOrigin() 
+            if ent then 
+                local OrderPoint = ent:GetAbsOrigin() 
 
-                local newOrder = {                                        --发送攻击指令
-                        UnitIndex = trigger.activator:entindex(), 
-                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-                        TargetIndex = nil, --Optional.  Only used when targeting units
-                        AbilityIndex = 0, --Optional.  Only used when casting abilities
-                        Position = OrderPoint, --Optional.  Only used when targeting the ground
-                        Queue = 0 --Optional.  Used for queueing up abilities
-                 }
-                             ExecuteOrderFromTable(newOrder)
-
+                    local newOrder = {                                        --发送攻击指令
+                            UnitIndex = trigger.activator:entindex(), 
+                            OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                            TargetIndex = nil, --Optional.  Only used when targeting units
+                            AbilityIndex = 0, --Optional.  Only used when casting abilities
+                            Position = OrderPoint, --Optional.  Only used when targeting the ground
+                            Queue = 0 --Optional.  Used for queueing up abilities
+                     }
+                                 ExecuteOrderFromTable(newOrder)
+            end
 
 
 

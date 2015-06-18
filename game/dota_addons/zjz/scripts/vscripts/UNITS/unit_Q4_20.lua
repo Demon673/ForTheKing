@@ -8,14 +8,17 @@ local brain_OnAttackOthers = function( u_self, u_target, f_damage )
 end
 
 local brain_OnAttacked = function( u_self, u_attacker, f_damage )
+	if ((u_self:GetHealth() / u_self:GetMaxHealth() < 0.5) and (RandomInt(0, 99) < 35)) then
+		u_self:SetHealth(u_self:GetHealth() + f_damage)
+	end
 end
 
 local brain_OnTakenDamage = function( u_self, u_attacker, f_damage )
-	u_self.brain.skills[2].fun( u_self, u_attacker)
+	u_self.brain.skills[1].fun( u_self )
 end
 
 local brain_OnHealthRegain = function( u_self, u_healer, f_number )
-	u_self.brain.skills[2].fun( u_self, u_healer)
+	u_self.brain.skills[1].fun( u_self )
 end
 ---------- Order System ----------
 
@@ -35,58 +38,9 @@ local brain_OnGetOrderLastHit = function( u_self, u_sender, u_target, f_number )
 	return f_number
 end
 
----------- Criticle Strike Table ----------
-
-local criticle = function( u_self, u_target )
-	local f_random = RandomFloat( 0, 100 )
-	if ( BuffManager:GetCount( u_self, "modifier_Q1_20_criticle" ) > 0 ) then
-		f_chance = 105
-	else
-		f_chance = 20
-	end
-	if ( f_random < f_chance ) then
-
-		local i_particle = ParticleManager:CreateParticle(
-								"particles/base_attacks/ranged_badguy_explosion.vpcf",
-							 	PATTACH_CUSTOMORIGIN_FOLLOW,
-								u_target
-							 )
-		ParticleManager:SetParticleControlEnt(i_particle, 3, u_target, 5, "attach_hitloc", u_target:GetOrigin(), true)
-
-		return 2
-	else
-		return 1
-	end
-end
-
 ---------- Skill Table ----------
 
-local skill_01_cast = function( u_self )
-
-	local particle_function = function( u_unit )
-		local i_particle = ParticleManager:CreateParticle(
-								"particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf",
-							 	PATTACH_ROOTBONE_FOLLOW,
-								u_unit
-							 )
-		ParticleManager:SetParticleControlEnt(i_particle, 3, u_unit, 5, "attach_hitloc", u_unit:GetOrigin(), true) -- CP3
-
-		return i_particle
-	end
-
-	BuffManager:Add( u_self, "modifier_Q1_20_criticle", particle_function, true )
-
-
-	GameRules:GetGameModeEntity():SetContextThink(
-			DoUniqueString("modifier_Q1_20_criticle"),
-			function( )
-				BuffManager:Remove( u_self, "modifier_Q1_20_criticle" )
-			end,	--End Think Function
-			3.0
-		)
-end
-
-local skill_02_passive = function( u_self )
+local skill_01_passive = function( u_self )
 
 	local particle_function = function( u_unit )
 		local i_particle = ParticleManager:CreateParticle(
@@ -102,9 +56,14 @@ local skill_02_passive = function( u_self )
 	local f_self_health = u_self:GetHealth()
 	local f_self_health_max = u_self:GetMaxHealth()
 	local f_health_percentage = u_self:GetHealth() / u_self:GetMaxHealth()
-	local i_stack_count = math.floor((1 - f_health_percentage) * 20) + 1
-	print("Calculated to set stack count to " .. tostring(i_stack_count))
-	BuffManager:SetCount( u_self, "modifier_Q1_20_attack_speed", particle_function, i_stack_count )
+
+	if ((f_health_percentage >= 0.5) and (BuffManager:GetCount( u_self, "modifier_Q4_20_attack_speed" ) == 0)) then
+		BuffManager:Add( u_self, "modifier_Q4_20_attack_speed", particle_function, false )
+	end
+
+	if ((f_health_percentage < 0.5) and (BuffManager:GetCount( u_self, "modifier_Q4_20_attack_speed" ) == 1)) then
+		BuffManager:Remove( u_self, "modifier_Q4_20_attack_speed" )
+	end
 
 end
 
@@ -127,10 +86,8 @@ local brain_inititlize = function( u_unit )
 	brain.order_function["KillStart"] = brain_OnGetOrderKillStart
 	brain.order_function["LastHit"] = brain_OnGetOrderLastHit
 
-	brain.criticle_function[1] = criticle
-
-	brain.skills[1] = SkillManager:AddSkill( "Criticle when low health", brain.skills, 0.0, 7.0, -1, skill_01_cast )
-	brain.skills[2] = SkillManager:AddSkill( "AttackSpeed when low health", brain.skills, 0.0, 0.0, 0, skill_02_passive )
+	brain.skills[1] = SkillManager:AddSkill( "AttackSpeed when high health", brain.skills, 0.0, 0.0, 0, skill_01_passive )
+	skill_01_passive( u_unit )
 
 	AbilityManager:AddAndSet( u_unit, "listener_OnHealthRegain" )
 

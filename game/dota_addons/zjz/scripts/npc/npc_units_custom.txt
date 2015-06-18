@@ -8267,8 +8267,8 @@
     //----------------------------------------------------------------
     "StatusHealth"              "1300"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "0"         // 基础魔法值
-    "StatusManaRegen"           "0"         // 魔法恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
@@ -8403,8 +8403,8 @@
     //----------------------------------------------------------------
     "StatusHealth"              "1770"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "0"         // 基础魔法值
-    "StatusManaRegen"           "0"         // 魔法恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
@@ -8542,8 +8542,8 @@
     //----------------------------------------------------------------
     "StatusHealth"              "480"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "0"         // 基础魔法值
-    "StatusManaRegen"           "0"         // 魔法恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
@@ -8648,8 +8648,8 @@
     //----------------------------------------------------------------
     "StatusHealth"              "1380"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "0"         // 基础魔法值
-    "StatusManaRegen"           "0"         // 魔法恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
@@ -8755,8 +8755,8 @@
     //----------------------------------------------------------------
     "StatusHealth"              "500"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "0"         // 基础魔法值
-    "StatusManaRegen"           "0"         // 魔法恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
@@ -8863,8 +8863,8 @@
     //----------------------------------------------------------------
     "StatusHealth"              "1360"       // 基础生命值
     "StatusHealthRegen"         "0.5"         // 生命恢复速度
-    "StatusMana"                "0"         // 基础魔法值
-    "StatusManaRegen"           "0"         // 魔法恢复速度
+    "StatusMana"                "60"         // 基础魔法值
+    "StatusManaRegen"           "1"         // 魔法恢复速度
 
 
     "SoundSet"                  ""                  // 音效，
