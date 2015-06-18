@@ -14,10 +14,10 @@ end
 AllTypes = {}
 AllTypes["Q"] = { "Q1_00","Q2_00","Q3_00","Q4_00","Q5_00", }
 AllTypes["W"] = { "W1_00","W2_00","W3_00","W4_00","W5_00", }
-AllTypes["E"] = { "E1_00","E2_00","E3_00","E4_00","E5_00","E6_00",}
-AllTypes["D"] = { "Q3_00" }
-AllTypes["F"] = { "Q4_00" }
-AllTypes["R"] = { "Q1_00" }
+AllTypes["E"] = { "E6_00",}
+AllTypes["D"] = { "D6_00", }
+AllTypes["F"] = { "E1_00","E2_00","E3_00","E4_00","E5_00","D6_00", }
+AllTypes["R"] = { "D1_00","D2_00","D3_00","D4_00","D5_00","D6_00", }
 
 
 function playerstarts:playertable()
