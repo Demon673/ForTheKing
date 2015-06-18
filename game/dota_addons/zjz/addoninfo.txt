@@ -1,3 +1,11 @@
 "AddonInfo"
 {
+	"TeamCount" "2"
+	maps			"zjz"
+	"IsPlayable"	"1"
+	"zjz"
+	{
+					"MaxPlayers"                    "8"
+	}
+
 }
