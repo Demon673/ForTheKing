@@ -5025,6 +5025,22 @@
                 }
             }
 
+            "modifier_Q4_10_attack_speed"
+            {
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "25"
+                }
+            }
+
+            "modifier_Q4_20_attack_speed"
+            {
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "35"
+                }
+            }
+
         }
     }
 
