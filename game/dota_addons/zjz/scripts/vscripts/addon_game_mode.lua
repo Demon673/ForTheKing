@@ -544,6 +544,8 @@ end
 function CbtfGameMode:InitGameMode()
 	print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 0.1 )
+	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 4 )
+	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 4 )
     --GameRules:GetGameModeEntity():SetThink( "RoundThinker", self, "GlobalThink", 1 )
     --GameRules:GetGameModeEntity():SetContextThink(DoUniqueString("RoundThinker"), "RoundThinker", 0.1)
     
