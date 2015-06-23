@@ -4984,6 +4984,750 @@
     }
 }
 
+//jn_D1_00
+
+//jn_D1_10
+
+    //磁化爆炸
+    "jn_D2_00"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "invoker_emp"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D2_00"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+                "OnAttackLanded"
+                {
+                    "Random"
+                    {
+                        "Chance"            "%chance"
+                        "OnSuccess"
+                        {
+                            "RunScript"
+                            {
+                                "ScriptFile"    "scripts/vscripts/abilities.lua"
+                                "Function"      "jn_D2_00"
+                                "Damage"        "%damage"
+                                "Count"         "%count"
+                                "Target"
+                                {
+                                    "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                                    "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                                    "Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
+                                    "Center"    "CASTER"
+                                    "Radius"    "%radius"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //概率
+            {
+                "var_type"          "FIELD_INTEGER"
+                "chance"            "100"
+            }
+            "02"    //范围
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "250"
+            }
+            "03"    //伤害
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "40"
+            }
+            "04"    //伤害敌人数量
+            {
+                "var_type"          "FIELD_INTEGER"
+                "count"             "3"
+            }
+        }
+    }
+    //磁化爆炸
+    "jn_D2_10a"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "invoker_emp"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D2_10a"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+
+                "OnAttackStart"
+                {
+                    "Random"
+                    {
+                        "Chance"            "%chance"
+                        "OnSuccess"
+                        {
+                            "RunScript"
+                            {
+                                "ScriptFile"    "scripts/vscripts/abilities.lua"
+                                "Function"      "jn_D2_10"
+                                "Damage"        "%damage"
+                                "Count"         "%count"
+                                "Target"
+                                {
+                                    "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                                    "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                                    "Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
+                                    "Center"    "CASTER"
+                                    "Radius"    "%radius"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //概率
+            {
+                "var_type"          "FIELD_INTEGER"
+                "chance"            "100"
+            }
+            "02"    //范围
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "250"
+            }
+            "03"    //伤害
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "80"
+            }
+            "04"    //伤害敌人数量
+            {
+                "var_type"          "FIELD_INTEGER"
+                "count"             "3"
+            }
+        }
+    }
+    //石化魔咒
+    "jn_D2_10b"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "earth_spirit_petrify"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D2_10b"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+                "IsDebuff"              "0"
+                
+                "OnHealReceived"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "scripts/vscripts/Abilities.lua"
+                        "Function"      "jn_D2_10b"
+                        "HealPercent"   "%heal_percent"
+                    }
+                }
+            }
+
+            "modifier_jn_D2_10b_effect"
+            {
+                "Duration"              "%duration"
+                "StatusEffectName"      "particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
+                "StatusEffectPriority"  "10"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL" "1"
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //最低生命值百分比
+            {
+                "var_type"          "FIELD_INTEGER"
+                "heal_percent"      "30"
+            }
+            "02"    //持续时间
+            {
+                "var_type"          "FIELD_FLOAT"
+                "duration"          "3.0"
+            }
+        }
+    }
+    //弧形闪电
+    "jn_D3_00"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "zuus_arc_lightning"
+        "MaxLevel"                      "1"
+
+        "precache" //缓存特效
+        {
+            "particle"              "particles/units/heroes/hero_zuus/zuus_arc_lightning_head.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_jn_D3_00"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "scripts/vscripts/Abilities.lua"
+                        "Function"      "jn_D3_00"
+                        "Count"         "%count"
+                        "Damage"        "%damage"
+                        "Radius"        "%radius"
+                        "AttackCount"   "%attack_count"
+                    }
+                }
+            }
+
+            "modifier_jn_D3_00_effect"
+            {
+                "Duration"          "0.1"
+                "IsHidden"          "1"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "OnCreated"
+                {
+                    "Damage"
+                    {
+                        "Target"        "TARGET"
+                        "Type"          "DAMAGE_TYPE_MAGICAL"
+                        "Damage"        "%damage"
+                    }
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //电击数量
+            {
+                "var_type"          "FIELD_INTEGER"
+                "count"             "3"
+            }
+            "02"    //伤害
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "60"
+            }
+            "03"    //检测范围
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "600"
+            }
+            "04"    //攻击次数
+            {
+                "var_type"          "FIELD_INTEGER"
+                "attack_count"      "5"
+            }
+        }
+    }
+    //弧形闪电
+    "jn_D3_10"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "zuus_arc_lightning"
+        "MaxLevel"                      "1"
+
+        "precache" //缓存特效
+        {
+            "particle"              "particles/units/heroes/hero_zuus/zuus_arc_lightning_head.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_jn_D3_10"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "scripts/vscripts/Abilities.lua"
+                        "Function"      "jn_D3_00"
+                        "Count"         "%count"
+                        "Damage"        "%damage"
+                        "Radius"        "%radius"
+                        "AttackCount"   "%attack_count"
+                    }
+                }
+            }
+
+            "modifier_jn_D3_10_effect"
+            {
+                "Duration"          "0.1"
+                "IsHidden"          "1"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "OnCreated"
+                {
+                    "Damage"
+                    {
+                        "Target"        "TARGET"
+                        "Type"          "DAMAGE_TYPE_MAGICAL"
+                        "Damage"        "%damage"
+                    }
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //电击数量
+            {
+                "var_type"          "FIELD_INTEGER"
+                "count"             "5"
+            }
+            "02"    //伤害
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "80"
+            }
+            "03"    //检测范围
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "600"
+            }
+            "04"    //攻击次数
+            {
+                "var_type"          "FIELD_INTEGER"
+                "attack_count"      "5"
+            }
+        }
+    }
+    //魔王降临
+    "jn_D4_00"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "bloodseeker_thirst"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D4_00"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+            
+                "Aura"              "modifier_jn_D4_00_effect"
+                "Aura_Radius"       "%radius"
+                "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types"        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+                "Aura_Flags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+            }
+
+            "modifier_jn_D4_00_effect"
+            {
+                "IsDebuff"          "1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //降低护甲
+            {
+                "var_type"          "FIELD_INTEGER"
+                "armor"             "-3"
+            }
+            "02"    //作用范围
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "400"
+            }
+        }
+    }
+    //蔓延触须
+    "jn_D4_10b"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "treant_overgrowth"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D4_10b"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+                
+                "Aura"              "modifier_jn_D4_10b_effect"
+                "Aura_Radius"       "%radius"
+                "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types"        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+                "Aura_Flags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+            }
+
+            "modifier_jn_D4_10b_effect"
+            {
+                "IsDebuff"          "1"
+                "ThinkInterval"     "%interval"
+                "OnIntervalThink"
+                {
+                    "Damage"
+                    {
+                        "Target"        "TARGET"
+                        "Type"          "DAMAGE_TYPE_MAGICAL"
+                        "Damage"        "%damage"
+                    }
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //范围
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "200"
+            }
+            "02"    //伤害
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "13"
+            }
+            "03"    //伤害间隔
+            {
+                "var_type"          "FIELD_FLOAT"
+                "interval"          "1"
+            }
+        }
+    }
+    //魂影缭绕
+    "jn_D4_10c"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "terrorblade_reflection_alt1"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D4_10c"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+        
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" "%percent"
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "percent"           "-33"
+            }
+        }
+    }
+    //减速
+    "jn_D6_00"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+        "AbilityTextureName"            "tusk_frozen_sigil"
+        "MaxLevel"                      "1"
+
+        "AbilityCooldown"               "10"
+        "AbilityManaCost"               "60"
+
+        "precache" //缓存特效
+        {
+            "particle"              "particles/generic_gameplay/generic_slowed_cold.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "ApplyModifier"
+            {
+                "ModifierName"  "modifier_jn_D6_00"
+                "Target"        "TARGET"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_jn_D6_00"
+            {
+                "Duration"          "%duration"
+                "IsDebuff"          "1"
+                "EffectName"        "particles/generic_gameplay/generic_slowed_cold.vpcf"
+                "EffectAttachType"  "follow_chest"
+        
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed" 
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "03"    //持续时间
+            {
+                "var_type"          "FIELD_INTEGER"
+                "duration"          "7"
+            }
+            "01"    //攻击速度
+            {
+                "var_type"          "FIELD_INTEGER"
+                "attack_speed"      "-30"
+            }
+            "02"    //移动速度
+            {
+                "var_type"          "FIELD_INTEGER"
+                "move_speed"        "-30"
+            }
+        }
+    }
+    //霜冻之箭
+    "jn_D6_10b"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST| DOTA_ABILITY_BEHAVIOR_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+        "AbilityTextureName"            "drow_ranger_frost_arrows"
+        "MaxLevel"                      "1"
+
+        "precache" //缓存特效
+        {
+            "particle"              "particles/generic_gameplay/generic_slowed_cold.vpcf"
+            "particle"              "particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_jn_D6_10b"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+        
+                "Orb"
+                {
+                    "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"    "particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+                    "CastAttack"        "1"
+                }
+                "OnOrbFire"
+                {
+                }
+                "OnOrbImpact"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"  "modifier_jn_D6_10b_effect"
+                        "Target"        "TARGET"
+                    }
+                }
+            }
+
+            "modifier_jn_D6_10b_effect"
+            {
+                "IsDebuff"          "1"
+                "Duration"          "%duration"
+                "EffectName"        "particles/generic_gameplay/generic_slowed_cold.vpcf"
+                "EffectAttachType"  "follow_chest"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed" 
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "03"    //持续时间
+            {
+                "var_type"          "FIELD_INTEGER"
+                "duration"          "2"
+            }
+            "01"    //攻击速度
+            {
+                "var_type"          "FIELD_INTEGER"
+                "attack_speed"      "-30"
+            }
+            "02"    //移动速度
+            {
+                "var_type"          "FIELD_INTEGER"
+                "move_speed"        "-30"
+            }
+        }
+    }
+    //狂风
+    "jn_D6_11a"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityTextureName"            "invoker_tornado"
+        "MaxLevel"                      "1"
+
+        "AbilityCooldown"               "20"
+        "AbilityManaCost"               "60"
+
+        "precache" //缓存特效
+        {
+            "particle"              "particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "LinearProjectile"
+            {
+                "EffectName"        "particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+                "MoveSpeed"         "1200"
+                "StartRadius"       "0"
+                "EndRadius"         "300"
+                "FixedDistance"     "1000"
+                "TargetTeams"       "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"       "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                "TargetFlags"       "DOTA_UNIT_TARGET_FLAG_NONE"
+                "HasFrontalCone"    "0"
+                "ProvidesVision"    "1"
+                "VisionRadius"      "300"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"               "0"
+
+            "Damage"
+            {
+                "Target"        "TARGET"
+                "Type"          "DAMAGE_TYPE_MAGICAL"
+                "Damage"        "%damage"
+            }
+
+            "Stun"
+            {
+                "Duration"      "%duration"
+                "Target"        "TARGET"
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "80"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_FLOAT"
+                "duration"          "0.7"
+            }
+        }
+    }
+    //灵敏
+    "jn_D6_11b"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "beastmaster_hawk_invisibility"
+        "MaxLevel"                      "1"
+
+        "Modifiers"
+        {
+            "modifier_jn_D6_11b"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+        
+                "OnAbilityExecuted"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"  "modifier_jn_D6_11b_effect"
+                        "Target"        "CASTER"
+                    }
+                }
+            }
+
+            "modifier_jn_D6_11b_effect"
+            {
+                "Duration"          "%duration"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
+                }
+            }
+        }
+
+        "AbilitySpecial"
+        {
+            "01"    //攻击速度
+            {
+                "var_type"          "FIELD_INTEGER"
+                "attack_speed"      "100"
+            }
+            "02"    //持续时间
+            {
+                "var_type"          "FIELD_FLOAT"
+                "duration"          "7"
+            }
+        }
+    }
+
+
 
 
 
