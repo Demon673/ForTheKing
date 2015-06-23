@@ -121,8 +121,8 @@ function RoundThinker()
 								--随着时间强化
 					    leftHwd:SetBaseDamageMin(RoundThinker_wave+5)
 						leftHwd:SetBaseDamageMax(RoundThinker_wave+5)
-						leftHwd:SetMaxHealth(100+10*RoundThinker_wave)
-	    				leftHwd:SetHealth(100+10*RoundThinker_wave)
+						leftHwd:SetBaseMaxHealth(100+10*RoundThinker_wave)
+	    				--leftHwd:SetHealth(100+10*RoundThinker_wave)
 
 
 				       	local Order = 
@@ -153,8 +153,9 @@ function RoundThinker()
 							
 				    rightHwd:SetBaseDamageMin(RoundThinker_wave+5)
 					rightHwd:SetBaseDamageMax(RoundThinker_wave+5)
-					rightHwd:SetMaxHealth(100+10*RoundThinker_wave)
-		    		rightHwd:SetHealth(100+10*RoundThinker_wave)
+					rightHwd:SetBaseMaxHealth(100+10*RoundThinker_wave)
+					--print("hp is "..100+10*RoundThinker_wave)
+		    		--rightHwd:SetHealth(200+10*RoundThinker_wave)
 
 
 
