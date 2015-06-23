@@ -171,10 +171,9 @@ function buildbuilding( keys )--建筑完成
 		--build.FDesc:SetModelScale(f_scale+0.6)
 		--移除技能
 	for j = 0,5,1 do
-	    local temp=u_building:GetAbilityByIndex(j) --获取技能实体
+	    local temp=build:GetAbilityByIndex(j) --获取技能实体
 	    if temp then 
-	    	u_building:RemoveAbility(temp:GetAbilityName())
-	        temp:SetLevel(1)                     --移除技能
+	    	build:RemoveAbility(temp:GetAbilityName())
 	    end
 	end
 	--设置模型大小
