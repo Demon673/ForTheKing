@@ -515,12 +515,12 @@ function fangkabing(keys)
 
 	--获取范围内的单位
 	local group = FindUnitsInRadius(caster:GetTeamNumber(),point,nil,200,teams,types,flags,FIND_UNITS_EVERYWHERE,true)
-		print("the kabing unit is  ")
-		print("group:"..#group)	
+		--print("the kabing unit is  ")
+		--print("group:"..#group)	
 	for i,target in pairs(group) do
 		local team_number = target:GetTeamNumber() 
 		local unit_point = target:GetAbsOrigin()
-
+		target:AddNewModifier(nil, nil, "modifier_phased", {duration=0.3})
 		if team_number == DOTA_TEAM_GOODGUYS  then
 
 					local attack_to_right = Vector(4200 , unit_point.y,unit_point.z)

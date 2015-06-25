@@ -5788,10 +5788,10 @@
         {
             "Ability1"               
             {
-                //"Name"                "enigma_demonic_conversion"
+                "Name"                "enigma_demonic_conversion"
                 //"AOE"                "0"
-                //"Radius"             "600"
-                //"MinimumTargets"     "1"
+                "Radius"             "600"
+                "MinimumTargets"     "1"
 
             }               
         }

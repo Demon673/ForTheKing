@@ -125,6 +125,7 @@ function UnitManager:CreateUnitByBuilding( u_building )
             Queue = 0 
         }
     u_unit:SetContextThink(DoUniqueString("order_later"), function() ExecuteOrderFromTable(t_order) end, 0.1)
+    u_unit:MoveToPositionAggressive(4760,6000,0)
 
     AbilityManager:AddAndSet( u_unit, "buff_register" )
 
