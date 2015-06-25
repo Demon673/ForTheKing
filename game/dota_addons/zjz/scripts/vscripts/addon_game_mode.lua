@@ -691,8 +691,6 @@ function CbtfGameMode:OnThink()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
-
-
 	return 0.1
 end
 

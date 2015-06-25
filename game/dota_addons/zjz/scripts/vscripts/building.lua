@@ -169,7 +169,9 @@ function buildbuilding( keys )--建筑完成
 		--print("this building model scale is "..f_scale)
 		--build:SetModelScale(f_scale+0.6) --待修改
 		--build.FDesc:SetModelScale(f_scale+0.6)
-		--移除技能
+	--设置蓝量
+	
+	--移除技能
 	for j = 0,5,1 do
 	    local temp=build:GetAbilityByIndex(j) --获取技能实体
 	    if temp then 
