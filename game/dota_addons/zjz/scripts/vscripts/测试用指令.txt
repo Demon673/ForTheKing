@@ -18,7 +18,7 @@ dota_create_unit npc_nature_10_PW
 dota_create_unit npc_unit_hum10_BZ
 dota_create_unit npc_unit_hum10_BZ enemy
 -item item_uglybase_tiepi
-
+dota_create_unit npc_luxueqi
 ===创建敌方斧王，友方斧王
 
 dota_dev hero_teleport

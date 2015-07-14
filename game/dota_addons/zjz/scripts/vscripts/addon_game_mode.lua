@@ -614,7 +614,6 @@ end
 function CbtfGameMode:OnNPCSpawned( keys )
 	local trigger_unit = EntIndexToHScript(keys.entindex)
 	local trigger_unit_team_number = trigger_unit:GetTeamNumber() 
-
 	--设置新生单位的朝向
 	if trigger_unit_team_number == DOTA_TEAM_GOODGUYS then
 		trigger_unit:SetForwardVector((Vector(2000,0,0) - Vector(-2000,0,0)):Normalized())--朝右

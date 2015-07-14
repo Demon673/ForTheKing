@@ -27,5 +27,6 @@
 	  
 	"AttackDamageMin"           "1"                         // 
     "AttackDamageMax"           "2"                         // 
+
 	}
 }
