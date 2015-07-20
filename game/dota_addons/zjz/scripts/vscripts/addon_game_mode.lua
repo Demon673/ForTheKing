@@ -519,6 +519,19 @@ function PrecacheEverythingFromTable( context, kvtable)
 	end	   
 end
 
+--技能特效预载表
+ParticleTable={
+	"particles/farmer/farmer.vpcf",
+	"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf",
+	"particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave.vpcf",
+	"particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf",
+	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodrage.vpcf",
+	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf",
+	"particles/base_attacks/ranged_badguy_explosion.vpcf",
+	"particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_aftershock_egset.vpcf",
+	"particles/status_fx/status_effect_gods_strength.vpcf",
+	"particles/econ/items/faceless_void/faceless_void_weapon_bfury/battlefury_cleave_reference.vpcf",
+}
 
 function Precache( context )
 
@@ -529,8 +542,9 @@ function Precache( context )
 	time = time - GameRules:GetGameTime()
 	print("DONE PRECACHEING IN:"..tostring(time).."Seconds")
 
-	PrecacheParticle( "particles/farmer/farmer.vpcf", context )
-	PrecacheParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context )
+	for i=1,#ParticleTable do
+		PrecacheParticle(ParticleTable[i],context)
+	end
 
 end
 
