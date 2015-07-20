@@ -541,7 +541,7 @@ function Precache( context )
 	PrecacheEveryThingFromKV( context )
 	time = time - GameRules:GetGameTime()
 	print("DONE PRECACHEING IN:"..tostring(time).."Seconds")
-
+	--载入技能特效
 	for i=1,#ParticleTable do
 		PrecacheParticle(ParticleTable[i],context)
 	end
